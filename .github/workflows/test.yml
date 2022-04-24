@@ -11,8 +11,7 @@ jobs:
       uses: appleboy/scp-action@master
       with:
         host: "bitinjection.com"
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        key: ${{ secrets.KEY }}
+        username: "dthompson"
+        password: "password"
         source: "*"
         target: "./honeybeeandfriends/html/staging"
