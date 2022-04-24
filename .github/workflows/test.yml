@@ -10,8 +10,8 @@ jobs:
     - name: copy file via ssh password
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:
-        host: bitinjection.com
-        username: 'dthompson'
+        server: "bitinjection.com"
+        username: "dthompson"
         key: ${{ secrets.KEY }}
         local_path: "./"
         remote_path: "./honeybeeandfriends/html/staging"
