@@ -8,10 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: copy file via ssh password
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
+      uses: appleboy/scp-action@master
       with:
-        server: "bitinjection.com"
-        username: "dthompson"
+        host: "bitinjection.com"
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.KEY }}
-        local_path: "./"
-        remote_path: "./honeybeeandfriends/html/staging"
+        source: "*"
+        target: "./honeybeeandfriends/html/staging"
