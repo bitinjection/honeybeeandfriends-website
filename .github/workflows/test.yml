@@ -1,5 +1,8 @@
 name: scp files
-on: [workflow_dispatch]
+on:
+  push:
+    branches:
+      - dev
 jobs:
 
   build:
