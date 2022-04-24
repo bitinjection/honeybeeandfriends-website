@@ -13,6 +13,6 @@ jobs:
         host: "bitinjection.com"
         username: "dthompson"
         key: ${{ secrets.KEY }}
-        passphrase: ${{ secrets.passphrase }}
+        passphrase: ${{ secrets.PASSPHRASE }}
         source: "*"
         target: "./honeybeeandfriends/html/staging"
