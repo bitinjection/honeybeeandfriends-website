@@ -12,7 +12,6 @@ jobs:
       with:
         host: "bitinjection.com"
         username: "dthompson"
-        key: ${{ secrets.KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }}
+        password: ${{ secrets.PASSWORD }}
         source: "*"
         target: "./honeybeeandfriends/html/staging"
