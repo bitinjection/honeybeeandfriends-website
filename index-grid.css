@@ -1,22 +1,18 @@
-@font-face {
-  font-family: "Jua";
-  src: url(Jua-Regular.ttf);
-}
-
 body {
   margin: 0px;
   padding: 0px;
-  /* background: linear-gradient(180deg, rgb(0, 209, 255) 0%, rgb(255, 218, 0) 50%); */
-  background-color: rgb(0, 213, 255);
+  background: linear-gradient(180deg, rgb(0, 209, 255) 0%, rgb(255, 218, 0) 50%);
 }
 
 .landing-page-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 200px 15px 1fr 15px auto;
 }
 
-.header-container {
-  display: flex;
+.logo {
+  grid-column: 1;
+  align-self: center;
 }
 
 .logo img {
@@ -24,8 +20,13 @@ body {
   padding-left: 32px;
 }
 
+.navbar {
+  grid-column: 1;
+  margin-top: 32px;
+}
 
 .navbar-links {
+  grid-column: 2;
   align-self: center;
 }
 
@@ -37,11 +38,11 @@ div.base-frame {
   padding-right: 32px;
   padding-top: 24px;
   padding-bottom: 24px;
-  margin-right: 24px;
-  margin-left: 24px;
+  margin-right: 32px;
+  margin-left: 32px;
   border-style: solid;
   border-radius: 8px;
-  border-color: rgb(120, 37, 2);
+  border-color: hsl(25deg 36% 53%);
   border-width: 4px;
   color: white;
   font-size: 24px;
@@ -54,31 +55,32 @@ div.base-frame {
 }
 
 .red-frame {
-  background-color: #e33939;
-  transform: rotate(-10deg);
+  background-color: #ca3535;
+  transform: rotate(5deg);
 }
 
 .yellow-frame {
-  background-color: #ffa700;
-  transform: rotate(10deg);
+  background-color: #c4c429;
+  transform: rotate(4deg);
 }
 
 .green-frame {
-    background-color: green;
-    transform: rotate(-10deg);
+    background-color: #9bba1f;
+    transform: rotate(-5deg);
 }
 
 .blue-frame {
-  background-color: #2620db;
-  transform: rotate(10deg);
+  background-color: #1f9fba;
+  transform: rotate(-10deg);
 }
 
 .violet-frame {
   background-color: violet;
-  transform: rotate(-10deg);
+  transform: rotate(5deg);
 }
 
 .phone-number {
+  grid-column: 3;
   align-self: center;
   text-align: right;
   padding-right: 32px;
@@ -90,26 +92,15 @@ div.base-frame {
 .page-seperator {
   background-color: rgb(120, 37, 2);
   height: 15px;
+  grid-column: 1 / span 3;
 }
 
 .middle-content {
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   background-color: rgb(156, 195, 200);
-  min-height: 100vh;
-}
-
-.middle-content-flex-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #bee1e1;
-  margin: 100px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .text-box {
@@ -120,6 +111,7 @@ div.base-frame {
   margin: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
+  justify-self: center;
   font-family: 'Jua', sans-serif;
 }
 
@@ -138,42 +130,26 @@ div.base-frame {
   grid-row: 3;
 }
 
-.cute-image {
-  padding: 10px;
-  margin: 50px;
-}
-
-.cute-image img {
-  width: 300px;
-}
-
 h1 {
 	color: hwb(0 0% 100%);
 }
 
 .link-card-section {
-  /* width: 740px; */
+  width: 740px;
   margin: 0 auto;
 }
 
 .bottom-content {
+  grid-column: 1 / span 3;
   background-color: rgb(0, 33, 43);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   min-height: 200px;
-  height: 100%;
+  max-height: 100%;
 }
 
 .footer-text {
   color: white;
   justify-self: left;
   align-self: center;
-}
-
-.daycare-schedule, td, th {
-  /* font-family: 'Jua', sans-serif; */
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 5px;
-  margin-bottom: 5px;
 }
