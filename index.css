@@ -134,10 +134,11 @@ body {
 .cute-image {
   padding: 10px;
   margin: 50px;
+  align-self: center;
 }
 
 .cute-image img {
-  width: 300px;
+  width: 200px;
 }
 
 h1 {
@@ -159,7 +160,6 @@ h1 {
 }
 
 .daycare-schedule, td, th {
-  /* font-family: 'Jua', sans-serif; */
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
