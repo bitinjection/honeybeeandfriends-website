@@ -17,65 +17,46 @@ body {
 
 .header-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .logo img {
   width: 240px;
-  padding-left: 32px;
 }
 
-
-.navbar-links {
-  align-self: center;
-}
-
-div.base-frame {
-  list-style-type: none;
-  display: inline-block;
-  font-family: 'Jua', sans-serif;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  margin-right: 24px;
-  margin-left: 24px;
-  border-style: solid;
-  border-radius: 8px;
-  border-color: rgb(120, 37, 2);
-  border-width: 4px;
+.base-frame {
+  font-family: "Jua";
   color: white;
-  font-size: 24px;
-  vertical-align: top;
+  text-decoration: none;
+  flex-grow: 1;
+  font-size: larger;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
 }
 
-.base-frame a {
-  color: inherit;
-  text-decoration: none;
+.base-frame:hover {
+opacity: 80%;
 }
 
 .red-frame {
   background-color: #e33939;
-  transform: rotate(-10deg);
 }
 
 .yellow-frame {
   background-color: #ffa700;
-  transform: rotate(10deg);
 }
 
 .green-frame {
     background-color: green;
-    transform: rotate(-10deg);
 }
 
 .blue-frame {
   background-color: #2620db;
-  transform: rotate(10deg);
 }
 
 .violet-frame {
   background-color: violet;
-  transform: rotate(-10deg);
 }
 
 .phone-number {
@@ -149,11 +130,6 @@ div.base-frame {
 
 h1 {
 	color: hwb(0 0% 100%);
-}
-
-.link-card-section {
-  /* width: 740px; */
-  margin: 0 auto;
 }
 
 .bottom-content {
