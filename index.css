@@ -41,7 +41,14 @@ body {
 }
 
 .base-frame:hover {
+  height: 60px;
+}
+
+@media screen and (max-width: 590px) {
+.base-frame:hover {
   filter: brightness(80%);
+  height: auto;
+}
 }
 
 .red-frame {
