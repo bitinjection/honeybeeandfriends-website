@@ -151,6 +151,7 @@ body {
   color: white;
   justify-self: left;
   align-self: center;
+  font-family: sans-serif;
 }
 
 .daycare-schedule, td, th {
@@ -169,4 +170,18 @@ body {
 
 .calendar {
   align-self: center;
+}
+
+.footer-title {
+  margin-bottom: 18px;
+  font-size: larger;
+}
+
+.footer-section {
+  margin-bottom: 12px;
+}
+
+.footer-section div {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
