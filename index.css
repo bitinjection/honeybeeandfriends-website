@@ -42,6 +42,8 @@ body {
   text-align: center;
   margin-top: auto;
   width: 60px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 
 .base-frame:hover {
