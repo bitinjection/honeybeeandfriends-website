@@ -94,7 +94,7 @@ body {
   min-height: 100vh;
 }
 
-.middle-content-flex-container {
+.middle-content-sub-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
