@@ -185,3 +185,23 @@ body {
   padding-top: 4px;
   padding-bottom: 4px;
 }
+
+.daycare-schedule th {
+  background-color: #5cbedf;
+}
+
+.daycare-schedule tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+.daycare-schedule tr:nth-child(odd) {
+  background-color: white;
+}
+
+.daycare-schedule-container {
+  background-color: #ccf3ff;
+}
+
+.asterisk {
+  color: red;
+}
