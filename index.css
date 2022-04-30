@@ -137,10 +137,6 @@ body {
   width: 200px;
 }
 
-h1 {
-	color: hwb(0 0% 100%);
-}
-
 .bottom-content {
   background-color: rgb(0, 33, 43);
   display: flex;
