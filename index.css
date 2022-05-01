@@ -205,3 +205,15 @@ body {
 .asterisk {
   color: red;
 }
+
+.about-text-box {
+  margin: 72px;
+}
+
+.about-text {
+  font-family: 'Jua', sans-serif;
+  height: auto;
+  align-self: center;
+  font-size: x-large;
+  margin-bottom: 48px;
+}
