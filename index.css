@@ -58,23 +58,23 @@ body {
 }
 
 .red-frame {
-  background-color: #e33939;
+  background-color: #f15d5d;
 }
 
 .yellow-frame {
-  background-color: #ffa700;
+  background-color: #ffb833;
 }
 
 .green-frame {
-    background-color: green;
+  background-color: #48bb48;
 }
 
 .blue-frame {
-  background-color: #2620db;
+  background-color: #6964ef;
 }
 
 .violet-frame {
-  background-color: violet;
+  background-color: #f393f3;
 }
 
 .phone-number {
@@ -92,7 +92,7 @@ body {
 }
 
 .middle-content {
-  background-color: rgb(156, 195, 200);
+  background-color: rgb(192 248 255);
   min-height: 100vh;
 }
 
@@ -187,11 +187,11 @@ body {
 }
 
 .daycare-schedule th {
-  background-color: #5cbedf;
+  background-color: #71eb71;
 }
 
 .daycare-schedule tr:nth-child(even) {
-  background-color: lightblue;
+  background-color: #ccffcc;
 }
 
 .daycare-schedule tr:nth-child(odd) {
@@ -199,11 +199,15 @@ body {
 }
 
 .daycare-schedule-container {
-  background-color: #ccf3ff;
+  background-color: #43b761;
 }
 
 .asterisk {
   color: red;
+}
+
+#about-container {
+  background-color: #ffd3d3;
 }
 
 .about-text-box {
@@ -216,4 +220,20 @@ body {
   align-self: center;
   font-size: x-large;
   margin-bottom: 48px;
+}
+
+#schedule-container {
+  background-color: #ccffcc;
+}
+
+#menu-container {
+  background-color: #aed9ff;
+}
+
+#contact-container {
+  background-color: #ffd9ff;
+}
+
+#contact-text-box {
+  background-color: rgb(255 169 255);
 }
