@@ -10,7 +10,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(180deg, rgb(0, 209, 255) 0%, white 19%);
+  background: linear-gradient(180deg, rgb(163 238 255) 0%, white 19%);
   background-color: rgb(0, 213, 255);
 }
 
@@ -34,7 +34,7 @@ body {
 
 .base-frame {
   font-family: "Jua";
-  color: white;
+  color: black;
   text-decoration: none;
   flex-grow: 1;
   font-size: larger;
@@ -58,23 +58,23 @@ body {
 }
 
 .red-frame {
-  background-color: #f15d5d;
+  background-color: rgb(253 159 159);
 }
 
 .yellow-frame {
-  background-color: #ffb833;
+  background-color: #ffd991;
 }
 
 .green-frame {
-  background-color: #48bb48;
+  background-color: #ccffcc;
 }
 
 .blue-frame {
-  background-color: #6964ef;
+  background-color: rgb(216 174 255);
 }
 
 .violet-frame {
-  background-color: #f393f3;
+  background-color: rgb(255 217 255);
 }
 
 .phone-number {
@@ -143,15 +143,15 @@ body {
   background-color: rgb(0, 33, 43);
   display: flex;
   justify-content: space-between;
-  min-height: 200px;
+  min-height: 300px;
   height: 100%;
 }
 
 .footer-text {
   color: white;
   justify-self: left;
-  align-self: center;
   font-family: sans-serif;
+  padding-top: 48px;
 }
 
 .daycare-schedule, td, th {
@@ -210,6 +210,10 @@ body {
   background-color: #ffd3d3;
 }
 
+#about-background {
+  background-color: rgb(253 159 159);
+}
+
 .about-text-box {
   margin: 72px;
 }
@@ -222,12 +226,28 @@ body {
   margin-bottom: 48px;
 }
 
+#gallery-background {
+  background-color: #ffd991
+}
+
+#schedule-background {
+  background-color: #ccffcc;
+}
+
 #schedule-container {
   background-color: #ccffcc;
 }
 
 #menu-container {
   background-color: #aed9ff;
+}
+
+#menu-background {
+background-color: rgb(216 174 255);
+}
+
+#contact-background {
+  background-color: rgb(255 217 255);
 }
 
 #contact-container {
