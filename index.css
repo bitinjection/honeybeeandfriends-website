@@ -26,11 +26,13 @@ body {
 
 .logo img {
   width: 700px;
+  margin-bottom: -7px;
 }
 
 .nav-bar {
   display: flex;
-  height: 60px;
+  height: 65px;
+  background-color: rgb(120, 37, 2);
 }
 
 .base-frame {
