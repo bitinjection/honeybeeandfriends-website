@@ -215,6 +215,7 @@ body {
 
 #about-background {
   background-color: rgb(253 159 159);
+  display: none;
 }
 
 .about-text-box {
@@ -230,11 +231,13 @@ body {
 }
 
 #gallery-background {
-  background-color: #ffd991
+  background-color: #ffd991;
+  display: none;
 }
 
 #schedule-background {
   background-color: #ccffcc;
+  display: none;
 }
 
 #schedule-container {
@@ -247,10 +250,12 @@ body {
 
 #menu-background {
 background-color: rgb(216 174 255);
+display: none;
 }
 
 #contact-background {
   background-color: rgb(255 217 255);
+  display: none;
 }
 
 #contact-container {
