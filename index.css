@@ -19,17 +19,18 @@ body {
   flex-direction: column;
 }
 
-.header-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .logo {
-  margin: 10px;
+  align-self: center;
+  padding-top: 5px ;
 }
 
 .logo img {
-  width: 150px;
+  width: 700px;
+}
+
+.nav-bar {
+  display: flex;
+  height: 60px;
 }
 
 .base-frame {
@@ -51,10 +52,10 @@ body {
 }
 
 @media screen and (max-width: 590px) {
-.base-frame:hover {
-  filter: brightness(80%);
-  height: auto;
-}
+  .base-frame:hover {
+    filter: brightness(80%);
+    height: auto;
+  }
 }
 
 .red-frame {
