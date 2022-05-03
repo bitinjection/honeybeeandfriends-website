@@ -73,6 +73,10 @@ body {
 }
 
 .blue-frame {
+  background-color: rgb(192 248 255);
+}
+
+.purple-frame {
   background-color: rgb(216 174 255);
 }
 
