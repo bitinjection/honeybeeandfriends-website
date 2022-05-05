@@ -22,10 +22,11 @@ body {
 .logo {
   align-self: center;
   padding-top: 5px ;
+  max-width: 700px;
 }
 
 .logo img {
-  width: 700px;
+  width: 100%;
   margin-bottom: -7px;
 }
 
@@ -33,20 +34,49 @@ body {
   display: flex;
   height: 65px;
   background-color: rgb(120, 37, 2);
+  position: relative;
+}
+
+#side-nav-bar {
+  display: none;
+  flex-direction: column;
+  height: fit-content;
+  position: absolute;
+  top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 2;
+}
+
+.side-content {
+  font-family: Jua;
+  font-size: larger;
+  padding: 10px;
+  width: 100%;
+}
+
+.hamburger {
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  padding-left: 10px;
+  display: none;
+}
+
+.hamburger img {
+  height: 100%;
 }
 
 .base-frame {
   font-family: "Jua";
-  color: black;
-  text-decoration: none;
   flex-grow: 1;
   font-size: larger;
   padding: 10px;
   text-align: center;
   margin-top: auto;
-  width: 60px;
+  width: 100%;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  min-width: 140px;
 }
 
 .base-frame:hover {
@@ -60,28 +90,40 @@ body {
   }
 }
 
-.red-frame {
+.red-frame, #about-side-content {
   background-color: rgb(253 159 159);
 }
 
-.yellow-frame {
+.yellow-frame, #gallery-side-content {
   background-color: #ffd991;
 }
 
-.green-frame {
+.green-frame, #daily-side-content {
   background-color: #ccffcc;
 }
 
-.blue-frame {
+.blue-frame, #home-side-content {
   background-color: rgb(192 248 255);
 }
 
-.purple-frame {
+.purple-frame, #menu-side-content {
   background-color: rgb(216 174 255);
 }
 
-.violet-frame {
+.violet-frame, #contact-side-content {
   background-color: rgb(255 217 255);
+}
+
+#filter {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+  filter: opacity(50%);
 }
 
 .phone-number {
@@ -268,4 +310,19 @@ display: none;
 
 #contact-text-box {
   background-color: rgb(255 169 255);
+}
+
+@media screen and (max-width: 800px) {
+
+  .nav-bar {
+    height: 50px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .base-frame {
+    display: none;
+  }
 }
