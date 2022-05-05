@@ -83,13 +83,6 @@ body {
   height: 60px;
 }
 
-@media screen and (max-width: 590px) {
-  .base-frame:hover {
-    filter: brightness(80%);
-    height: auto;
-  }
-}
-
 .red-frame, #about-side-content {
   background-color: rgb(253 159 159);
 }
@@ -142,7 +135,7 @@ body {
 
 .middle-content {
   background-color: rgb(192 248 255);
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .middle-content-sub-container {
@@ -218,7 +211,13 @@ body {
 }
 
 .calendar {
+  justify-self: center;
   align-self: center;
+  align-items: center;
+}
+
+.calendar img {
+  width: 100%;
 }
 
 .footer-title {
@@ -249,6 +248,7 @@ body {
 
 .daycare-schedule-container {
   background-color: #43b761;
+  font-family: Jua;
 }
 
 .asterisk {
@@ -287,7 +287,7 @@ body {
 }
 
 #schedule-container {
-  background-color: #ccffcc;
+  background-color: #43b761;
 }
 
 #menu-container {
@@ -295,8 +295,8 @@ body {
 }
 
 #menu-background {
-background-color: rgb(216 174 255);
-display: none;
+  background-color: rgb(216 174 255);
+  display: none;
 }
 
 #contact-background {
@@ -305,11 +305,13 @@ display: none;
 }
 
 #contact-container {
-  background-color: #ffd9ff;
+  background-color: rgb(255 169 255);
 }
 
 #contact-text-box {
+  font-family: Jua;
   background-color: rgb(255 169 255);
+  margin: 72px;
 }
 
 @media screen and (max-width: 800px) {
@@ -322,7 +324,24 @@ display: none;
     display: block;
   }
 
+  .middle-content-sub-container {
+    margin: 20px;
+  }
+
   .base-frame {
     display: none;
+  }
+
+  .about-text-box {
+    margin: 20px;
+  }
+
+  .bottom-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-text {
+    text-align: center;
   }
 }
