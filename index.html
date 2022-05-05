@@ -3,11 +3,12 @@
 
 <head>
   <link rel="stylesheet" href="index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <div class="landing-page-container">
-    <div class="logo">
+    <div id="logo" class="logo">
       <a href="index.html" title="Go to our Home Page">
         <img src="Heading.png"
           alt="Logo featuring a jolly honeybee holding a pot, and little insects. Title: Honeybee and Friends Daycare. Address: 22 New Dawn Place, The Woodlands, TX, 77385. Phone Number: TBG">
@@ -15,6 +16,9 @@
     </div>
 
     <div class="nav-bar">
+      <a class="hamburger" onclick="showSideBar()">
+        <img src="hamburger.png" alt="Open Nav Hamburger Icon">
+      </a>
       <a class="base-frame blue-frame" onclick="swapMiddle(previousTab,'home-page')" title="Go to our Home Page">Home
       </a>
       <a class="base-frame red-frame" onclick="swapMiddle(previousTab,'about-background')" title="Learn about us">About
@@ -27,6 +31,24 @@
         title="Food menu for the kids">Menu</a>
       <a class="base-frame violet-frame" onclick="swapMiddle(previousTab,'contact-background')"
         title="Our contact information">Contact</a>
+
+      <div id="side-nav-bar">
+        <a id="home-side-content" class="side-content" onclick="swapMiddle(previousTab,'home-page')"
+          title="Go to our Home Page">Home
+        </a>
+        <a id="about-side-content" class="side-content" onclick="swapMiddle(previousTab,'about-background')"
+          title="Learn about us">About
+          Us</a>
+        <a id="gallery-side-content" class="side-content" onclick="swapMiddle(previousTab,'gallery-background')"
+          title="Check out pictures">Gallery</a>
+        <a id="daily-side-content" class="side-content" onclick="swapMiddle(previousTab,'schedule-background')"
+          title="Daily schedule">Daily Schedule</a>
+        <a id="menu-side-content" class="side-content" onclick="swapMiddle(previousTab,'menu-background')"
+          title="Food menu for the kids">Menu</a>
+        <a id="contact-side-content" class="side-content" onclick="swapMiddle(previousTab,'contact-background')"
+          title="Our contact information">Contact</a>
+      </div>
+      <div id="filter" onclick="hideSideBar()"></div>
     </div>
 
     <div id="home-page" class="middle-content">
@@ -99,7 +121,7 @@
 
     <div id="schedule-background" class="middle-content">
       <div id="schedule-container" class="middle-content-sub-container">
-        <div class="text-box page-text-box daycare-schedule-container">
+        <div class="daycare-schedule-container">
           <table class="daycare-schedule">
             <tr>
               <th>Daily Schedule</th>
@@ -165,14 +187,16 @@
     <div id="menu-background" class="middle-content">
       <div id="menu-container" class="middle-content-sub-container">
         <div class="calendar">
-          <embed src="Daycare_Calendar_May_22.pdf" width="800px" height="2100px" />
+          <img src="Daycare_Calendar_May_221024_1.jpg" alt="">
+          <img src="Daycare_Calendar_May_221024_2.jpg" alt="">
+          <img src="Daycare_Calendar_May_221024_3.jpg" alt="">
         </div>
       </div>
     </div>
 
     <div id="contact-background" class="middle-content">
       <div id="contact-container" class="middle-content-sub-container">
-        <div id="contact-text-box" class="text-box page-text-box">
+        <div id="contact-text-box">
           <h1>Address</h1>
           <div>
             22 New Dawn Place <br>
@@ -219,7 +243,6 @@
       <div class="image">comb here</div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 
