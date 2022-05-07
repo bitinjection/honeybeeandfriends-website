@@ -1,0 +1,21 @@
+
+name: scp files
+on:
+  push:
+    branches:
+      - main
+jobs:
+
+  build:
+    name: copy file via ssh key
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@master
+      with:
+        host: "bitinjection.com"
+        username: "dthompson"
+        password: ${{ secrets.PASSWORD }}
+        source: "*"
+        target: "./honeybeeandfriends/html/"

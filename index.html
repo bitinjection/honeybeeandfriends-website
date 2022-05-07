@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Honeybee and Friends Daycare</title>
+
+  <!-- Favicon HTML -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="landing-page-container">
+    <div id="logo" class="logo">
+      <a href="index.html" title="Go to our Home Page">
+        <img src="Heading.png"
+          alt="Logo featuring a jolly honeybee holding a pot, and little insects. Title: Honeybee and Friends Daycare. Address: 22 New Dawn Place, The Woodlands, TX, 77385. Phone Number: TBG">
+      </a>
+    </div>
+
+    <div class="nav-bar">
+      <a class="hamburger" onclick="showSideBar()">
+        <img src="hamburger.png" alt="Open Nav Hamburger Icon">
+      </a>
+      <a class="base-frame blue-frame" onclick="swapMiddle(previousTab,'home-page')" title="Go to our Home Page">Home
+      </a>
+      <a class="base-frame red-frame" onclick="swapMiddle(previousTab,'about-background')" title="Learn about us">About
+        Us</a>
+      <a class="base-frame yellow-frame" onclick="swapMiddle(previousTab,'gallery-background')"
+        title="Check out pictures">Gallery</a>
+      <a class="base-frame green-frame" onclick="swapMiddle(previousTab,'schedule-background')"
+        title="Daily schedule">Daily Schedule</a>
+      <a class="base-frame purple-frame" onclick="swapMiddle(previousTab,'menu-background')"
+        title="Food menu for the kids">Menu</a>
+      <a class="base-frame violet-frame" onclick="swapMiddle(previousTab,'contact-background')"
+        title="Our contact information">Contact</a>
+
+      <div id="side-nav-bar">
+        <a id="home-side-content" class="side-content" onclick="swapMiddle(previousTab,'home-page')"
+          title="Go to our Home Page">Home
+        </a>
+        <a id="about-side-content" class="side-content" onclick="swapMiddle(previousTab,'about-background')"
+          title="Learn about us">About
+          Us</a>
+        <a id="gallery-side-content" class="side-content" onclick="swapMiddle(previousTab,'gallery-background')"
+          title="Check out pictures">Gallery</a>
+        <a id="daily-side-content" class="side-content" onclick="swapMiddle(previousTab,'schedule-background')"
+          title="Daily schedule">Daily Schedule</a>
+        <a id="menu-side-content" class="side-content" onclick="swapMiddle(previousTab,'menu-background')"
+          title="Food menu for the kids">Menu</a>
+        <a id="contact-side-content" class="side-content" onclick="swapMiddle(previousTab,'contact-background')"
+          title="Our contact information">Contact</a>
+      </div>
+      <div id="filter" onclick="hideSideBar()"></div>
+    </div>
+
+    <div id="home-page" class="middle-content">
+      <div class="middle-content-sub-container">
+        <div class="flex-row">
+          <div class="text-box box1">
+            <h1>Fun with Friends</h1>
+            <div>
+              Our daycare's mission is to enhance creative growth though social interaction, art and play while
+              sprinkling
+              in academics to help little Honey Bees prepare for elementary.
+            </div>
+          </div>
+
+          <div class="cute-image butterfly">
+            <img src="butterfly.png" alt="Graphic of a butterfly">
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="cute-image ant">
+            <img src="ant.png" alt="Graphic of an ant">
+          </div>
+
+          <div class="text-box box2">
+            <h1>State certified</h1>
+            <div>
+              We maintain compliance with all state regulations at all times. Your child's safety and
+              comfort are our number one concern.
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <div class="text-box box3">
+            <h1>Experienced, certified care</h1>
+            <div>
+              With years of teaching experience as a mother and teacher, Susan will be there for your
+              child.
+            </div>
+          </div>
+
+          <div class="cute-image ladybug">
+            <img src="ladybug.png" alt="Graphic of a ladybug">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about-background" class="middle-content">
+      <div id="about-container" class="middle-content-sub-container">
+        <div class="about-text-box">
+          <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
+            certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
+            has experience in the school system and enjoys spending time with her own children.</div>
+          <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
+            creative, and safe learning environment. We provide nutritious meals and physical activities
+            while encouraging kids to be team players as well as independent learners.</div>
+          <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
+            This includes FBI background checks, fingerprinting, and state training. We have completed sleep
+            safe training, food handler certification, and CPR certification. You can be confident we provide
+            a safe and stable environment for your child to grow.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gallery-background" class="middle-content">
+
+    </div>
+
+    <div id="schedule-background" class="middle-content">
+      <div id="schedule-container" class="middle-content-sub-container">
+        <div class="daycare-schedule-container">
+          <table class="daycare-schedule">
+            <tr>
+              <th>Daily Schedule</th>
+              <th>Activity</th>
+            </tr>
+            <tr>
+              <td>6:30am-7:30am</td>
+              <td>Arrival/Wash hands/Breakfast</td>
+            </tr>
+            <tr>
+              <td>7:30am-9:30am</td>
+              <td>Small groups/Center play</td>
+            </tr>
+            <tr>
+              <td>9:30am-10:00am</td>
+              <td>Wash hands/Snack time</td>
+            </tr>
+            <tr>
+              <td>10:00am-11:00am</td>
+              <td>Indoor/Outdoor play</td>
+            </tr>
+            <tr>
+              <td>11:00am-11:30am</td>
+              <td>Morning meeting/Read-a-loud</td>
+            </tr>
+            <tr>
+              <td>11:30am-12:30pm</td>
+              <td>Small groups/Center play</td>
+            </tr>
+            <tr>
+              <td>12:30pm-1:30pm</td>
+              <td>Wash hands/Lunch</td>
+            </tr>
+            <tr>
+              <td>1:30pm-3:30pm</td>
+              <td>Rest/Quiet play</td>
+            </tr>
+            <tr>
+              <td>3:30pm-4:30pm</td>
+              <td>Indoor/Outdoor play/Wash hands/Snack</td>
+            </tr>
+            <tr>
+              <td>4:30pm-5:30pm</td>
+              <td>Small Groups/Center play</td>
+            </tr>
+            <tr>
+              <td>5:30pm-6:00pm</td>
+              <td>Free time/Wash hands/Light snack</td>
+            </tr>
+            <tr>
+              <td>6:00pm-6:30pm</td>
+              <td>Parent pick up</td>
+            </tr>
+          </table>
+          <div>
+            <span class="asterisk">*</span> Bathroom breaks throughout the day.<br>
+            Schedule is subject to change based on special activities.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu-background" class="middle-content">
+      <div id="menu-container" class="middle-content-sub-container">
+        <div class="calendar">
+          <img src="Daycare_Calendar_May_221024_1.jpg" alt="">
+          <img src="Daycare_Calendar_May_221024_2.jpg" alt="">
+          <img src="Daycare_Calendar_May_221024_3.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div id="contact-background" class="middle-content">
+      <div id="contact-container" class="middle-content-sub-container">
+        <div id="contact-text-box">
+          <h1>Address</h1>
+          <div>
+            22 New Dawn Place <br>
+            The Woodlands, TX, 77385
+          </div>
+          <h1>Contact Us</h1>
+          <div>
+            Email: susan@honeybeeandfriends.buzz<br>
+            Phone: 444-123-4567
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-seperator"></div>
+
+    <div class="bottom-content">
+      <div class="image">comb here</div>
+      <div class="footer-text">
+        <div class="footer-title">CONTACT US</div>
+
+        <div class="footer-section">
+          <div>22 New Dawn Pl</div>
+          <div>The Woodlands, TX 77385</div>
+        </div>
+
+        <div class="footer-section">
+          <div>susan@honeybeeandfriends.buzz</div>
+          <div>(444) 123-4567</div>
+        </div>
+      </div>
+      <div class="footer-text">
+        <div class="footer-title">HOURS OF OPERATION</div>
+
+        <div class="footer-section">
+          Monday through Friday: 6:30 AM to 6:30 PM
+        </div>
+
+        <div class="footer-section">
+          <div>Saturday: Closed</div>
+          <div>Sunday: Closed</div>
+        </div>
+      </div>
+      <div class="image">comb here</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
