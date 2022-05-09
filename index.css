@@ -367,7 +367,8 @@ body {
     align-items: center;
   }
 
-  .footer-item {
-    /* text-align: center; */
+  #contact-text-box {
+    font-size: larger;
+    margin: 20px;
   }
 }
