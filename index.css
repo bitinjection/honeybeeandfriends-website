@@ -189,7 +189,38 @@ body {
   height: 100%;
 }
 
+.icon {
+  font-size: large;
+  float: left;
+  width: 30px;
+  margin-right: 10px;
+  padding: 0px 5px 0px 5px;
+}
+
+.icon-img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.envelope {
+  padding: 0px;
+}
+
+.footer-title {
+  margin-bottom: 18px;
+  font-size: large;
+}
+
+.footer-contact-info {
+  margin-bottom: 12px;
+}
+
 .footer-text {
+  display: inline-block;
+  line-height: 25px;
+}
+
+.footer-item {
   color: white;
   justify-self: left;
   font-family: sans-serif;
@@ -218,20 +249,6 @@ body {
 
 .calendar img {
   width: 100%;
-}
-
-.footer-title {
-  margin-bottom: 18px;
-  font-size: larger;
-}
-
-.footer-section {
-  margin-bottom: 12px;
-}
-
-.footer-section div {
-  padding-top: 4px;
-  padding-bottom: 4px;
 }
 
 .daycare-schedule th {
@@ -310,8 +327,17 @@ body {
 
 #contact-text-box {
   font-family: Jua;
+  font-size:x-large;
   background-color: rgb(255 169 255);
   margin: 72px;
+}
+
+#contact-text-box div {
+  margin-bottom: 10px;
+}
+
+.contact-text-box-text {
+  display: inline-block;
 }
 
 @media screen and (max-width: 800px) {
@@ -341,7 +367,7 @@ body {
     align-items: center;
   }
 
-  .footer-text {
-    text-align: center;
+  .footer-item {
+    /* text-align: center; */
   }
 }
