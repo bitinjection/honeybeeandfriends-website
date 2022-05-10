@@ -391,6 +391,7 @@ body {
   max-height: 400px;
   object-fit: cover;
   background-color: black;
+  width: 100%;
 }
 
 /* Next & previous buttons */

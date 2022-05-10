@@ -1,22 +1,31 @@
-var previousTab = 'home-page';
-
+const nav = Nav();
 const slideShow = SlideShow();
 slideShow.currentSlide(1);
 
-function swapMiddle(p, n) {
-  document.getElementById(p).style.display = 'none';
-  document.getElementById(n).style.display = 'initial';
-  previousTab = n;
-}
+function Nav() {
+  let previousTab = 'home-page';
 
-function showSideBar() {
-  document.getElementById('side-nav-bar').style.display = 'flex';
-  document.getElementById('filter').style.display = 'block';
-}
+  const swapMiddle = (n) => {
+    document.getElementById(previousTab).style.display = 'none';
+    document.getElementById(n).style.display = 'initial';
+    previousTab = n;
+  }
 
-function hideSideBar() {
-  document.getElementById('side-nav-bar').style.display = 'none';
-  document.getElementById('filter').style.display = 'none';
+  const showSideBar = () => {
+    document.getElementById('side-nav-bar').style.display = 'flex';
+    document.getElementById('filter').style.display = 'block';
+  }
+
+  const hideSideBar = () => {
+    document.getElementById('side-nav-bar').style.display = 'none';
+    document.getElementById('filter').style.display = 'none';
+  }
+
+  return {
+    swapMiddle,
+    showSideBar,
+    hideSideBar
+  }
 }
 
 function SlideShow() {
