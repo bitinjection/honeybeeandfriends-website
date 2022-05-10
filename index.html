@@ -27,39 +27,40 @@
     </div>
 
     <div class="nav-bar">
-      <a class="hamburger" onclick="showSideBar()">
+      <a class="hamburger" onclick="nav.showSideBar()">
         <img src="hamburger.png" alt="Open Nav Hamburger Icon">
       </a>
-      <a class="base-frame blue-frame" onclick="swapMiddle(previousTab,'home-page')" title="Go to our Home Page">Home
+      <a class="base-frame blue-frame" onclick="nav.swapMiddle('home-page')" title="Go to our Home Page">Home
       </a>
-      <a class="base-frame red-frame" onclick="swapMiddle(previousTab,'about-background')" title="Learn about us">About
+      <a class="base-frame red-frame" onclick="nav.swapMiddle('about-background')" title="Learn about us">About
         Us</a>
-      <a class="base-frame yellow-frame" onclick="swapMiddle(previousTab,'gallery-background')"
+      <a class="base-frame yellow-frame" onclick="nav.swapMiddle('gallery-background')"
         title="Check out pictures">Gallery</a>
-      <a class="base-frame green-frame" onclick="swapMiddle(previousTab,'schedule-background')"
-        title="Daily schedule">Daily Schedule</a>
-      <a class="base-frame purple-frame" onclick="swapMiddle(previousTab,'menu-background')"
+      <a class="base-frame green-frame" onclick="nav.swapMiddle('schedule-background')" title="Daily schedule">Daily
+        Schedule</a>
+      <a class="base-frame purple-frame" onclick="nav.swapMiddle('menu-background')"
         title="Food menu for the kids">Menu</a>
-      <a class="base-frame violet-frame" onclick="swapMiddle(previousTab,'contact-background')"
+      <a class="base-frame violet-frame" onclick="nav.swapMiddle('contact-background')"
         title="Our contact information">Contact</a>
 
       <div id="side-nav-bar">
-        <a id="home-side-content" class="side-content" onclick="swapMiddle(previousTab,'home-page')"
+        <a id="home-side-content" class="side-content" onclick="nav.swapMiddle('home-page')"
           title="Go to our Home Page">Home
         </a>
-        <a id="about-side-content" class="side-content" onclick="swapMiddle(previousTab,'about-background')"
+        <a id="about-side-content" class="side-content" onclick="nav.swapMiddle('about-background')"
           title="Learn about us">About
           Us</a>
-        <a id="gallery-side-content" class="side-content" onclick="swapMiddle(previousTab,'gallery-background')"
+        <a id="gallery-side-content" class="side-content" onclick="nav.swapMiddle('gallery-background')"
           title="Check out pictures">Gallery</a>
-        <a id="daily-side-content" class="side-content" onclick="swapMiddle(previousTab,'schedule-background')"
-          title="Daily schedule">Daily Schedule</a>
-        <a id="menu-side-content" class="side-content" onclick="swapMiddle(previousTab,'menu-background')"
+        <a id="daily-side-content" class="side-content" onclick="nav.swapMiddle('schedule-background')"
+          title="Daily schedule">Daily
+          Schedule</a>
+        <a id="menu-side-content" class="side-content" onclick="nav.swapMiddle('menu-background')"
           title="Food menu for the kids">Menu</a>
-        <a id="contact-side-content" class="side-content" onclick="swapMiddle(previousTab,'contact-background')"
+        <a id="contact-side-content" class="side-content" onclick="nav.swapMiddle('contact-background')"
           title="Our contact information">Contact</a>
       </div>
-      <div id="filter" onclick="hideSideBar()"></div>
+      <div id="filter" onclick="nav.hideSideBar()"></div>
     </div>
 
     <div id="home-page" class="middle-content">
@@ -68,15 +69,15 @@
 
         <!-- Full-width images with number and caption text -->
         <div class="my-slides fade">
-          <img src="20220506_114817.jpg" style="width:100%">
+          <img src="20220506_114817.jpg">
         </div>
 
         <div class="my-slides fade">
-          <img src="20220506_114901.jpg" style="width:100%">
+          <img src="20220506_114901.jpg">
         </div>
 
         <div class="my-slides fade">
-          <img src="20220506_114855.jpg" style="width:100%">
+          <img src="20220506_114855.jpg">
         </div>
 
         <!-- Next and previous buttons -->
