@@ -27,43 +27,83 @@
     </div>
 
     <div class="nav-bar">
-      <a class="hamburger" onclick="showSideBar()">
+      <a class="hamburger" onclick="nav.showSideBar()">
         <img src="hamburger.png" alt="Open Nav Hamburger Icon">
       </a>
-      <a class="base-frame blue-frame" onclick="swapMiddle(previousTab,'home-page')" title="Go to our Home Page">Home
+      <a class="base-frame blue-frame" onclick="nav.swapMiddle('home-page')" title="Go to our Home Page">Home
       </a>
-      <a class="base-frame red-frame" onclick="swapMiddle(previousTab,'about-background')" title="Learn about us">About
+      <a class="base-frame red-frame" onclick="nav.swapMiddle('about-background')" title="Learn about us">About
         Us</a>
-      <a class="base-frame yellow-frame" onclick="swapMiddle(previousTab,'gallery-background')"
+      <a class="base-frame yellow-frame" onclick="nav.swapMiddle('gallery-background')"
         title="Check out pictures">Gallery</a>
-      <a class="base-frame green-frame" onclick="swapMiddle(previousTab,'schedule-background')"
-        title="Daily schedule">Daily Schedule</a>
-      <a class="base-frame purple-frame" onclick="swapMiddle(previousTab,'menu-background')"
+      <a class="base-frame green-frame" onclick="nav.swapMiddle('schedule-background')" title="Daily schedule">Daily
+        Schedule</a>
+      <a class="base-frame purple-frame" onclick="nav.swapMiddle('menu-background')"
         title="Food menu for the kids">Menu</a>
-      <a class="base-frame violet-frame" onclick="swapMiddle(previousTab,'contact-background')"
+      <a class="base-frame violet-frame" onclick="nav.swapMiddle('contact-background')"
         title="Our contact information">Contact</a>
 
       <div id="side-nav-bar">
-        <a id="home-side-content" class="side-content" onclick="swapMiddle(previousTab,'home-page')"
+        <a id="home-side-content" class="side-content" onclick="nav.swapMiddle('home-page')"
           title="Go to our Home Page">Home
         </a>
-        <a id="about-side-content" class="side-content" onclick="swapMiddle(previousTab,'about-background')"
+        <a id="about-side-content" class="side-content" onclick="nav.swapMiddle('about-background')"
           title="Learn about us">About
           Us</a>
-        <a id="gallery-side-content" class="side-content" onclick="swapMiddle(previousTab,'gallery-background')"
+        <a id="gallery-side-content" class="side-content" onclick="nav.swapMiddle('gallery-background')"
           title="Check out pictures">Gallery</a>
-        <a id="daily-side-content" class="side-content" onclick="swapMiddle(previousTab,'schedule-background')"
-          title="Daily schedule">Daily Schedule</a>
-        <a id="menu-side-content" class="side-content" onclick="swapMiddle(previousTab,'menu-background')"
+        <a id="daily-side-content" class="side-content" onclick="nav.swapMiddle('schedule-background')"
+          title="Daily schedule">Daily
+          Schedule</a>
+        <a id="menu-side-content" class="side-content" onclick="nav.swapMiddle('menu-background')"
           title="Food menu for the kids">Menu</a>
-        <a id="contact-side-content" class="side-content" onclick="swapMiddle(previousTab,'contact-background')"
+        <a id="contact-side-content" class="side-content" onclick="nav.swapMiddle('contact-background')"
           title="Our contact information">Contact</a>
       </div>
-      <div id="filter" onclick="hideSideBar()"></div>
+      <div id="filter" onclick="nav.hideSideBar()"></div>
     </div>
 
     <div id="home-page" class="middle-content">
-      <div class="middle-content-sub-container">
+      <!-- W3 Schools Slideshow container -->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="my-slides fade">
+          <img src="slideshow-opendoor.jpg">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="house.jpeg">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="slideshow-readingbee.jpg">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="slideshow-closeddoor.jpg">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="slideshow-tv.jpg">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="slideShow.plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="slideShow.plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="slideShow.currentSlide(1)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(2)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(3)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(4)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(5)"></span>
+      </div>
+
+      <div id="home-container" class="middle-content-sub-container">
         <div class="flex-row">
           <div class="text-box box1">
             <h1>Fun with Friends</h1>
@@ -80,10 +120,6 @@
         </div>
 
         <div class="flex-row">
-          <div class="cute-image ant">
-            <img src="ant.png" alt="Graphic of an ant">
-          </div>
-
           <div class="text-box box2">
             <h1>State certified</h1>
             <div>
@@ -91,14 +127,18 @@
               comfort are our number one concern.
             </div>
           </div>
+
+          <div class="cute-image ant">
+            <img src="ant.png" alt="Graphic of an ant">
+          </div>
         </div>
 
         <div class="flex-row">
           <div class="text-box box3">
             <h1>Experienced, certified care</h1>
             <div>
-              With years of teaching experience as a mother and teacher, Susan will be there for your
-              child.
+              With years of teaching experience as a mother and teacher, Susan helps guide, nurture and
+              encourage your child to grow through creative play, teamwork, and independent learning.
             </div>
           </div>
 
@@ -112,16 +152,24 @@
     <div id="about-background" class="middle-content">
       <div id="about-container" class="middle-content-sub-container">
         <div class="about-text-box">
-          <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
-            certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
-            has experience in the school system and enjoys spending time with her own children.</div>
-          <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
-            creative, and safe learning environment. We provide nutritious meals and physical activities
-            while encouraging kids to be team players as well as independent learners.</div>
-          <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
-            This includes FBI background checks, fingerprinting, and state training. We have completed sleep
-            safe training, food handler certification, and CPR certification. You can be confident we provide
-            a safe and stable environment for your child to grow.</div>
+          <div class="title">About the Daycare</div>
+          <div class="about-content">
+              <div class="flex-row">
+                <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
+                  certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
+                  has worked in the school system and enjoys spending time with her own children.</div>
+                <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
+                  creative, and safe learning environment. We provide nutritious meals and physical activities
+                  while encouraging kids to be team players as well as independent learners.</div>
+                <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
+                  This includes FBI background checks, fingerprinting, and state training. We have completed sleep
+                  safe training, food handler certification, and CPR certification. You can be confident we provide
+                  a safe and stable environment for your child to grow.</div>
+            </div>
+            <div class="about-image">
+              <img src="texasAM.png">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -132,10 +180,13 @@
 
     <div id="schedule-background" class="middle-content">
       <div id="schedule-container" class="middle-content-sub-container">
+        <div class="schedule-title-border">
+          <div class="title" >Daily Schedule</div>
+        </div>
         <div class="daycare-schedule-container">
           <table class="daycare-schedule">
             <tr>
-              <th>Daily Schedule</th>
+              <th>Time</th>
               <th>Activity</th>
             </tr>
             <tr>
@@ -187,7 +238,7 @@
               <td>Parent pick up</td>
             </tr>
           </table>
-          <div>
+          <div class="schedule-footer">
             <span class="asterisk">*</span> Bathroom breaks throughout the day.<br>
             Schedule is subject to change based on special activities.
           </div>
@@ -208,6 +259,7 @@
     <div id="contact-background" class="middle-content">
       <div id="contact-container" class="middle-content-sub-container">
         <div id="contact-text-box">
+          <div>
           <div>
             <div class="icon">
               <img class="icon-img" src="pin.png" alt="Address">
@@ -232,10 +284,14 @@
               <img class="icon-img" src="mobile.png" alt="Phone Number">
             </div>
             <div class="contact-text-box-text">
-              832-810-2722
+              <a href="tel:832-810-2722">832-810-2722</a>
             </div>
           </div>
-
+        </div>
+          <div class="contact-picture">
+            <img src="house-contact.jpeg">
+          </div>
+      </div>
         </div>
       </div>
     </div>
@@ -271,7 +327,7 @@
             <img class="icon-img" src="mobile.png" alt="Phone Number">
           </div>
           <div class="footer-text">
-            832-810-2722
+            <a href="tel:832-810-2722">832-810-2722</a>
           </div>
         </div>
       </div>
