@@ -69,15 +69,23 @@
 
         <!-- Full-width images with number and caption text -->
         <div class="my-slides fade">
-          <img src="20220506_114817.jpg">
+          <img src="slideshow-opendoor.jpg">
         </div>
 
         <div class="my-slides fade">
-          <img src="20220506_114901.jpg">
+          <img src="house.jpeg">
         </div>
 
         <div class="my-slides fade">
-          <img src="20220506_114855.jpg">
+          <img src="slideshow-readingbee.jpg">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="slideshow-closeddoor.jpg">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="slideshow-tv.jpg">
         </div>
 
         <!-- Next and previous buttons -->
@@ -91,9 +99,11 @@
         <span class="dot" onclick="slideShow.currentSlide(1)"></span>
         <span class="dot" onclick="slideShow.currentSlide(2)"></span>
         <span class="dot" onclick="slideShow.currentSlide(3)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(4)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(5)"></span>
       </div>
 
-      <div class="middle-content-sub-container">
+      <div id="home-container" class="middle-content-sub-container">
         <div class="flex-row">
           <div class="text-box box1">
             <h1>Fun with Friends</h1>
@@ -110,10 +120,6 @@
         </div>
 
         <div class="flex-row">
-          <div class="cute-image ant">
-            <img src="ant.png" alt="Graphic of an ant">
-          </div>
-
           <div class="text-box box2">
             <h1>State certified</h1>
             <div>
@@ -121,14 +127,18 @@
               comfort are our number one concern.
             </div>
           </div>
+
+          <div class="cute-image ant">
+            <img src="ant.png" alt="Graphic of an ant">
+          </div>
         </div>
 
         <div class="flex-row">
           <div class="text-box box3">
             <h1>Experienced, certified care</h1>
             <div>
-              With years of teaching experience as a mother and teacher, Susan will be there for your
-              child.
+              With years of teaching experience as a mother and teacher, Susan helps guide, nurture and
+              encourage your child to grow through creative play, teamwork, and independent learning.
             </div>
           </div>
 
@@ -142,16 +152,24 @@
     <div id="about-background" class="middle-content">
       <div id="about-container" class="middle-content-sub-container">
         <div class="about-text-box">
-          <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
-            certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
-            has experience in the school system and enjoys spending time with her own children.</div>
-          <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
-            creative, and safe learning environment. We provide nutritious meals and physical activities
-            while encouraging kids to be team players as well as independent learners.</div>
-          <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
-            This includes FBI background checks, fingerprinting, and state training. We have completed sleep
-            safe training, food handler certification, and CPR certification. You can be confident we provide
-            a safe and stable environment for your child to grow.</div>
+          <div class="title">About the Daycare</div>
+          <div class="about-content">
+              <div class="flex-row">
+                <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
+                  certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
+                  has worked in the school system and enjoys spending time with her own children.</div>
+                <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
+                  creative, and safe learning environment. We provide nutritious meals and physical activities
+                  while encouraging kids to be team players as well as independent learners.</div>
+                <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
+                  This includes FBI background checks, fingerprinting, and state training. We have completed sleep
+                  safe training, food handler certification, and CPR certification. You can be confident we provide
+                  a safe and stable environment for your child to grow.</div>
+            </div>
+            <div class="about-image">
+              <img src="texasAM.png">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -162,10 +180,13 @@
 
     <div id="schedule-background" class="middle-content">
       <div id="schedule-container" class="middle-content-sub-container">
+        <div class="schedule-title-border">
+          <div class="title" >Daily Schedule</div>
+        </div>
         <div class="daycare-schedule-container">
           <table class="daycare-schedule">
             <tr>
-              <th>Daily Schedule</th>
+              <th>Time</th>
               <th>Activity</th>
             </tr>
             <tr>
@@ -217,7 +238,7 @@
               <td>Parent pick up</td>
             </tr>
           </table>
-          <div>
+          <div class="schedule-footer">
             <span class="asterisk">*</span> Bathroom breaks throughout the day.<br>
             Schedule is subject to change based on special activities.
           </div>
@@ -238,6 +259,7 @@
     <div id="contact-background" class="middle-content">
       <div id="contact-container" class="middle-content-sub-container">
         <div id="contact-text-box">
+          <div>
           <div>
             <div class="icon">
               <img class="icon-img" src="pin.png" alt="Address">
@@ -262,9 +284,14 @@
               <img class="icon-img" src="mobile.png" alt="Phone Number">
             </div>
             <div class="contact-text-box-text">
-              832-810-2722
+              <a href="tel:832-810-2722">832-810-2722</a>
             </div>
           </div>
+        </div>
+          <div class="contact-picture">
+            <img src="house.jpeg">
+          </div>
+      </div>
         </div>
       </div>
     </div>
@@ -300,7 +327,7 @@
             <img class="icon-img" src="mobile.png" alt="Phone Number">
           </div>
           <div class="footer-text">
-            832-810-2722
+            <a href="tel:832-810-2722">832-810-2722</a>
           </div>
         </div>
       </div>

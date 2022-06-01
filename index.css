@@ -3,6 +3,11 @@
   src: url(Jua-Regular.ttf);
 }
 
+@font-face {
+  font-family: "luck";
+  src: url(luck.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -155,13 +160,38 @@ body {
 
 .text-box {
   background-color: rgb(219, 219, 219);
-  height: 200px;
-  width: 300px;
+  max-width: 500px;
   padding: 10px;
   margin: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
   font-family: 'Jua', sans-serif;
+  min-height: 250px;
+}
+
+.text-box h1 {
+  font-family: luck;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.text-box div {
+  padding-bottom: 32px;
+  font-size: x-large;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.box1 {
+  background-color: #ffd991;
+}
+
+.box2 {
+  background-color: rgb(216 174 255)
+}
+
+.box3 {
+  background-color: rgb(204 255 204)
 }
 
 .page-text-box {
@@ -178,7 +208,7 @@ body {
 }
 
 .cute-image img {
-  width: 200px;
+  width: 300px;
 }
 
 .bottom-content {
@@ -228,17 +258,34 @@ body {
 }
 
 .daycare-schedule, td, th {
-  border: 1px solid black;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 16px;
   
 }
 
 .daycare-schedule {
   align-self: center;
   justify-self: center;
-  margin-bottom: 5px;
-  width: 100%;
+  margin: 0 auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  max-width: 1000px;
+  font-size: xx-large;
+  border-style: solid;
+  border-color: #959595;
+}
+
+.schedule-title-border {
+  background-color: #bf974b;
+}
+
+.schedule-title-border > div {
+  background-color: #f9c954;
+  
+}
+
+.schedule-footer {
+  margin: 32px;
 }
 
 .calendar {
@@ -252,7 +299,7 @@ body {
 }
 
 .daycare-schedule th {
-  background-color: #71eb71;
+  background-color: white;
 }
 
 .daycare-schedule tr:nth-child(even) {
@@ -264,8 +311,8 @@ body {
 }
 
 .daycare-schedule-container {
-  background-color: #43b761;
   font-family: Jua;
+  background-color: #ffebc6;
 }
 
 .asterisk {
@@ -276,6 +323,26 @@ body {
   background-color: #ffd3d3;
 }
 
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.about-content > div:nth-child(1) {
+  max-width: 1000px;
+}
+
+
+.about-content > div:nth-child(2) img {
+  width: 400px;
+}
+
+#home-container {
+  background-color: #ffffff00;
+  box-shadow: none;
+}
+
 #about-background {
   background-color: rgb(253 159 159);
   display: none;
@@ -283,6 +350,18 @@ body {
 
 .about-text-box {
   margin: 72px;
+}
+
+#home-container > div:nth-child(1) {
+  background-color: #ccffcc;
+}
+
+#home-container > div:nth-child(2) {
+  background-color: #ffd991;
+}
+
+#home-container > div:nth-child(3) {
+  background-color: #d8aeff;
 }
 
 .about-text {
@@ -301,10 +380,6 @@ body {
 #schedule-background {
   background-color: #ccffcc;
   display: none;
-}
-
-#schedule-container {
-  background-color: #43b761;
 }
 
 #menu-container {
@@ -330,6 +405,9 @@ body {
   font-size:x-large;
   background-color: rgb(255 169 255);
   margin: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #contact-text-box div {
@@ -338,6 +416,18 @@ body {
 
 .contact-text-box-text {
   display: inline-block;
+}
+
+.contact-picture {
+  margin-top: 16px;
+}
+
+.title {
+  font-family: "luck";
+  margin-top: 32px;
+  margin-bottom: 48px;
+  font-size: xxx-large;
+  text-align: center;
 }
 
 @media screen and (max-width: 800px) {
@@ -380,6 +470,8 @@ body {
   position: relative;
   /* margin: auto; */
   margin-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(120, 37, 2);
 }
 
 /* Hide the images by default */
