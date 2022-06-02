@@ -539,3 +539,11 @@ body {
   from {filter: brightness(0%)}
   to {filter: brightness(100%)}
 }
+
+.gallery-image {
+  width: 100%;
+}
+
+.gallery-image img {
+  width: 100%;
+}
