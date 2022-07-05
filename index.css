@@ -254,6 +254,10 @@ body {
   line-height: 25px;
 }
 
+.footer-text a {
+  color: red;
+}
+
 .footer-item {
   color: white;
   justify-self: left;
