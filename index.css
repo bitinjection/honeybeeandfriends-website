@@ -112,6 +112,10 @@ body {
   background-color: rgb(255 217 255);
 }
 
+.indigo-frame, #pricing-side-content {
+  background-color: rgb(219, 217, 255);
+}
+
 #filter {
   display: none;
   position: fixed;
@@ -391,9 +395,28 @@ body {
   display: none;
 }
 
+#pricing-background {
+  background-color: rgb(219, 217, 255);
+  display: none;
+}
+
 #contact-background {
   background-color: rgb(255 217 255);
   display: none;
+}
+
+#pricing-container {
+  background-color: rgb(219, 217, 255);
+}
+
+#pricing-text-box {
+  font-family: Jua;
+  font-size:x-large;
+  /* background-color: rgb(255 169 255); */
+  margin: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #contact-container {
