@@ -144,7 +144,7 @@ body {
 
 .middle-content {
   background-color: rgb(192 248 255);
-  min-height: 80vh;
+  /* min-height: 80vh; */
 }
 
 .middle-content-sub-container {
@@ -447,6 +447,10 @@ body {
 
 .contact-picture {
   margin-top: 16px;
+}
+
+.contact-picture img {
+  width: 100%
 }
 
 .title {
