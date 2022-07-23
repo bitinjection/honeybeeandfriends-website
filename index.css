@@ -10,6 +10,25 @@
 
 h1 {
   font-family: luck;
+  font-size: xx-large;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-family: Jua;
+}
+
+.cta-container {
+  background-color: rgb(255 169 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 32px;
+  padding: 32px;
+}
+
+.above-fold-cta {
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 32px
 }
 
 #home-container h1 {
@@ -197,15 +216,15 @@ body {
 }
 
 .box1 {
-  background-color: #ffd991;
-}
-
-.box2 {
   background-color: rgb(216 174 255)
 }
 
-.box3 {
+.box2 {
   background-color: rgb(204 255 204)
+}
+
+.box3 {
+  background-color: #ffd991;
 }
 
 .page-text-box {
@@ -368,6 +387,7 @@ body {
 
 .about-text-box {
   margin: 72px;
+  width: 90%;
 }
 
 #home-container > div:nth-child(1) {
