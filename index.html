@@ -20,7 +20,10 @@
   </script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-235385299-1');
@@ -31,8 +34,7 @@
   <div class="landing-page-container">
     <div id="logo" class="logo">
       <a href="index.html" title="Go to our Home Page">
-        <img src="Heading.png"
-          alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
+        <img src="Heading.png" alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
       </a>
     </div>
 
@@ -50,8 +52,8 @@
         Schedule</a>
       <a class="base-frame purple-frame" onclick="nav.swapMiddle('menu-background')"
         title="Food menu for the kids">Menu</a>
-      <a class="base-frame indigo-frame" onclick="nav.swapMiddle('pricing-background')"
-        title="Pricing">Pricing and Forms</a>
+      <a class="base-frame indigo-frame" onclick="nav.swapMiddle('pricing-background')" title="Pricing">Pricing and
+        Forms</a>
       <a class="base-frame violet-frame" onclick="nav.swapMiddle('contact-background')"
         title="Our contact information">Contact</a>
 
@@ -83,19 +85,23 @@
 
         <!-- Full-width images with number and caption text -->
         <div class="my-slides fade">
-          <img src="slideshow-opendoor.jpg">
+          <img src="slideshow-opendoor.jpg" alt="Image of a daycare room.">
         </div>
 
         <div class="my-slides fade">
-          <img src="house.jpeg">
+          <img src="Garden.jpg" alt="Image of garden with roses.">
         </div>
 
         <div class="my-slides fade">
-          <img src="slideshow-readingbee.jpg">
+          <img src="house.jpeg" alt="Imaages of the house.">
         </div>
 
         <div class="my-slides fade">
-          <img src="slideshow-closeddoor.jpg">
+          <img src="slideshow-readingbee.jpg" alt="Image of a daycare room.">
+        </div>
+
+        <div class="my-slides fade">
+          <img src="slideshow-closeddoor.jpg" alt="Image of a glass door of a daycare room.">
         </div>
 
         <!-- Next and previous buttons -->
@@ -110,6 +116,7 @@
         <span class="dot" onclick="slideShow.currentSlide(2)"></span>
         <span class="dot" onclick="slideShow.currentSlide(3)"></span>
         <span class="dot" onclick="slideShow.currentSlide(4)"></span>
+        <span class="dot" onclick="slideShow.currentSlide(5)"></span>
       </div>
 
       <div class="cta-container">
@@ -167,51 +174,84 @@
         <div class="about-text-box">
           <div class="title">About the Daycare</div>
           <div class="about-content">
-              <div class="flex-row">
-                <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
-                  certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
-                  has worked in the school system and enjoys spending time with her own children.</div>
-                <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
-                  creative, and safe learning environment. We provide nutritious meals and physical activities
-                  while encouraging kids to be team players as well as independent learners.</div>
-                <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
-                  This includes FBI background checks, fingerprinting, and state training. We have completed sleep
-                  safe training, food handler certification, and CPR certification. You can be confident we provide
-                  a safe and stable environment for your child to grow.</div>
+            <div class="flex-row">
+              <div class="about-text">Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
+                certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
+                has worked in the school system and enjoys spending time with her own children.</div>
+              <div class="about-text">Honeybee and Friends Daycare is dedicated to providing a fun, educational,
+                creative, and safe learning environment. We provide nutritious meals and physical activities
+                while encouraging kids to be team players as well as independent learners.</div>
+              <div class="about-text">Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
+                This includes FBI background checks, fingerprinting, and state training. We have completed sleep
+                safe training, food handler certification, and CPR certification. You can be confident we provide
+                a safe and stable environment for your child to grow.</div>
             </div>
             <div class="about-image">
-              <img src="texasAM.png">
+              <img src="texasAM.png" alt="Logo of Texas A&M">
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
     <div id="gallery-background" class="middle-content">
       <div class="middle-content-sub-container">
-        <div class="gallery-image"><img src="house.jpeg"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0056.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0061.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0062.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0063.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0070.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0071.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0072.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0073.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0074.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0075.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0077.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0078.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0079.jpg" loading="lazy"></div>
-        <div class="gallery-image"><img src="gallery/IMG_0081.jpg" loading="lazy"></div>
+        <div class="gallery-image">
+          <img src="house.jpeg" alt="Image of the house.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0056.jpg" loading="lazy" alt="Image of the front door from the inside.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0061.jpg" loading="lazy" alt="Image of the daycare room.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0062.jpg" loading="lazy" alt="Image of the daycare room.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0063.jpg" loading="lazy"
+            alt="Image of a caterpillar on the wall, body made of the alphabet.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0070.jpg" loading="lazy" alt="Image of a table and chairs sized for small children.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0071.jpg" loading="lazy"
+            alt="Image of a variety of toys organized in cute boxes on a shelf.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0072.jpg" loading="lazy" alt="Image of a shelf containing learning material.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0073.jpg" loading="lazy"
+            alt="Image of a hangable container on a door containing learning material.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0074.jpg" loading="lazy" alt="Image of a ball-pit and tube.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0075.jpg" loading="lazy" alt="Image of a paper mural above the ballpit and tube.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0077.jpg" loading="lazy" alt="Image of the daycare room.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0078.jpg" loading="lazy"
+            alt="Image of a variety of toys organized in cute boxes on a shelf.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0079.jpg" loading="lazy" alt="Image of the daycare room.">
+        </div>
+        <div class="gallery-image">
+          <img src="gallery/IMG_0081.jpg" loading="lazy" alt="Image of a ball-pit and tube">
+        </div>
       </div>
     </div>
 
     <div id="schedule-background" class="middle-content">
       <div id="schedule-container" class="middle-content-sub-container">
         <div class="schedule-title-border">
-          <div class="title" >Daily Schedule</div>
+          <div class="title">Daily Schedule</div>
         </div>
         <div class="daycare-schedule-container">
           <table class="daycare-schedule">
@@ -268,8 +308,8 @@
               <td>2:30pm</td>
               <td>Center play</td>
             </tr>
-            
-            
+
+
             <tr>
               <td>3:30pm</td>
               <td>Wash hands / Snack / Movie time</td>
@@ -307,107 +347,107 @@
 
 
     <div id="pricing-background" class="middle-content">
-        <div id="pricing-container" class="middle-content-sub-container">
-          <div id="pricing-text-box">
-            We currently charge $250 per week for children 18 months and older.<br>
-            We also offer half days during the summer months at a rate of $95 per half day.<br>
-            Payments may be made via credit card, debit card, or check, and are due monthly.
-          </div>
+      <div id="pricing-container" class="middle-content-sub-container">
+        <div id="pricing-text-box">
+          We currently charge $250 per week for children 18 months and older.<br>
+          We also offer half days during the summer months at a rate of $95 per half day.<br>
+          Payments may be made via credit card, debit card, or check, and are due monthly.
         </div>
+      </div>
     </div>
 
     <div id="contact-background" class="middle-content">
       <div id="contact-container" class="middle-content-sub-container">
         <div id="contact-text-box">
           <div>
-          <div>
-            <div class="icon">
-              <img class="icon-img" src="pin.png" alt="Daycare's Address in The Woodlands">
+            <div>
+              <div class="icon">
+                <img class="icon-img" src="pin.png" alt="Daycare's Address in The Woodlands">
+              </div>
+              <div class="contact-text-box-text">
+                Harper's Landing<br>
+                The Woodlands, TX, 77385<br>
+                Please contact us for our exact address
+              </div>
             </div>
-            <div class="contact-text-box-text">
-              Harper's Landing<br>
-              The Woodlands, TX, 77385<br>
-              Please contact us for our exact address
-            </div>
-          </div>
 
-          <div>
-            <div class="icon envelope">
-              <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
+            <div>
+              <div class="icon envelope">
+                <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
+              </div>
+              <div class="contact-text-box-text">
+                susan@honeybeeandfriends.buzz
+              </div>
             </div>
-            <div class="contact-text-box-text">
-              susan@honeybeeandfriends.buzz
-            </div>
-          </div>
 
-          <div>
-            <div class="icon">
-              <img class="icon-img" src="mobile.png" alt="Daycare's Phone Number">
-            </div>
-            <div class="contact-text-box-text">
-              <a href="tel:832-810-2722">832-810-2722</a>
+            <div>
+              <div class="icon">
+                <img class="icon-img" src="mobile.png" alt="Daycare's Phone Number">
+              </div>
+              <div class="contact-text-box-text">
+                <a href="tel:832-810-2722">832-810-2722</a>
+              </div>
             </div>
           </div>
-        </div>
           <div class="contact-picture">
             <img src="house-contact.jpeg" alt="Home Daycare in The Woodlands">
           </div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="page-seperator"></div>
+
+  <div class="bottom-content">
+    <div class="image"></div>
+    <div class="footer-item">
+      <div class="footer-title">CONTACT US</div>
+
+      <div class="footer-contact-info">
+        <div class="icon">
+          <img class="icon-img" src="pin.png" alt="Daycare Address in The Woodlands">
+        </div>
+        <div class="footer-text">
+          Harper's Landing<br>
+          The Woodlands, TX 77385<br>
+          Please contact for our exact address
+        </div>
+      </div>
+
+      <div class="footer-contact-info">
+        <div class="icon envelope">
+          <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
+        </div>
+        <div class="footer-text">
+          susan@honeybeeandfriends.buzz<br>
+        </div>
+      </div>
+
+      <div class="footer-contact-info">
+        <div class="icon">
+          <img class="icon-img" src="mobile.png" alt="Daycare's Phone Number">
+        </div>
+        <div class="footer-text">
+          <a href="tel:832-810-2722">832-810-2722</a>
         </div>
       </div>
     </div>
 
-    <div class="page-seperator"></div>
+    <div class="footer-item">
+      <div class="footer-title">HOURS OF OPERATION</div>
 
-    <div class="bottom-content">
-      <div class="image"></div>
-      <div class="footer-item">
-        <div class="footer-title">CONTACT US</div>
-
-        <div class="footer-contact-info">
-          <div class="icon">
-            <img class="icon-img" src="pin.png" alt="Daycare Address in The Woodlands">
-          </div>
-          <div class="footer-text">
-            Harper's Landing<br>
-            The Woodlands, TX 77385<br>
-            Please contact for our exact address
-          </div>
-        </div>
-
-        <div class="footer-contact-info">
-          <div class="icon envelope">
-            <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
-          </div>
-          <div class="footer-text">
-            susan@honeybeeandfriends.buzz<br>
-          </div>
-        </div>
-
-        <div class="footer-contact-info">
-          <div class="icon">
-            <img class="icon-img" src="mobile.png" alt="Daycare's Phone Number">
-          </div>
-          <div class="footer-text">
-            <a href="tel:832-810-2722">832-810-2722</a>
-          </div>
+      <div class="footer-contact-info">
+        <div class="footer-text">
+          Monday through Friday: 7:00 AM to 5:30 PM<br>
+          Saturday: Closed<br>
+          Sunday: Closed
         </div>
       </div>
-
-      <div class="footer-item">
-        <div class="footer-title">HOURS OF OPERATION</div>
-
-        <div class="footer-contact-info">
-          <div class="footer-text">
-            Monday through Friday: 7:00 AM to 5:30 PM<br>
-            Saturday: Closed<br>
-            Sunday: Closed
-          </div>
-        </div>
-      </div>
-      <div class="image"></div>
     </div>
-    <script src="script.js"></script>
+    <div class="image"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
