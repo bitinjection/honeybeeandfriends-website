@@ -562,6 +562,12 @@ body {
   }
 }
 
+@media screen and (max-width: 460px) {
+  .middle-content-sub-container {
+    margin: 0px;
+  }
+}
+
 /* Slideshow Styling */
 /* Slideshow container */
 .slideshow-container {
