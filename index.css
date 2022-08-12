@@ -145,6 +145,10 @@ body {
   background-color: rgb(219, 217, 255);
 }
 
+#indigo-frame-short {
+  display: none;
+}
+
 #filter {
   display: none;
   position: fixed;
@@ -173,7 +177,7 @@ body {
 
 .middle-content {
   background-color: rgb(192 248 255);
-  /* min-height: 80vh; */
+  min-height: 80vh;
 }
 
 .middle-content-sub-container {
@@ -489,6 +493,40 @@ body {
   margin-bottom: 48px;
   font-size: xxx-large;
   text-align: center;
+}
+
+@media screen and (max-width: 1181px) and (min-width: 1077px) {
+
+  .indigo-frame {
+    display: none;
+  }
+
+  #indigo-frame-short {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1077px) {
+
+  .nav-bar {
+    height: 50px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .middle-content-sub-container {
+    margin: 20px;
+  }
+
+  .base-frame {
+    display: none;
+  }
+
+  .about-text-box {
+    margin: 20px;
+  }
 }
 
 @media screen and (max-width: 800px) {
