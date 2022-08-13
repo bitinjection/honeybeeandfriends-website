@@ -84,7 +84,7 @@ function FoodMenu(startDay, totalDays, holdayDates) {
     const createHeader = () => {
       const headerRow = table.insertRow();
 
-      for(let i=0; i < days.length; ++i) {
+      for (let i = 0; i < days.length; ++i) {
         const cell = headerRow.insertCell();
         cell.appendChild(document.createTextNode(days[i]))
         cell.style.border = '1px solid black';
@@ -99,7 +99,7 @@ function FoodMenu(startDay, totalDays, holdayDates) {
 
       const skipDays = (weekRow, daysToSkip) => {
         const adjustedDaysToSkip = startDay % days.length;
-        for(let i=0; i < adjustedDaysToSkip; ++i) {
+        for (let i = 0; i < adjustedDaysToSkip; ++i) {
           weekRow.insertCell();
         }
       };
