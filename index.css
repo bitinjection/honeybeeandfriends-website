@@ -433,6 +433,45 @@ body {
   display: none;
 }
 
+.food-menu {
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 24px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  background-color: wheat;
+  font-size: x-large;
+}
+
+.food-menu th {
+  text-align: center;
+  border-bottom-style: solid;
+  border-width: 2px;
+  font-family: luck;
+  letter-spacing: 1.5px;
+}
+
+.food-menu td {
+  font-family: Jua;
+}
+
+.food-note {
+  text-align: center;
+  font-family: Jua;
+  margin-bottom: 24px;
+}
+
+.food-title {
+  font-family: luck;
+  letter-spacing: 1.5px;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 36px;
+}
+
 #pricing-background {
   background-color: rgb(219, 217, 255);
   display: none;
