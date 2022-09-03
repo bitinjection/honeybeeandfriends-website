@@ -684,6 +684,33 @@ body {
   to {filter: brightness(100%)}
 }
 
+@media screen and (min-width: 1077px) {
+.gallery {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+  }
+
+  .gallery img {
+    margin: 12px;
+  }
+
+}
+
+@media screen and (max-width: 1077px) {
+  .gallery {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+  }
+}
+
 .gallery-image {
   width: 100%;
 }
