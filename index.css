@@ -406,12 +406,20 @@ body {
   background-color: #d8aeff;
 }
 
+.about-heading {
+  letter-spacing: 1.3px;
+  font-family: luck;
+  margin-bottom: 24px;
+  color: black;
+}
+
 .about-text {
   font-family: 'Jua', sans-serif;
   height: auto;
   align-self: center;
   font-size: x-large;
   margin-bottom: 48px;
+  color: #303030;
 }
 
 #gallery-background {
@@ -431,6 +439,45 @@ body {
 #menu-background {
   background-color: rgb(216 174 255);
   display: none;
+}
+
+.food-menu {
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 24px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  background-color: wheat;
+  font-size: x-large;
+}
+
+.food-menu th {
+  text-align: center;
+  border-bottom-style: solid;
+  border-width: 2px;
+  font-family: luck;
+  letter-spacing: 1.5px;
+}
+
+.food-menu td {
+  font-family: Jua;
+}
+
+.food-note {
+  text-align: center;
+  font-family: Jua;
+  margin-bottom: 24px;
+}
+
+.food-title {
+  font-family: luck;
+  letter-spacing: 1.5px;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 36px;
 }
 
 #pricing-background {
@@ -643,6 +690,33 @@ body {
 @keyframes fade {
   from {filter: brightness(0%)}
   to {filter: brightness(100%)}
+}
+
+@media screen and (min-width: 1077px) {
+.gallery {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+  }
+
+  .gallery img {
+    margin: 12px;
+  }
+
+}
+
+@media screen and (max-width: 1077px) {
+  .gallery {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+  }
 }
 
 .gallery-image {
