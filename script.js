@@ -10,16 +10,19 @@ function gtag() {
   dataLayer.push(arguments);
 }
 
-gtag('js', new Date());
-
-gtag('config', 'UA-235385299-1');
-
 function logPageView(target) {
   // Quick hack since this isn't really what I'm focusing on at the moment
   // Use the element ID as a fake page
   gtag('set', 'page_path', '/' + target + '.html');
   gtag('event', 'page_view');
 }
+
+gtag('js', new Date());
+
+gtag('config', 'UA-235385299-1');
+
+// Initial, special page load event
+logPageView('landing-page');
 
 function LoggedNavigator(navigator) {
 
