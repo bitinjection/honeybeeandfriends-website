@@ -1,13 +1,42 @@
-const nav = Nav();
+const nav = LoggedNavigator(new Nav());
 const slideShow = SlideShow();
 slideShow.currentSlide(1);
 
-// const calendarDiv = document.getElementsByClassName("calendar")[0];
 
-// const foodMenu = FoodMenu(2, 30, []);
-// const calendarTable = foodMenu.createCalendarDomElement();
+// Initialize gtag
+window.dataLayer = window.dataLayer || [];
 
-calendarDiv.appendChild(calendarTable);
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'UA-235385299-1');
+
+function logPageView(target) {
+  // Quick hack since this isn't really what I'm focusing on at the moment
+  // Use the element ID as a fake page
+  gtag('set', 'page_path', '/' + target + '.html');
+  gtag('event', 'page_view');
+}
+
+function LoggedNavigator(navigator) {
+
+  const swapMiddle = (target) => {
+    navigator.swapMiddle(target);
+    logPageView(target)
+  }
+
+  const showSideBar = () => navigator.showSideBar();
+  const hideSideBar = () => navigator.hideSideBar();
+
+  return {
+    swapMiddle,
+    showSideBar,
+    hideSideBar
+  };
+}
 
 function Nav() {
   let previousTab = 'home-page';
@@ -75,64 +104,31 @@ function SlideShow() {
   }
 }
 
-function FoodMenu(startDay, totalDays, holdayDates) {
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-  const createCalendarDomElement = () => {
-    const table = document.createElement('table');
-    const weeks = totalDays / 5;
-
-    const createHeader = () => {
-      const headerRow = table.insertRow();
-
-      for (let i = 0; i < days.length; ++i) {
-        const cell = headerRow.insertCell();
-        cell.appendChild(document.createTextNode(days[i]))
-        cell.style.border = '1px solid black';
-        cell.style.borderSpacing = '0px';
-      }
-
-    };
-
-    const populateDays = () => {
-      const createWeekRow = (table) => table.insertRow();
-      const createDayCell = (weekRow) => row.insertCell();
-
-      const skipDays = (weekRow, daysToSkip) => {
-        const adjustedDaysToSkip = startDay % days.length;
-        for (let i = 0; i < adjustedDaysToSkip; ++i) {
-          weekRow.insertCell();
-        }
-      };
-
-      const addMeals = () => {
-        const totalWeeks = totalDays / 7;
-        for (let row = 0; row < totalWeeks; ++row) {
-          let column = (row === 0) ? startDay : 0;
-          const weekRow = table.insertRow();
-
-          if (column != 0) skipDays(weekRow, startDay);
-
-          while (column < days.length) {
-            var cell = weekRow.insertCell();
-            cell.appendChild(document.createTextNode(days[column] + `${row}, ${column}`));
-            cell.style.border = '1px solid black';
-            cell.style.borderSpacing = '0px';
-            column++;
-          }
-        }
-      }
-
-      addMeals();
-    };
 
 
-    createHeader();
-    populateDays();
 
-    return table;
-  };
+function Tests() {
+  function IsGtagLoaded()
+  {
+    if (!gtag) {
+      console.log('gtag is not loaded')
+    }
+  }
+
+  function run() {
+    if (location.hostname === '' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    {
+      console.log("RUNNING TESTS");
+      IsGtagLoaded();
+      console.log("TESTS COMPLETED")
+    }
+  }
 
   return {
-    createCalendarDomElement
-  };
+    run
+  }
 }
+
+const tests = Tests();
+
+tests.run();
