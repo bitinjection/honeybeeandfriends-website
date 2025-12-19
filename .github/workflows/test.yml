@@ -17,4 +17,4 @@ jobs:
         username: "dthompson"
         password: ${{ secrets.PASSWORD }}
         source: "*"
-        target: "./honeybeeandfriends/html/staging"
+        target: "./daycarewebsite"
