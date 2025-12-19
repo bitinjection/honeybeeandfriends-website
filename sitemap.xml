@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://honeybeeandfriends.buzz/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://honeybeeandfriends.buzz/house-contact.jpeg</image:loc>
+      <image:title>Honeybee and Friends Daycare - Home Daycare in The Woodlands TX</image:title>
+      <image:caption>State-certified home daycare serving The Woodlands, Conroe, and Harper's Landing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://honeybeeandfriends.buzz/slideshow-opendoor.jpg</image:loc>
+      <image:title>Daycare Playroom at Honeybee and Friends</image:title>
+      <image:caption>Safe and fun learning environment for toddlers and preschoolers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://honeybeeandfriends.buzz/Heading.png</image:loc>
+      <image:title>Honeybee and Friends Daycare Logo</image:title>
+    </image:image>
+  </url>
+
+</urlset>
