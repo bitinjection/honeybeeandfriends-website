@@ -1,6 +1,9 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Honeybee and Friends Daycare",
+    "short_name": "Honeybee Daycare",
+    "description": "Home daycare in The Woodlands, TX serving Harper's Landing, Conroe, Shenandoah & Oakridge",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,5 +18,6 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait"
 }
