@@ -179,14 +179,14 @@
 </head>
 
 <body>
-  <div class="landing-page-container">
+  <header class="landing-page-container">
     <div id="logo" class="logo">
       <a href="index.html" title="Go to our Home Page">
         <img src="Heading.png" alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
       </a>
     </div>
 
-    <div class="nav-bar">
+    <nav class="nav-bar" aria-label="Main navigation">
       <a class="hamburger" onclick="nav.showSideBar()">
         <img src="hamburger.png" alt="Daycare Menu">
       </a>
@@ -228,9 +228,11 @@
           title="Our contact information">Contact</a>
       </div>
       <div id="filter" onclick="nav.hideSideBar()"></div>
-    </div>
+    </nav>
+  </header>
 
-    <div id="home-page" class="middle-content">
+  <main>
+    <section id="home-page" class="middle-content" aria-label="Home">
       <!-- W3 Schools Slideshow container -->
       <div class="slideshow-container">
 
@@ -276,10 +278,10 @@
       <div id="home-container" class="middle-content-sub-container">
         <div class="flex-row">
           <div class="text-box box1">
-            <h1>Fun with Friends</h1>
+            <h2>Fun with Friends</h2>
             <div>
               Growth through social interaction, education, art and play helps your child prepare for elementary school,
-              and a comfortable, positive, nuturing environemnt helps our little honey bees learn to love learning.
+              and a comfortable, positive, nurturing environment helps our little honey bees learn to love learning.
             </div>
           </div>
 
@@ -290,9 +292,9 @@
 
         <div class="flex-row">
           <div class="text-box box2">
-            <h1>State certified</h1>
+            <h2>State Certified</h2>
             <div>
-               Your child's safety and comfort are our number one concern.  State regulations are complied with at all times.
+               Your child's safety and comfort are our number one concern. State regulations are complied with at all times.
             </div>
           </div>
 
@@ -303,7 +305,7 @@
 
         <div class="flex-row">
           <div class="text-box box3">
-            <h1>Experienced, certified care</h1>
+            <h2>Experienced, Certified Care</h2>
             <div>
               With years of experience as a mother and teacher, Miss K guides, nurtures and
               encourages your child to grow through creative play, teamwork, and independent learning.
@@ -315,28 +317,28 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="about-background" class="middle-content">
+    <section id="about-background" class="middle-content" aria-labelledby="about-title">
       <div id="about-container" class="middle-content-sub-container">
         <div class="about-text-box">
-          <div class="title">About the Daycare</div>
+          <h2 id="about-title" class="title">About the Daycare</h2>
           <div class="about-content">
             <div class="flex-row">
               <div class="about-text">
-                <div class="about-heading">An Educated and Experienced Teacher and Mother</div>
+                <h3 class="about-heading">An Educated and Experienced Teacher and Mother</h3>
                 Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
                 certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
                 has worked in the school system and enjoys spending time with her own children.
               </div>
               <div class="about-text">
-                <div class="about-heading">Fun, Safe Education</div>
+                <h3 class="about-heading">Fun, Safe Education</h3>
                 Honeybee and Friends Daycare is dedicated to providing a fun, educational,
                 creative, and safe learning environment. We provide nutritious meals and physical activities
                 while encouraging kids to be team players as well as independent learners.
               </div>
               <div class="about-text">
-                <div class="about-heading">Certified and Trained</div>
+                <h3 class="about-heading">Certified and Trained</h3>
                 Honeybee and Friends Daycare meets the qualifications for a Listed Daycare.
                 This includes FBI background checks, fingerprinting, and state training. We have completed sleep
                 safe training, food handler certification, and CPR certification. You can be confident we provide
@@ -349,10 +351,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="gallery-background" class="middle-content">
+    <section id="gallery-background" class="middle-content" aria-labelledby="gallery-title">
       <div class="middle-content-sub-container">
+        <h2 id="gallery-title" class="title gallery-title">Daycare Photo Gallery</h2>
         <div class="gallery">
           <img src="gallery/thumbnails/house-front.jpg" loading="lazy" alt="Image of front of house">
           <img src="gallery/thumbnails/house-back.jpg" loading="lazy" alt="Image of back of house">
@@ -380,12 +383,12 @@
           <img src="gallery/thumbnails/IMG_0081.jpg" loading="lazy" alt="Image of a ball-pit and tube">
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="schedule-background" class="middle-content">
+    <section id="schedule-background" class="middle-content" aria-labelledby="schedule-title">
       <div id="schedule-container" class="middle-content-sub-container">
         <div class="schedule-title-border">
-          <div class="title">Daily Schedule</div>
+          <h2 id="schedule-title" class="title">Daily Schedule</h2>
         </div>
         <div class="daycare-schedule-container">
           <table class="daycare-schedule">
@@ -473,12 +476,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="menu-background" class="middle-content">
+    <section id="menu-background" class="middle-content" aria-labelledby="menu-title">
       <div id="menu-container" class="middle-content-sub-container">
         <div class="calendar">
-          <div class="food-title">Our Menu</div>
+          <h2 id="menu-title" class="food-title">Our Menu</h2>
           <div class="food-note">All meals and snacks will be served with Milk, Orange Juice, Apple Juice, or Grape Juice.</div>
           <div class="food-note">We regularly update this menu.</div>
           <table class="food-menu">
@@ -519,10 +522,9 @@
           </table>
         </div>
       </div>
-    </div>
+    </section>
 
-
-    <div id="pricing-background" class="middle-content">
+    <section id="pricing-background" class="middle-content" aria-label="Pricing">
       <div id="pricing-container" class="middle-content-sub-container">
         <div id="pricing-text-box">
           We currently charge $250 per week.  We are only able to accept children 18 months and older at this time.<br>
@@ -533,9 +535,9 @@
           Payments may be made via credit card, debit card, or check, and are due weekly by Monday.<br>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="contact-background" class="middle-content">
+    <section id="contact-background" class="middle-content" aria-label="Contact">
       <div id="contact-container" class="middle-content-sub-container">
         <div id="contact-text-box">
           <div>
@@ -573,12 +575,12 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <div class="page-seperator"></div>
 
-  <div class="bottom-content">
+  <footer class="bottom-content">
     <div class="image"></div>
     <div class="footer-item">
       <div class="footer-title">CONTACT US</div>
@@ -625,7 +627,7 @@
       </div>
     </div>
     <div class="image"></div>
-  </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 
