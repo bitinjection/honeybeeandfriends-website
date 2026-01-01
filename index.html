@@ -143,11 +143,11 @@
             "name": "Full-Time Daycare",
             "description": "Full-time childcare Monday through Friday, 7:00 AM to 5:30 PM, including breakfast, lunch, and snacks."
           },
-          "price": "250.00",
+          "price": "300.00",
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "250.00",
+            "price": "300.00",
             "priceCurrency": "USD",
             "unitText": "week"
           }
@@ -207,7 +207,7 @@
         "name": "What is the cost of daycare?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "$250 per week for full-time enrollment, including breakfast, lunch, and snacks."
+          "text": "$300 per week for full-time enrollment, including breakfast, lunch, and snacks."
         }
       }
     ]
@@ -227,100 +227,98 @@
 
 <body>
   <header class="landing-page-container">
-    <div id="logo" class="logo">
-      <a href="index.html" title="Go to our Home Page">
-        <img src="Heading.png" alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
-      </a>
+    <div class="header-top">
+      <div id="logo" class="logo">
+        <a href="index.html" title="Go to our Home Page">
+          <img src="Heading.png" alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
+        </a>
+      </div>
+      <div class="header-phone">
+        <a href="tel:832-810-2722" title="Call to schedule a tour">
+          <span class="phone-icon">&#128222;</span>
+          <span class="phone-text">Schedule a Tour:</span>
+          <span class="phone-number-display">832-810-2722</span>
+        </a>
+      </div>
     </div>
 
     <nav class="nav-bar" aria-label="Main navigation">
-      <a class="hamburger" onclick="nav.showSideBar()">
-        <img src="hamburger.png" alt="Daycare Menu">
-      </a>
-      <a class="base-frame blue-frame" onclick="nav.swapMiddle('home-page')" title="Go to our Home Page">Home
-      </a>
-      <a class="base-frame red-frame" onclick="nav.swapMiddle('about-background')" title="Learn about us">About
-        Us</a>
-      <a class="base-frame yellow-frame" onclick="nav.swapMiddle('gallery-background')"
-        title="Check out pictures">Gallery</a>
-      <a class="base-frame green-frame" onclick="nav.swapMiddle('schedule-background')" title="Daily schedule">
-        Schedule</a>
-      <a class="base-frame purple-frame" onclick="nav.swapMiddle('menu-background')"
-        title="Food menu for the kids">Menu</a>
-      <a class="base-frame indigo-frame" onclick="nav.swapMiddle('pricing-background')" title="Pricing">Pricing and
-        Forms</a>
-      <a class="base-frame indigo-frame" id="indigo-frame-short" onclick="nav.swapMiddle('pricing-background')"
-        title="Pricing">Pricing &
-        Forms</a>
-      <a class="base-frame violet-frame" onclick="nav.swapMiddle('contact-background')"
-        title="Our contact information">Contact</a>
+      <button class="hamburger" data-action="show-sidebar" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="side-nav-bar">
+        <img src="hamburger.png" alt="">
+      </button>
+      <button class="base-frame blue-frame" data-page="home-page" type="button" title="Go to our Home Page" aria-current="page">Home</button>
+      <button class="base-frame red-frame" data-page="about-background" type="button" title="Learn about us">About Us</button>
+      <button class="base-frame yellow-frame" data-page="gallery-background" type="button" title="Check out pictures">Gallery</button>
+      <button class="base-frame green-frame" data-page="schedule-background" type="button" title="Daily schedule">Schedule</button>
+      <button class="base-frame purple-frame" data-page="menu-background" type="button" title="Food menu for the kids">Menu</button>
+      <button class="base-frame indigo-frame" data-page="pricing-background" type="button" title="Pricing"><span class="nav-text-full">Pricing and Forms</span><span class="nav-text-short">Pricing & Forms</span></button>
+      <button class="base-frame violet-frame" data-page="contact-background" type="button" title="Our contact information">Contact</button>
 
-      <div id="side-nav-bar">
-        <a id="home-side-content" class="side-content" onclick="nav.swapMiddle('home-page')"
-          title="Go to our Home Page">Home
-        </a>
-        <a id="about-side-content" class="side-content" onclick="nav.swapMiddle('about-background')"
-          title="Learn about us">About
-          Us</a>
-        <a id="gallery-side-content" class="side-content" onclick="nav.swapMiddle('gallery-background')"
-          title="Check out pictures">Gallery</a>
-        <a id="daily-side-content" class="side-content" onclick="nav.swapMiddle('schedule-background')"
-          title="Daily schedule">
-          Schedule</a>
-        <a id="menu-side-content" class="side-content" onclick="nav.swapMiddle('menu-background')"
-          title="Food menu for the kids">Menu</a>
-        <a id="pricing-side-content" class="side-content" onclick="nav.swapMiddle('pricing-background')"
-          title="Pricing">Pricing and Forms</a>
-        <a id="contact-side-content" class="side-content" onclick="nav.swapMiddle('contact-background')"
-          title="Our contact information">Contact</a>
+      <div id="side-nav-bar" class="is-hidden" role="menu" aria-label="Mobile navigation">
+        <button id="home-side-content" class="side-content" data-page="home-page" type="button" role="menuitem" title="Go to our Home Page" aria-current="page">Home</button>
+        <button id="about-side-content" class="side-content" data-page="about-background" type="button" role="menuitem" title="Learn about us">About Us</button>
+        <button id="gallery-side-content" class="side-content" data-page="gallery-background" type="button" role="menuitem" title="Check out pictures">Gallery</button>
+        <button id="daily-side-content" class="side-content" data-page="schedule-background" type="button" role="menuitem" title="Daily schedule">Schedule</button>
+        <button id="menu-side-content" class="side-content" data-page="menu-background" type="button" role="menuitem" title="Food menu for the kids">Menu</button>
+        <button id="pricing-side-content" class="side-content" data-page="pricing-background" type="button" role="menuitem" title="Pricing">Pricing and Forms</button>
+        <button id="contact-side-content" class="side-content" data-page="contact-background" type="button" role="menuitem" title="Our contact information">Contact</button>
       </div>
-      <div id="filter" onclick="nav.hideSideBar()"></div>
+      <div id="filter" class="is-hidden" data-action="hide-sidebar" role="presentation"></div>
     </nav>
   </header>
 
   <main>
     <section id="home-page" class="middle-content" aria-label="Home">
-      <!-- W3 Schools Slideshow container -->
-      <div class="slideshow-container">
+      <!-- Slideshow -->
+      <div class="slideshow-container" role="region" aria-label="Photo slideshow" aria-roledescription="carousel">
+        <div class="slideshow-live-region" data-slideshow="live-region" aria-live="polite" aria-atomic="true"></div>
 
-        <!-- Full-width images with number and caption text -->
-        <div class="my-slides fade">
+        <div class="my-slides fade" data-slideshow="slide" role="group" aria-roledescription="slide" aria-label="1 of 5">
           <img src="slideshow-opendoor.jpg" alt="Playroom at Honeybee daycare in The Woodlands TX">
+          <div class="slide-caption">Our Bright Playroom</div>
         </div>
 
-        <div class="my-slides fade">
+        <div class="my-slides fade is-hidden" data-slideshow="slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
           <img src="Garden.jpg" alt="Image of garden with roses.">
+          <div class="slide-caption">Beautiful Garden Area</div>
         </div>
 
-        <div class="my-slides fade">
+        <div class="my-slides fade is-hidden" data-slideshow="slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
           <img src="house.jpeg" alt="Honeybee daycare home exterior in The Woodlands">
+          <div class="slide-caption">Welcome to Our Home</div>
         </div>
 
-        <div class="my-slides fade">
+        <div class="my-slides fade is-hidden" data-slideshow="slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
           <img src="slideshow-readingbee.jpg" alt="Image of a daycare room.">
+          <div class="slide-caption">Cozy Reading Corner</div>
         </div>
 
-        <div class="my-slides fade">
+        <div class="my-slides fade is-hidden" data-slideshow="slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
           <img src="slideshow-closeddoor.jpg" alt="Image of a glass door of a daycare room.">
+          <div class="slide-caption">Safe Learning Environment</div>
         </div>
 
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="slideShow.plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="slideShow.plusSlides(1)">&#10095;</a>
+        <button class="prev" type="button" data-slide-delta="-1" aria-label="Previous slide">&#10094;</button>
+        <button class="next" type="button" data-slide-delta="1" aria-label="Next slide">&#10095;</button>
       </div>
-      <br>
 
-      <!-- The dots/circles -->
-      <div style="text-align:center">
-        <span class="dot" onclick="slideShow.currentSlide(1)"></span>
-        <span class="dot" onclick="slideShow.currentSlide(2)"></span>
-        <span class="dot" onclick="slideShow.currentSlide(3)"></span>
-        <span class="dot" onclick="slideShow.currentSlide(4)"></span>
-        <span class="dot" onclick="slideShow.currentSlide(5)"></span>
+      <div class="slideshow-dots" role="tablist" aria-label="Slide selection">
+        <button class="dot" type="button" data-slideshow="dot" data-slide="1" role="tab" aria-label="Go to slide 1" aria-selected="true"></button>
+        <button class="dot" type="button" data-slideshow="dot" data-slide="2" role="tab" aria-label="Go to slide 2" aria-selected="false"></button>
+        <button class="dot" type="button" data-slideshow="dot" data-slide="3" role="tab" aria-label="Go to slide 3" aria-selected="false"></button>
+        <button class="dot" type="button" data-slideshow="dot" data-slide="4" role="tab" aria-label="Go to slide 4" aria-selected="false"></button>
+        <button class="dot" type="button" data-slideshow="dot" data-slide="5" role="tab" aria-label="Go to slide 5" aria-selected="false"></button>
       </div>
 
       <div class="cta-container">
-        <h1 class="above-fold-cta">The Woodlands Child Care <br><br>Honeybee and Friends Daycare</h1>
+        <div class="cta-badge">State Certified Home Daycare in Harper's Landing</div>
+        <h1 class="above-fold-cta">The Woodlands Child Care</h1>
+        <p class="cta-subtext">Schedule a tour and see why local families trust us with their little ones</p>
+        <a href="tel:832-810-2722" class="cta-button">
+          <span class="cta-phone-icon">&#128222;</span> Call Now: 832-810-2722
+        </a>
+        <p class="cta-alt">Limited enrollment available</p>
+        <a href="#" class="cta-secondary" data-page="contact-background" title="Send us a message online">Or send us a message online</a>
       </div>
       <div id="home-container" class="middle-content-sub-container">
         <div class="flex-row">
@@ -368,7 +366,7 @@
       </div>
     </section>
 
-    <section id="about-background" class="middle-content" aria-labelledby="about-title">
+    <section id="about-background" class="middle-content is-hidden" aria-labelledby="about-title">
       <div id="about-container" class="middle-content-sub-container">
         <div class="about-text-box">
           <h2 id="about-title" class="title">About the Daycare</h2>
@@ -409,7 +407,7 @@
       </div>
     </section>
 
-    <section id="gallery-background" class="middle-content" aria-labelledby="gallery-title">
+    <section id="gallery-background" class="middle-content is-hidden" aria-labelledby="gallery-title">
       <div class="middle-content-sub-container">
         <h2 id="gallery-title" class="title gallery-title">Daycare Photo Gallery</h2>
         <div class="gallery">
@@ -441,7 +439,7 @@
       </div>
     </section>
 
-    <section id="schedule-background" class="middle-content" aria-labelledby="schedule-title">
+    <section id="schedule-background" class="middle-content is-hidden" aria-labelledby="schedule-title">
       <div id="schedule-container" class="middle-content-sub-container">
         <div class="schedule-title-border">
           <h2 id="schedule-title" class="title">Daily Schedule</h2>
@@ -534,7 +532,7 @@
       </div>
     </section>
 
-    <section id="menu-background" class="middle-content" aria-labelledby="menu-title">
+    <section id="menu-background" class="middle-content is-hidden" aria-labelledby="menu-title">
       <div id="menu-container" class="middle-content-sub-container">
         <div class="calendar">
           <h2 id="menu-title" class="food-title">Our Menu</h2>
@@ -580,10 +578,10 @@
       </div>
     </section>
 
-    <section id="pricing-background" class="middle-content" aria-label="Pricing">
+    <section id="pricing-background" class="middle-content is-hidden" aria-label="Pricing">
       <div id="pricing-container" class="middle-content-sub-container">
         <div id="pricing-text-box">
-          Honeybee and Friends Daycare offers quality childcare in The Woodlands area at $250 per week. We accept children 12 months and older.<br>
+          Honeybee and Friends Daycare offers quality childcare in The Woodlands area at $300 per week.<br>
           <br>
           Pricing is non-negotiable, and full time enrollment is all we are able to currently offer.<br>
           However, if you need other accommodations, please feel free to reach out.<br>
@@ -593,7 +591,7 @@
       </div>
     </section>
 
-    <section id="contact-background" class="middle-content" aria-label="Contact">
+    <section id="contact-background" class="middle-content is-hidden" aria-label="Contact">
       <div id="contact-container" class="middle-content-sub-container">
         <div id="contact-text-box">
           <div>
@@ -629,6 +627,58 @@
           <div class="contact-picture">
             <img src="house-contact.jpeg" alt="Home Daycare in The Woodlands">
           </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div id="contact-form-container" class="contact-form-wrapper">
+          <h3 class="contact-form-title">Send Us a Message</h3>
+          <p class="contact-form-subtitle">We'll get back to you within 24 hours</p>
+
+          <form id="contact-form" action="https://formspree.io/f/xdaordej" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="parent-name">Your Name <span class="required">*</span></label>
+                <input type="text" id="parent-name" name="parent_name" required placeholder="Enter your name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX">
+              </div>
+
+              <div class="form-group">
+                <label for="child-age">Child's Age <span class="required">*</span></label>
+                <select id="child-age" name="child_age" required>
+                  <option value="">Select age...</option>
+                  <option value="12-18 months">12-18 months</option>
+                  <option value="18-24 months">18-24 months</option>
+                  <option value="2 years">2 years</option>
+                  <option value="3 years">3 years</option>
+                  <option value="4 years">4 years</option>
+                  <option value="5 years">5 years</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="start-date">Desired Start Date</label>
+              <input type="date" id="start-date" name="start_date">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message or Questions</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your childcare needs, ask questions, or request a tour..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
@@ -684,6 +734,14 @@
     </div>
     <div class="image"></div>
   </footer>
+  <!-- Sticky Mobile CTA Bar -->
+  <div class="mobile-cta-bar">
+    <a href="tel:832-810-2722" title="Tap to call and schedule a tour">
+      <span class="mobile-cta-icon">&#128222;</span>
+      <span class="mobile-cta-text">Schedule a Tour: 832-810-2722</span>
+    </a>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
