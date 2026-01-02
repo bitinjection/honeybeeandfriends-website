@@ -22,6 +22,16 @@ const CONFIG = Object.freeze({
     slide: '[data-slideshow="slide"]',
     dot: '[data-slideshow="dot"]',
     liveRegion: '[data-slideshow="live-region"]'
+  },
+  // Human-readable page paths for cleaner GA4 reports
+  pagePaths: {
+    'home-page': '/home',
+    'about-background': '/about',
+    'gallery-background': '/gallery',
+    'schedule-background': '/schedule',
+    'menu-background': '/menu',
+    'pricing-background': '/pricing',
+    'contact-background': '/contact'
   }
 });
 
@@ -66,20 +76,90 @@ function Analytics() {
 
   /**
    * Logs a virtual page view for SPA-style navigation.
+   * Uses human-readable paths from CONFIG.pagePaths for cleaner GA4 reports.
    * @param {string} pageId - The page identifier to log
    */
   const logPageView = (pageId) => {
     if (!isGtagAvailable()) return;
 
+    const pagePath = CONFIG.pagePaths[pageId] || '/' + pageId;
+    const pageTitle = pagePath.slice(1); // Remove leading slash for title
+
     gtag('event', 'page_view', {
-      page_title: pageId,
+      page_title: pageTitle,
       page_location: window.location.href,
-      page_path: '/' + pageId
+      page_path: pagePath
+    });
+  };
+
+  /**
+   * Logs a phone click conversion event.
+   * Uses beacon transport to ensure delivery before page navigation.
+   * @param {string} location - Where the click occurred (header, cta_primary, contact_page, mobile_sticky, footer)
+   */
+  const logPhoneClick = (location) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'phone_click', {
+      event_category: 'conversion',
+      event_label: location,
+      phone_number: '832-810-2722',
+      transport_type: 'beacon'
+    });
+  };
+
+  /**
+   * Logs an email click conversion event.
+   * Uses beacon transport to ensure delivery before mailto navigation.
+   * @param {string} location - Where the click occurred (contact_page, footer)
+   */
+  const logEmailClick = (location) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'email_click', {
+      event_category: 'conversion',
+      event_label: location,
+      transport_type: 'beacon'
+    });
+  };
+
+  /**
+   * Logs a form submission conversion event.
+   * Uses beacon transport to ensure delivery before form navigation.
+   * @param {Object} formData - Form field data to include
+   */
+  const logFormSubmit = (formData = {}) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'form_submit', {
+      event_category: 'conversion',
+      form_name: 'contact_form',
+      transport_type: 'beacon',
+      ...formData
+    });
+  };
+
+  /**
+   * Logs a CTA click event.
+   * @param {string} ctaType - Type of CTA (primary, secondary)
+   * @param {string} destination - Where the CTA leads
+   */
+  const logCtaClick = (ctaType, destination) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'cta_click', {
+      event_category: 'engagement',
+      cta_type: ctaType,
+      destination: destination
     });
   };
 
   return Object.freeze({
     logPageView,
+    logPhoneClick,
+    logEmailClick,
+    logFormSubmit,
+    logCtaClick,
     isGtagAvailable
   });
 }
@@ -328,10 +408,39 @@ function SlideShow(options = {}) {
  */
 function EventController(nav, slideShow) {
   /**
+   * Determines the location context for an email link click.
+   * @param {Element} link - The clicked mailto: link
+   * @returns {string} Location identifier for analytics
+   */
+  const getEmailLocation = (link) => {
+    if (link.closest('#contact-text-box')) return 'contact_page';
+    if (link.closest('footer')) return 'footer';
+    return 'unknown';
+  };
+
+  /**
    * Handles click events via delegation.
    * @param {Event} event - The click event
    */
   const handleClick = (event) => {
+    // Phone click tracking (tel: links)
+    const phoneLink = event.target.closest('a[href^="tel:"]');
+    if (phoneLink) {
+      const location = getPhoneLocation(phoneLink);
+      analytics.logPhoneClick(location);
+      // Don't prevent default - let the call go through
+      return;
+    }
+
+    // Email click tracking (mailto: links)
+    const emailLink = event.target.closest('a[href^="mailto:"]');
+    if (emailLink) {
+      const location = getEmailLocation(emailLink);
+      analytics.logEmailClick(location);
+      // Don't prevent default - let the email client open
+      return;
+    }
+
     const target = event.target.closest('[data-page], [data-action], [data-slide], [data-slide-delta]');
     if (!target) return;
 
@@ -501,8 +610,8 @@ eventController.init();
 // Show first slide (already visible in HTML, but ensures state is synced)
 slideShow.goToSlide(1);
 
-// Log initial page view
-analytics.logPageView('landing-page');
+// Log initial page view (matches CONFIG.defaultPage for consistency)
+analytics.logPageView(CONFIG.defaultPage);
 
 // Run dev tests in local environment
 DevTests().run();
