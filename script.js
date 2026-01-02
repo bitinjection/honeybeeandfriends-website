@@ -78,9 +78,154 @@ function Analytics() {
     });
   };
 
+  /**
+   * Logs a phone click conversion event.
+   * @param {string} location - Where the click occurred (header, cta_primary, contact_page, mobile_sticky, footer)
+   */
+  const logPhoneClick = (location) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'phone_click', {
+      event_category: 'conversion',
+      event_label: location,
+      phone_number: '832-810-2722'
+    });
+  };
+
+  /**
+   * Logs a form submission conversion event.
+   * @param {Object} formData - Form field data to include
+   */
+  const logFormSubmit = (formData = {}) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'form_submit', {
+      event_category: 'conversion',
+      form_name: 'contact_form',
+      ...formData
+    });
+  };
+
+  /**
+   * Logs a CTA click event.
+   * @param {string} ctaType - Type of CTA (primary, secondary)
+   * @param {string} destination - Where the CTA leads
+   */
+  const logCtaClick = (ctaType, destination) => {
+    if (!isGtagAvailable()) return;
+
+    gtag('event', 'cta_click', {
+      event_category: 'engagement',
+      cta_type: ctaType,
+      destination: destination
+    });
+  };
+
   return Object.freeze({
     logPageView,
+    logPhoneClick,
+    logFormSubmit,
+    logCtaClick,
     isGtagAvailable
+  });
+}
+
+// =============================================================================
+// Tracker Module (UTM Parameters)
+// =============================================================================
+
+/**
+ * Captures and persists UTM parameters for marketing attribution.
+ * Stores in sessionStorage to persist across SPA navigation.
+ */
+function Tracker() {
+  const PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  const STORAGE_KEY = 'honeybee_utm';
+
+  /**
+   * Extracts UTM parameters from the current URL.
+   * @returns {Object} Object containing UTM parameters found
+   */
+  const extractFromUrl = () => {
+    const params = new URLSearchParams(window.location.search);
+    const data = {};
+
+    PARAMS.forEach(param => {
+      const value = params.get(param);
+      if (value) {
+        data[param] = value;
+      }
+    });
+
+    return data;
+  };
+
+  /**
+   * Saves UTM parameters to sessionStorage.
+   * New params take precedence over existing ones.
+   * @param {Object} data - UTM parameters to save
+   */
+  const save = (data) => {
+    if (Object.keys(data).length === 0) return;
+
+    const existing = get();
+    const merged = { ...existing, ...data };
+
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+    } catch (e) {
+      // sessionStorage unavailable (private browsing, etc.)
+    }
+  };
+
+  /**
+   * Retrieves stored UTM parameters.
+   * @returns {Object} Stored UTM parameters or empty object
+   */
+  const get = () => {
+    try {
+      const stored = sessionStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : {};
+    } catch (e) {
+      return {};
+    }
+  };
+
+  /**
+   * Attaches UTM parameters as hidden fields to a form.
+   * @param {HTMLFormElement} form - The form element to enhance
+   */
+  const attachToForm = (form) => {
+    if (!form) return;
+
+    const data = get();
+
+    Object.entries(data).forEach(([key, value]) => {
+      let input = form.querySelector(`input[name="${key}"]`);
+
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        form.appendChild(input);
+      }
+
+      input.value = value;
+    });
+  };
+
+  /**
+   * Initializes the tracker - captures UTM params from URL.
+   */
+  const init = () => {
+    const data = extractFromUrl();
+    save(data);
+  };
+
+  return Object.freeze({
+    init,
+    get,
+    attachToForm
   });
 }
 
@@ -325,15 +470,45 @@ function SlideShow(options = {}) {
  * Decouples HTML from JavaScript by using data attributes.
  * @param {Object} nav - The navigation controller
  * @param {Object} slideShow - The slideshow controller
+ * @param {Object} analytics - The analytics tracker
+ * @param {Object} tracker - The UTM parameter tracker
  */
-function EventController(nav, slideShow) {
+function EventController(nav, slideShow, analytics, tracker) {
+  /**
+   * Determines the location context for a phone link click.
+   * @param {Element} link - The clicked tel: link
+   * @returns {string} Location identifier for analytics
+   */
+  const getPhoneLocation = (link) => {
+    if (link.closest('.header-phone')) return 'header';
+    if (link.closest('.cta-container')) return 'cta_primary';
+    if (link.closest('#contact-text-box')) return 'contact_page';
+    if (link.closest('.mobile-cta-bar')) return 'mobile_sticky';
+    if (link.closest('footer')) return 'footer';
+    return 'unknown';
+  };
+
   /**
    * Handles click events via delegation.
    * @param {Event} event - The click event
    */
   const handleClick = (event) => {
+    // Phone click tracking (tel: links)
+    const phoneLink = event.target.closest('a[href^="tel:"]');
+    if (phoneLink) {
+      const location = getPhoneLocation(phoneLink);
+      analytics.logPhoneClick(location);
+      // Don't prevent default - let the call go through
+      return;
+    }
+
     const target = event.target.closest('[data-page], [data-action], [data-slide], [data-slide-delta]');
     if (!target) return;
+
+    // CTA secondary link tracking (before navigation)
+    if (target.classList.contains('cta-secondary')) {
+      analytics.logCtaClick('secondary', target.dataset.page);
+    }
 
     // Navigation: data-page
     if (target.dataset.page) {
@@ -414,6 +589,25 @@ function EventController(nav, slideShow) {
   const init = () => {
     document.addEventListener('click', handleClick);
     document.addEventListener('keydown', handleKeydown);
+
+    // Contact form submission tracking
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', () => {
+        // Attach UTM parameters as hidden fields
+        tracker.attachToForm(contactForm);
+
+        // Log form submission with relevant data
+        const formData = {
+          child_age: contactForm.querySelector('[name="child_age"]')?.value || '',
+          has_phone: !!contactForm.querySelector('[name="phone"]')?.value,
+          has_start_date: !!contactForm.querySelector('[name="start_date"]')?.value
+        };
+        analytics.logFormSubmit(formData);
+
+        // Don't prevent default - let Formspree handle submission
+      });
+    }
   };
 
   /**
@@ -490,10 +684,14 @@ function DevTests() {
 // Initialization
 // =============================================================================
 
+// Initialize UTM tracking first (captures params from URL immediately)
+const tracker = Tracker();
+tracker.init();
+
 const analytics = Analytics();
 const nav = LoggedNavigator(Nav(), analytics);
 const slideShow = SlideShow();
-const eventController = EventController(nav, slideShow);
+const eventController = EventController(nav, slideShow, analytics, tracker);
 
 // Initialize event delegation
 eventController.init();
@@ -503,6 +701,15 @@ slideShow.goToSlide(1);
 
 // Log initial page view
 analytics.logPageView('landing-page');
+
+// Log campaign landing if UTM parameters present
+const utmData = tracker.get();
+if (Object.keys(utmData).length > 0 && typeof gtag === 'function') {
+  gtag('event', 'campaign_landing', {
+    event_category: 'marketing',
+    ...utmData
+  });
+}
 
 // Run dev tests in local environment
 DevTests().run();
