@@ -154,48 +154,7 @@ function Analytics() {
     });
   };
 
-  /**
-   * Logs a phone click conversion event.
-   * @param {string} location - Where the click occurred (header, cta_primary, contact_page, mobile_sticky, footer)
-   */
-  const logPhoneClick = (location) => {
-    if (!isGtagAvailable()) return;
 
-    gtag('event', 'phone_click', {
-      event_category: 'conversion',
-      event_label: location,
-      phone_number: '832-810-2722'
-    });
-  };
-
-  /**
-   * Logs a form submission conversion event.
-   * @param {Object} formData - Form field data to include
-   */
-  const logFormSubmit = (formData = {}) => {
-    if (!isGtagAvailable()) return;
-
-    gtag('event', 'form_submit', {
-      event_category: 'conversion',
-      form_name: 'contact_form',
-      ...formData
-    });
-  };
-
-  /**
-   * Logs a CTA click event.
-   * @param {string} ctaType - Type of CTA (primary, secondary)
-   * @param {string} destination - Where the CTA leads
-   */
-  const logCtaClick = (ctaType, destination) => {
-    if (!isGtagAvailable()) return;
-
-    gtag('event', 'cta_click', {
-      event_category: 'engagement',
-      cta_type: ctaType,
-      destination: destination
-    });
-  };
 
   return Object.freeze({
     logPageView,
