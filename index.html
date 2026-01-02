@@ -220,7 +220,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-ECF5TYR1E2');
+    // Disable automatic pageview - we handle SPA navigation manually in script.js
+    gtag('config', 'G-ECF5TYR1E2', { send_page_view: false });
   </script>
 
 </head>
@@ -229,7 +230,7 @@
   <header class="landing-page-container">
     <div class="header-top">
       <div id="logo" class="logo">
-        <a href="index.html" title="Go to our Home Page">
+        <a href="#" data-page="home-page" title="Go to our Home Page">
           <img src="Heading.png" alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
         </a>
       </div>
@@ -611,7 +612,7 @@
                 <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
               </div>
               <div class="contact-text-box-text">
-                susan@honeybeeandfriends.buzz
+                <a href="mailto:susan@honeybeeandfriends.buzz">susan@honeybeeandfriends.buzz</a>
               </div>
             </div>
 
@@ -707,7 +708,7 @@
           <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
         </div>
         <div class="footer-text">
-          susan@honeybeeandfriends.buzz<br>
+          <a href="mailto:susan@honeybeeandfriends.buzz">susan@honeybeeandfriends.buzz</a><br>
         </div>
       </div>
 
