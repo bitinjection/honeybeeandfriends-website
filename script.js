@@ -511,6 +511,37 @@ function SlideShow(options = {}) {
  */
 function EventController(nav, slideShow, analytics, tracker) {
   /**
+   * Toggles the expanded state of a testimonial review.
+   * @param {Element} button - The toggle button that was clicked
+   */
+  const toggleReview = (button) => {
+    const card = button.closest('.testimonial-card');
+    if (!card) return;
+
+    const preview = card.querySelector('.testimonial-preview');
+    const full = card.querySelector('.testimonial-full');
+    const toggleText = button.querySelector('.toggle-text');
+
+    if (!full) return; // Short review without full text
+
+    const isExpanded = card.classList.contains('expanded');
+
+    if (isExpanded) {
+      // Collapse
+      card.classList.remove('expanded');
+      show(preview);
+      hide(full);
+      if (toggleText) toggleText.textContent = 'Read full review';
+    } else {
+      // Expand
+      card.classList.add('expanded');
+      hide(preview);
+      show(full);
+      if (toggleText) toggleText.textContent = 'Show less';
+    }
+  };
+
+  /**
    * Determines the location context for a phone link click.
    * @param {Element} link - The clicked tel: link
    * @returns {string} Location identifier for analytics
@@ -579,7 +610,8 @@ function EventController(nav, slideShow, analytics, tracker) {
       const actions = {
         'show-sidebar': () => nav.showSideBar(),
         'hide-sidebar': () => nav.hideSideBar(),
-        'toggle-sidebar': () => nav.toggleSideBar()
+        'toggle-sidebar': () => nav.toggleSideBar(),
+        'toggle-review': () => toggleReview(target)
       };
       const action = actions[target.dataset.action];
       if (action) action();
