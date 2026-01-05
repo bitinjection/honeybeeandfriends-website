@@ -391,6 +391,15 @@ function SlideShow(options = {}) {
   const getDots = () => document.querySelectorAll(CONFIG.selectors.dot);
   const getLiveRegion = () => document.querySelector(CONFIG.selectors.liveRegion);
 
+  // Check if slideshow elements exist - if not, return a no-op interface
+  if (getSlides().length === 0) {
+    return Object.freeze({
+      advance: () => {},
+      goToSlide: () => {},
+      destroy: () => {}
+    });
+  }
+
   /**
    * Updates ARIA attributes on dots for accessibility.
    * @param {number} activeIndex - The currently active slide index
@@ -733,12 +742,12 @@ function DevTests() {
       test: () => document.querySelectorAll('[data-page]').length > 0
     },
     {
-      name: 'slideshow elements exist',
-      test: () => document.querySelectorAll(CONFIG.selectors.slide).length > 0
+      name: 'video tour exists',
+      test: () => document.querySelector('.video-tour-container') !== null
     },
     {
-      name: 'slideshow has ARIA attributes',
-      test: () => document.querySelector('[aria-roledescription="carousel"]') !== null
+      name: 'video tour has ARIA attributes',
+      test: () => document.querySelector('.video-tour-container[role="region"]') !== null
     },
     {
       name: 'active nav uses aria-current',
