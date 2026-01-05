@@ -932,6 +932,111 @@ h2.title,
   to {filter: brightness(100%)}
 }
 
+/* =============================================================================
+   Video Tour Styles
+   ============================================================================= */
+
+.video-tour-container {
+  background-color: rgb(120, 37, 2);
+  padding-bottom: var(--space-lg);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-lg) 0;
+}
+
+/* Responsive 16:9 aspect ratio container */
+.video-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  right: var(--space-lg);
+  width: calc(100% - var(--space-lg) * 2);
+  height: calc(100% - var(--space-lg));
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.video-description {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+}
+
+.video-description h3 {
+  font-family: luck;
+  font-size: var(--text-2xl);
+  color: white;
+  margin: 0 0 var(--space-sm) 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.video-description p {
+  font-family: Jua;
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Video responsive adjustments */
+@media screen and (max-width: 800px) {
+  .video-wrapper {
+    padding: var(--space-md) var(--space-md) 0;
+  }
+
+  .video-wrapper iframe {
+    top: var(--space-md);
+    left: var(--space-md);
+    right: var(--space-md);
+    width: calc(100% - var(--space-md) * 2);
+    height: calc(100% - var(--space-md));
+  }
+
+  .video-description {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .video-description h3 {
+    font-size: var(--text-xl);
+  }
+
+  .video-description p {
+    font-size: var(--text-base);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .video-wrapper {
+    padding: var(--space-sm) var(--space-sm) 0;
+  }
+
+  .video-wrapper iframe {
+    top: var(--space-sm);
+    left: var(--space-sm);
+    right: var(--space-sm);
+    width: calc(100% - var(--space-sm) * 2);
+    height: calc(100% - var(--space-sm));
+    border-radius: var(--radius-sm);
+  }
+
+  .video-description {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
 @media screen and (min-width: 1077px) {
 .gallery {
     margin: 0 auto;
