@@ -27,6 +27,7 @@ const CONFIG = Object.freeze({
   pagePaths: {
     'home-page': '/home',
     'about-background': '/about',
+    'philosophy-background': '/philosophy',
     'gallery-background': '/gallery',
     'schedule-background': '/schedule',
     'menu-background': '/menu',
@@ -688,12 +689,13 @@ function EventController(nav, slideShow, analytics, tracker) {
     document.addEventListener('keydown', handleKeydown);
 
     // Contact form submission tracking
+    // TEMPORARILY DISABLED - Form hidden pending AWS Lambda migration
+    // TODO: Re-enable when AWS SES/Lambda contact form is deployed
+    // See: aws-contact-form-setup.txt for implementation instructions
+    /*
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', () => {
-        // Attach UTM parameters as hidden fields
-        tracker.attachToForm(contactForm);
-
         // Log form submission with relevant data
         const formData = {
           child_age: contactForm.querySelector('[name="child_age"]')?.value || '',
@@ -701,10 +703,9 @@ function EventController(nav, slideShow, analytics, tracker) {
           has_start_date: !!contactForm.querySelector('[name="start_date"]')?.value
         };
         analytics.logFormSubmit(formData);
-
-        // Don't prevent default - let Formspree handle submission
       });
     }
+    */
   };
 
   /**
