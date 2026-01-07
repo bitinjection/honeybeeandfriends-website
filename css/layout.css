@@ -1,0 +1,393 @@
+/**
+ * layout.css - Structural Layout
+ *
+ * Contains: Header, navigation, footer, main content containers,
+ * and layout-related responsive styles.
+ */
+
+/* =============================================================================
+   Header / Logo
+   ============================================================================= */
+
+.landing-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  align-self: center;
+  padding: 5px 10px 0 10px;
+  max-width: 700px;
+}
+
+.logo img {
+  width: 100%;
+  margin-bottom: -7px;
+}
+
+/* Header Phone Number Styles */
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-phone {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.header-phone a {
+  text-decoration: none;
+  color: #333;
+  font-family: Jua;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.header-phone a:hover {
+  transform: scale(1.05);
+}
+
+.phone-icon {
+  font-size: 24px;
+}
+
+.phone-text {
+  font-size: 18px;
+  color: #555;
+}
+
+.phone-number-display {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-green-dark);
+}
+
+/* =============================================================================
+   Navigation
+   ============================================================================= */
+
+.nav-bar {
+  display: flex;
+  height: 65px;
+  background-color: var(--color-nav-brown);
+  position: relative;
+}
+
+#side-nav-bar {
+  flex-direction: column;
+  height: fit-content;
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+}
+
+/* When sidebar is visible, use flex display */
+#side-nav-bar:not(.is-hidden) {
+  display: flex;
+}
+
+.side-content {
+  font-family: Jua;
+  font-size: larger;
+  padding: 10px;
+  width: 100%;
+}
+
+.hamburger {
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  padding-left: 10px;
+  display: none;
+}
+
+.hamburger img {
+  height: 100%;
+}
+
+.base-frame {
+  font-family: Jua;
+  flex-grow: 1;
+  font-size: larger;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  min-width: 140px;
+}
+
+.base-frame:hover {
+  height: 60px;
+}
+
+/* Nav active state using aria-current for accessibility and styling
+   This replaces the old .nav-active class approach */
+[data-page][aria-current="page"] {
+  border-bottom: 4px solid rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+
+.side-content[aria-current="page"] {
+  background-color: rgba(255,255,255,0.3);
+  border-left: 4px solid rgba(0,0,0,0.3);
+  border-bottom: none;
+}
+
+/* Nav tabs use consolidated 5-color palette */
+.blue-frame, #home-side-content {
+  background-color: var(--color-green-tab);
+}
+
+.red-frame, #about-side-content {
+  background-color: var(--color-coral-tab);
+}
+
+.yellow-frame, #gallery-side-content {
+  background-color: var(--color-gold-tab);
+}
+
+.green-frame, #daily-side-content {
+  background-color: var(--color-green-tab);
+}
+
+.purple-frame, #menu-side-content {
+  background-color: var(--color-lavender-tab);
+}
+
+.indigo-frame, #pricing-side-content {
+  background-color: var(--color-sky-tab);
+}
+
+.violet-frame, #contact-side-content {
+  background-color: var(--color-coral-tab);
+}
+
+/* Nav tab color for philosophy */
+.sky-frame, #philosophy-side-content {
+  background-color: var(--color-sky-tab);
+}
+
+/* Responsive nav text for Pricing button */
+.nav-text-short {
+  display: none;
+}
+
+@media screen and (max-width: 1181px) and (min-width: 1077px) {
+  .nav-text-full {
+    display: none;
+  }
+  .nav-text-short {
+    display: inline;
+  }
+}
+
+#filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+  filter: opacity(50%);
+}
+
+/* When filter is visible, use block display */
+#filter:not(.is-hidden) {
+  display: block;
+}
+
+.page-separator {
+  background-color: var(--color-nav-brown);
+  height: 15px;
+}
+
+/* =============================================================================
+   Main Content Containers
+   ============================================================================= */
+
+.middle-content {
+  background-color: var(--color-green-light);
+  min-height: 80vh;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.middle-content-sub-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--color-bg);
+  margin: var(--space-2xl);
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.text-box {
+  background-color: var(--color-bg);
+  max-width: 500px;
+  padding: var(--space-md);
+  margin: var(--space-xl);
+  border-radius: var(--radius-sm);
+  font-family: Jua;
+  min-height: 250px;
+}
+
+.text-box h1,
+.text-box h2 {
+  font-family: luck;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.text-box div {
+  padding-bottom: 32px;
+  font-size: x-large;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.box1 {
+  background-color: var(--color-lavender-light);
+}
+
+.box2 {
+  background-color: var(--color-green-light);
+}
+
+.box3 {
+  background-color: var(--color-gold-light);
+}
+
+.cute-image {
+  padding: 10px;
+  margin: 50px;
+  align-self: center;
+}
+
+.cute-image img {
+  width: 300px;
+}
+
+/* =============================================================================
+   Footer
+   ============================================================================= */
+
+.bottom-content {
+  background-color: var(--color-footer-dark);
+  display: flex;
+  justify-content: space-between;
+  min-height: 300px;
+  height: 100%;
+}
+
+.icon {
+  font-size: large;
+  float: left;
+  width: 30px;
+  margin-right: 10px;
+  padding: 0px 5px 0px 5px;
+}
+
+.icon-img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.envelope {
+  padding: 0px;
+}
+
+.footer-title {
+  margin-bottom: 18px;
+  font-size: large;
+}
+
+.footer-contact-info {
+  margin-bottom: 12px;
+}
+
+.footer-text {
+  display: inline-block;
+  line-height: 25px;
+}
+
+.footer-text a {
+  color: red;
+}
+
+.footer-item {
+  color: white;
+  justify-self: left;
+  font-family: sans-serif;
+  padding-top: 48px;
+}
+
+/* =============================================================================
+   Layout Responsive Styles
+   ============================================================================= */
+
+@media screen and (max-width: 1077px) {
+  .nav-bar {
+    height: 50px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .middle-content-sub-container {
+    margin: 20px;
+  }
+
+  .base-frame {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottom-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust header phone for mobile */
+  .header-phone {
+    padding: 5px 10px;
+  }
+
+  .phone-text {
+    display: none;
+  }
+
+  .phone-number-display {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .middle-content-sub-container {
+    margin: 0px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .header-phone {
+    padding: 5px;
+  }
+}

@@ -26,7 +26,11 @@
   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="index.css">
+  <!-- CSS Split: base (foundation) → layout (structure) → components (UI) → pages (sections) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Open Graph / Facebook -->
@@ -46,7 +50,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Honeybee and Friends Daycare | The Woodlands TX">
-  <meta name="twitter:description" content="Licensed home daycare in The Woodlands serving Harper's Landing, Conroe & Shenandoah. Ages 12 months to 5 years.">
+  <meta name="twitter:description" content="Licensed home daycare in The Woodlands serving Harper's Landing, Conroe & Shenandoah. Ages 12 months to 4 years.">
   <meta name="twitter:image" content="https://honeybeeandfriends.buzz/facebook-advert.png">
 
   <!-- Local Business Structured Data (Schema.org) -->
@@ -57,7 +61,7 @@
     "@id": "https://honeybeeandfriends.buzz/#childcare",
     "name": "Honeybee and Friends Daycare",
     "alternateName": "Honeybee & Friends Daycare",
-    "description": "State-certified home daycare in The Woodlands, Texas providing quality childcare for children ages 12 months to 5 years. Our structured curriculum includes educational activities, creative play, and nutritious meals in a safe, nurturing environment.",
+    "description": "State-certified home daycare in The Woodlands, Texas providing quality childcare for children ages 12 months to 4 years. Our structured curriculum includes educational activities, creative play, and nutritious meals in a safe, nurturing environment.",
     "url": "https://honeybeeandfriends.buzz/",
     "logo": "https://honeybeeandfriends.buzz/Heading.png",
     "image": [
@@ -117,7 +121,7 @@
       "@type": "Person",
       "name": "Susan Kralevich",
       "jobTitle": "Owner and Director",
-      "description": "Texas A&M graduate with BA in Social Work, EC-12 Special Needs teaching certificate, CPR certified, and experienced CNA."
+      "description": "Texas A&M graduate with a BA in Social Work, an EC-12 Special Needs teaching certificate, CPR certification, and CNA experience."
     },
     "foundingDate": "2022",
     "numberOfEmployees": {
@@ -183,7 +187,7 @@
         "name": "What ages do you accept at Honeybee and Friends Daycare?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We accept children 12 months to 5 years old."
+          "text": "We accept children 12 months to 4 years old."
         }
       },
       {
@@ -231,7 +235,7 @@
     <div class="header-top">
       <div id="logo" class="logo">
         <a href="#" data-page="home-page" title="Go to our Home Page">
-          <img src="Heading.png" alt=" Honeybee and Friends Daycare. The Woodlands, TX, 77385">
+          <img src="Heading.png" alt="Honeybee and Friends Daycare - The Woodlands, TX 77385">
         </a>
       </div>
       <div class="header-phone">
@@ -311,8 +315,8 @@
             <h2>Fun with Friends</h2>
             <div>
               Families in Harper's Landing and The Woodlands trust us to prepare their children for elementary school
-              through social interaction, education, art and play. Our comfortable, nurturing environment helps
-              little ones learn cooperate and to love learning.
+              through social interaction, education, art, and play. Our comfortable, nurturing environment helps
+              little ones learn to cooperate and love learning.
             </div>
           </div>
 
@@ -325,8 +329,8 @@
           <div class="text-box box2">
             <h2>State Certified</h2>
             <div>
-               Your child's safety and comfort are our number one concern. As an official Texas listed home daycare serving
-               The Woodlands, Conroe, and surrounding communities, we comply with all state regulations.
+               Your child's safety and comfort are our number one concern. Honeybee and Friends Daycare is an official Texas listed home daycare serving
+               The Woodlands, Conroe, and surrounding communities, and we comply with all state regulations.
             </div>
           </div>
 
@@ -339,7 +343,7 @@
           <div class="text-box box3">
             <h2>Experienced, Certified Care</h2>
             <div>
-              With years of experience as a mother and educator in Montgomery County, Miss K guides, nurtures and
+              With years of experience as a mother and educator in Montgomery County, Miss K guides, nurtures, and
               encourages your child to grow through creative play, teamwork, and independent learning.
             </div>
           </div>
@@ -351,13 +355,13 @@
       </div>
 
       <!-- Testimonials Section -->
-      <div id="testimonials-container" class="testimonials-section">
+      <div id="testimonials-container" class="section-panel section-panel--sky testimonials-section">
         <h2 class="testimonials-title">What Parents Say</h2>
         <p class="testimonials-subtitle">Read reviews from real families</p>
 
         <div class="testimonials-grid">
           <!-- Review 1: M S -->
-          <div class="testimonial-card">
+          <div class="card testimonial-card">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testimonial-quote">
               "Her caring nature and teaching experience is definitely what sealed the deal for me to choose her over other child care centers."
@@ -366,7 +370,7 @@
               I had a bad experience at a well known preschool in the area and I happened to find this center via Google. Ms. K has been amazing! She has been working closely with my 2 year old and making sure she is learning and having fun while being well cared for...
             </div>
             <div class="testimonial-full is-hidden">
-              I had a bad experience at a well known preschool in the area and I happened to find this center via Google. Ms. K has been amazing! She has been working closely with my 2 year old and making sure she is learning and having fun while being well cared for. My 5 yo spent a week as well with Ms.K and he loved it and had plenty of learning activities to work on before school started. I compared her curriculum, schedule and her overall service with other well known preschools/child care centers in the area and Ms.K offers a very competitive rate. Her caring nature and teaching experience is definitely what sealed the deal for me to choose her over other child care centers in the area.
+              I had a bad experience at a well known preschool in the area and I happened to find this center via Google. Ms. K has been amazing! She has been working closely with my 2 year old and making sure she is learning and having fun while being well cared for. My 5 yo spent a week as well with Ms. K and he loved it and had plenty of learning activities to work on before school started. I compared her curriculum, schedule and her overall service with other well known preschools/child care centers in the area and Ms. K offers a very competitive rate. Her caring nature and teaching experience is definitely what sealed the deal for me to choose her over other child care centers in the area.
             </div>
             <button class="testimonial-toggle" type="button" data-action="toggle-review">
               <span class="toggle-text">Read full review</span>
@@ -380,7 +384,7 @@
           </div>
 
           <!-- Review 2: Nancy Camacho -->
-          <div class="testimonial-card">
+          <div class="card testimonial-card">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testimonial-quote">
               "She's the only one I would trust again with my little one."
@@ -396,7 +400,7 @@
           </div>
 
           <!-- Review 3: Safiyyah Dent -->
-          <div class="testimonial-card">
+          <div class="card testimonial-card">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testimonial-quote">
               "Even now, as our daughter attends Pre-K, she still talks about Ms. K and frequently asks to go visit her."
@@ -427,7 +431,7 @@ We are beyond grateful for the time our daughter spent at Honeybee and Friends C
           </div>
 
           <!-- Review 4: Estrella Harris -->
-          <div class="testimonial-card">
+          <div class="card testimonial-card">
             <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote class="testimonial-quote">
               "I'm able to go to work with peace of mind, without the anxiety of wondering if my child is safe or cared for."
@@ -464,11 +468,11 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
       </div>
 
       <!-- Philosophy Teaser -->
-      <div class="philosophy-teaser">
+      <div class="section-panel section-panel--gold philosophy-teaser">
         <div class="teaser-icon">&#127891;</div>
         <h3>Wondering About Academics vs. Play?</h3>
         <p>
-          Many parents ask us to teach children to read books or write words at young anges. The research on early childhood development might surprise you, and it's why we do things differently.
+          Many parents ask us to teach children to read books or write words at young ages. The research on early childhood development might surprise you, and it's why we do things differently.
         </p>
         <a href="#" class="teaser-link" data-page="philosophy-background">
           Learn about our approach <span class="teaser-arrow">&#8594;</span>
@@ -477,15 +481,15 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
     </section>
 
     <section id="about-background" class="middle-content is-hidden" aria-labelledby="about-title">
-      <div id="about-container" class="middle-content-sub-container">
+      <div id="about-container" class="section-panel section-panel--coral middle-content-sub-container">
         <div class="about-text-box">
           <h2 id="about-title" class="title">About the Daycare</h2>
           <div class="about-content">
             <div class="flex-row">
               <div class="about-text">
                 <h3 class="about-heading">An Educated and Experienced Teacher and Mother</h3>
-                Ms. Susan earned a BA in Social Work from Texas A&M and a teaching
-                certificate in EC-12 Special Needs. She also is CPR certified, and is an experienced CNA. She
+                Ms. K earned a BA in Social Work from Texas A&M and a teaching
+                certificate in EC-12 Special Needs. She is also CPR certified, and is an experienced CNA. She
                 has worked in the school system and enjoys spending time with her own children.
               </div>
               <div class="about-text">
@@ -502,11 +506,11 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
                 a safe and stable environment for your child to grow.
               </div>
               <div class="about-text">
-                <div class="about-heading">Proudly Serving The Woodlands Community</div>
+                <h3 class="about-heading">Proudly Serving The Woodlands Community</h3>
                 Honeybee and Friends Daycare is located in the Harper's Landing neighborhood
                 and proudly serves families throughout The Woodlands, south Conroe, Shenandoah,
                 and Oakridge. Our small, home-based setting offers a neighborhood feel that
-                cannot be found at larger daycare centers.
+                you won't find at larger daycare centers.
               </div>
             </div>
             <div class="about-image">
@@ -518,7 +522,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
     </section>
 
     <section id="philosophy-background" class="middle-content is-hidden" aria-labelledby="philosophy-title">
-      <div id="philosophy-container" class="middle-content-sub-container">
+      <div id="philosophy-container" class="section-panel section-panel--gold middle-content-sub-container">
         <h2 id="philosophy-title" class="title">Our Approach to Early Learning</h2>
 
         <div class="philosophy-intro">
@@ -542,7 +546,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
               actually develop. Before age 5, children's brains are wired for exploration, social connection,
               and hands-on discovery—not worksheets and memorization.
             </p>
-            <div class="research-highlight">
+            <div class="card research-highlight">
               <span class="highlight-icon">&#128218;</span>
               <div class="highlight-text">
                 Studies consistently show that children from play-based programs <strong>outperform</strong>
@@ -559,7 +563,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
               are designed to learn. Here's what your child experiences with us:
             </p>
             <div class="philosophy-grid">
-              <div class="philosophy-card">
+              <div class="card philosophy-card">
                 <div class="card-icon">&#129309;</div>
                 <h4>Social Skills</h4>
                 <p>
@@ -567,15 +571,15 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
                   and cooperate—skills that predict success far better than early reading.
                 </p>
               </div>
-              <div class="philosophy-card">
+              <div class="card philosophy-card">
                 <div class="card-icon">&#129528;</div>
                 <h4>Problem Solving</h4>
                 <p>
-                  Building with blocks, figuring out puzzles, and creative play develop critical
+                  Building with blocks, solving puzzles, and engaging in creative play develop critical
                   thinking skills that transfer to all future learning.
                 </p>
               </div>
-              <div class="philosophy-card">
+              <div class="card philosophy-card">
                 <div class="card-icon">&#127932;</div>
                 <h4>Early Literacy & Math</h4>
                 <p>
@@ -583,7 +587,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
                   of reading and math—without the stress of formal instruction.
                 </p>
               </div>
-              <div class="philosophy-card">
+              <div class="card philosophy-card">
                 <div class="card-icon">&#128150;</div>
                 <h4>Emotional Regulation</h4>
                 <p>
@@ -614,7 +618,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
           </div>
 
           <!-- Common Questions Section -->
-          <div class="philosophy-section philosophy-faq">
+          <div class="card philosophy-section philosophy-faq">
             <h3 class="philosophy-heading">Questions Parents Ask</h3>
 
             <div class="faq-item">
@@ -641,9 +645,9 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             <div class="faq-item">
               <h4 class="faq-question">"This sounds like you just let kids play all day."</h4>
               <p class="faq-answer">
-                Our days are intentionally structured with a balance of activities—check our
+                We intentionally structure our days with a balance of activities—check our
                 <a href="#" data-page="schedule-background">daily schedule</a>. The difference is that
-                our activities are designed around how young children actually learn, not how adults
+                we design our activities around how young children actually learn, not how adults
                 think they should learn. There's a big difference between unstructured chaos and
                 purposeful, guided play.
               </p>
@@ -652,7 +656,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
 
           <!-- CTA Section -->
           <div class="philosophy-cta">
-            <h3>See It In Action</h3>
+            <h3>See It in Action</h3>
             <p>
               The best way to understand our approach is to visit. Schedule a tour and watch
               how children learn, grow, and thrive at Honeybee and Friends.
@@ -662,12 +666,47 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             </a>
           </div>
 
+          <!-- Sources Section -->
+          <div class="card philosophy-sources">
+            <h4>Research &amp; Sources</h4>
+            <p class="sources-intro">
+              We ground our approach in decades of research from leading medical and educational organizations:
+            </p>
+            <ul class="sources-list">
+              <li>
+                <strong>American Academy of Pediatrics</strong> (2018).
+                <a href="https://publications.aap.org/pediatrics/article/142/3/e20182058/38649/The-Power-of-Play-A-Pediatric-Role-in-Enhancing" target="_blank" rel="noopener">"The Power of Play: A Pediatric Role in Enhancing Development in Young Children"</a>
+                — Clinical report on how play promotes healthy brain development and social-emotional skills.
+              </li>
+              <li>
+                <strong>National Association for the Education of Young Children</strong> (2020).
+                <a href="https://www.naeyc.org/resources/position-statements/dap/contents" target="_blank" rel="noopener">"Developmentally Appropriate Practice"</a>
+                — Position statement on effective early childhood education practices.
+              </li>
+              <li>
+                <strong>Marcon, R.A.</strong> (2002). "Moving Up the Grades: Relationship between Preschool Model and Later School Success."
+                <em>Early Childhood Research &amp; Practice</em>, 4(1).
+                — Longitudinal study showing play-based preschool children outperformed academic-focused peers by fourth grade.
+              </li>
+              <li>
+                <strong>Stipek, D. et al.</strong> (1995). "Effects of Different Instructional Approaches on Young Children's Achievement and Motivation."
+                <em>Child Development</em>, 66(1), 209-223.
+                — Research comparing child-centered vs. didactic preschool approaches.
+              </li>
+              <li>
+                <strong>Texas Health and Human Services</strong>.
+                <a href="https://www.hhs.texas.gov/providers/protective-services-providers/child-care-regulation" target="_blank" rel="noopener">Child Care Regulation</a>
+                — State requirements for licensed and registered child care providers in Texas.
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section id="gallery-background" class="middle-content is-hidden" aria-labelledby="gallery-title">
-      <div class="middle-content-sub-container">
+      <div class="section-panel section-panel--gold middle-content-sub-container">
         <h2 id="gallery-title" class="title gallery-title">Daycare Photo Gallery</h2>
         <div class="gallery">
           <img src="gallery/thumbnails/house-front.jpg" loading="lazy" alt="Honeybee and Friends Daycare home in Harper's Landing">
@@ -683,17 +722,17 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
           <img src="gallery/thumbnails/IMG-0644.jpg" loading="lazy" alt="Image of the large daycare room from another angle">
           <img src="gallery/thumbnails/IMG-0645.jpg" loading="lazy" alt="Image of a toy shelf">
           <img src="gallery/thumbnails/IMG-0646.jpg" loading="lazy" alt="Image of a shelf with worksheets">
-          <img src="gallery/thumbnails/IMG-0649.jpg" loading="lazy" alt="Image of a book shelf and bench">
+          <img src="gallery/thumbnails/IMG-0649.jpg" loading="lazy" alt="Image of a bookshelf and bench">
           <img src="gallery/thumbnails/IMG-0650.jpg" loading="lazy" alt="Image of an indoor bounce house">
           <img src="gallery/thumbnails/IMG-0651.jpg" loading="lazy" alt="Image of the second daycare room">
           <img src="gallery/thumbnails/IMG-0652.jpg" loading="lazy" alt="Image of cubbies, a whiteboard, and a TV">
           <img src="gallery/thumbnails/IMG-0653.jpg" loading="lazy" alt="Image of play stations">
           <img src="gallery/thumbnails/IMG-0654.jpg" loading="lazy" alt="Image of an indoor play house and calendar">
-          <img src="gallery/thumbnails/IMG-0656.jpg" loading="lazy" alt="Image of a ballpit and bear chair">
+          <img src="gallery/thumbnails/IMG-0656.jpg" loading="lazy" alt="Image of a ball pit and bear chair">
           <img src="gallery/thumbnails/IMG-0657.jpg" loading="lazy" alt="Image of a caterpillar made of paper plates">
-          <img src="gallery/thumbnails/IMG-0659.jpg" loading="lazy" alt="Image of swingset outside">
-          <img src="gallery/thumbnails/IMG_0074.jpg" loading="lazy" alt="Image of a ball-pit and tube.">
-          <img src="gallery/thumbnails/IMG_0081.jpg" loading="lazy" alt="Image of a ball-pit and tube">
+          <img src="gallery/thumbnails/IMG-0659.jpg" loading="lazy" alt="Image of swing set outside">
+          <img src="gallery/thumbnails/IMG_0074.jpg" loading="lazy" alt="Image of a ball pit and tube.">
+          <img src="gallery/thumbnails/IMG_0081.jpg" loading="lazy" alt="Image of a ball pit and tube">
         </div>
       </div>
     </section>
@@ -703,83 +742,83 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
         <div class="schedule-title-border">
           <h2 id="schedule-title" class="title">Daily Schedule</h2>
         </div>
-        <div class="daycare-schedule-container">
+        <div class="section-panel section-panel--green daycare-schedule-container">
           <table class="daycare-schedule">
             <tr>
               <th>Time</th>
               <th>Activity</th>
             </tr>
             <tr>
-              <td>7:00am</td>
+              <td>7:00 AM</td>
               <td>Arrival / Wash hands / Breakfast</td>
             </tr>
             <tr>
-              <td>8:00am</td>
+              <td>8:00 AM</td>
               <td>Small Groups (Math)</td>
             </tr>
             <tr>
-              <td>8:30am</td>
+              <td>8:30 AM</td>
               <td>Group Play (Social Interaction)</td>
             </tr>
             <tr>
-              <td>9:00am</td>
-              <td>Gym Style Play</td>
+              <td>9:00 AM</td>
+              <td>Gym-Style Play</td>
             </tr>
             <tr>
-              <td>9:30am</td>
+              <td>9:30 AM</td>
               <td>Snack</td>
             </tr>
             <tr>
-              <td>10:00am</td>
-              <td>Music Time (Nursery Rhymes, ABC's, 123's)</td>
+              <td>10:00 AM</td>
+              <td>Music Time (Nursery Rhymes, ABCs, 123s)</td>
             </tr>
             <tr>
-              <td>10:30am</td>
+              <td>10:30 AM</td>
               <td>Small Groups (English)</td>
             </tr>
             <tr>
-              <td>11:00am</td>
+              <td>11:00 AM</td>
               <td>Group Play (Social Interaction)</td>
             </tr>
             <tr>
-              <td>11:30am</td>
+              <td>11:30 AM</td>
               <td>Wash Hands / Lunch</td>
             </tr>
             <tr>
-              <td>12:00pm</td>
+              <td>12:00 PM</td>
               <td>Nap Time</td>
             </tr>
 
             <tr>
-              <td>2:00pm</td>
+              <td>2:00 PM</td>
               <td>Snack</td>
             </tr>
             <tr>
-              <td>2:30pm</td>
+              <td>2:30 PM</td>
               <td>Story Time / Creative Work</td>
             </tr>
             <tr>
-              <td>3:00pm</td>
+              <td>3:00 PM</td>
               <td>Small Groups (Science)</td>
             </tr>
             <tr>
-              <td>3:30pm</td>
+              <td>3:30 PM</td>
               <td>Snack</td>
             </tr>
             <tr>
-              <td>4:00pm</td>
+              <td>4:00 PM</td>
               <td>Group Play (Social Interaction)</td>
             </tr>
             <tr>
-              <td>4:30pm</td>
-              <td>Gym Style Play</td>
+              <td>4:30 PM</td>
+              <td>Gym-Style Play</td>
             </tr>
             <tr>
-              <td>5:00pm</td>
+              <td>5:00 PM</td>
               <td>Parent Pickup</td>
             </tr>
             <tr>
-              <td>5:30pm</td>
+              <td>5:30 PM</td>
               <td>Closing Time</td>
             </tr>
           </table>
@@ -792,44 +831,44 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
     </section>
 
     <section id="menu-background" class="middle-content is-hidden" aria-labelledby="menu-title">
-      <div id="menu-container" class="middle-content-sub-container">
+      <div id="menu-container" class="section-panel section-panel--lavender middle-content-sub-container">
         <div class="calendar">
           <h2 id="menu-title" class="food-title">Our Menu</h2>
-          <div class="food-note">All meals and snacks will be served with Milk, Orange Juice, Apple Juice, or Grape Juice.</div>
+          <div class="food-note">We serve all meals and snacks with milk, orange juice, apple juice, or grape juice.</div>
           <div class="food-note">We regularly update this menu.</div>
           <table class="food-menu">
             <tr><th>Breakfast</th></tr>
-            <tr><td>Pancakes, Strawberries and Milk</td></tr>
-            <tr><td>French Toast with Bananas and Milk</td></tr>
-            <tr><td>Oatmeal with Fruit</td></tr>
-            <tr><td>Cereal with Jelly Toast</td></tr>
-            <tr><td>Eggs with cheese, Peaches, Jelly Toast, and Milk</td></tr>
-            <tr><td>Eggs, Muffins, Mixed fruit, and Milk</td></tr>
+            <tr><td>Pancakes, strawberries, and milk</td></tr>
+            <tr><td>French toast with bananas and milk</td></tr>
+            <tr><td>Oatmeal with fruit</td></tr>
+            <tr><td>Cereal with jelly toast</td></tr>
+            <tr><td>Eggs with cheese, peaches, jelly toast, and milk</td></tr>
+            <tr><td>Eggs, muffins, mixed fruit, and milk</td></tr>
           </table>
           <table class="food-menu">
             <tr><th>Lunch</th></tr>
-            <tr><td>Spaghetti / Garlic Bread / Mixed Vegetables</td></tr>
-            <tr><td>Macaroni and Cheese with Broccoli</td></tr>
-            <tr><td>Chicken Fried Rice with Carrots</td></tr>
-            <tr><td>Grilled Cheese with Soup</td></tr>
-            <tr><td>Chicken Nuggets, French Fries and Mixed Vegetables</td></tr>
-            <tr><td>Baked Chicken with Tater Tots and Green Beans</td></tr>
+            <tr><td>Spaghetti, garlic bread, and mixed vegetables</td></tr>
+            <tr><td>Macaroni and cheese with broccoli</td></tr>
+            <tr><td>Chicken fried rice with carrots</td></tr>
+            <tr><td>Grilled cheese with soup</td></tr>
+            <tr><td>Chicken nuggets, french fries, and mixed vegetables</td></tr>
+            <tr><td>Baked chicken with tater tots and green beans</td></tr>
             <tr><td>Pizza</td></tr>
           </table>
           <table class="food-menu">
-            <tr><th>Healthy Snacks</th></tr>
-            <tr><td>Crackers and Sliced Cheese</td></tr>
-            <tr><td>Cinnamon Applesauce</td></tr>
-            <tr><td>Mixed Fruit with Yogurt (or Parfait)</td></tr>
-            <tr><td>Peaches with Yogurt</td></tr>
+            <tr><th>Snacks</th></tr>
+            <tr><td>Crackers and sliced cheese</td></tr>
+            <tr><td>Cinnamon applesauce</td></tr>
+            <tr><td>Mixed fruit with yogurt (or parfait)</td></tr>
+            <tr><td>Peaches with yogurt</td></tr>
             <tr><td>Strawberries</td></tr>
             <tr><td>Pudding</td></tr>
-            <tr><td>Nutrigrain Bars</td></tr>
+            <tr><td>Nutri-Grain Bars</td></tr>
             <tr><td>Grapes</td></tr>
             <tr><td>Muffins</td></tr>
             <tr><td>Bananas</td></tr>
-            <tr><td>Belvita Snacks</td></tr>
-            <tr><td>Carrots and Ranch</td></tr>
+            <tr><td>belVita Snacks</td></tr>
+            <tr><td>Carrots and ranch</td></tr>
             <tr><td>Cucumbers</td></tr>
             <tr><td>Watermelon</td></tr>
           </table>
@@ -838,20 +877,20 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
     </section>
 
     <section id="pricing-background" class="middle-content is-hidden" aria-label="Pricing">
-      <div id="pricing-container" class="middle-content-sub-container">
+      <div id="pricing-container" class="section-panel section-panel--sky middle-content-sub-container">
         <div id="pricing-text-box">
           Honeybee and Friends Daycare offers quality childcare in The Woodlands area at $300 per week.<br>
           <br>
-          Pricing is non-negotiable, and full time enrollment is all we are able to currently offer.<br>
+          Pricing is non-negotiable, and full-time enrollment is all we are currently able to offer.<br>
           However, if you need other accommodations, please feel free to reach out.<br>
           <br>
-          Payments may be made via credit card, debit card, or check, and are due weekly by Monday.<br>
+          You may pay via credit card, debit card, or check. Payments are due weekly by Monday.<br>
         </div>
       </div>
     </section>
 
     <section id="contact-background" class="middle-content is-hidden" aria-label="Contact">
-      <div id="contact-container" class="middle-content-sub-container">
+      <div id="contact-container" class="section-panel section-panel--coral middle-content-sub-container">
         <div id="contact-text-box">
           <div>
             <div>
@@ -860,8 +899,8 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
               </div>
               <div class="contact-text-box-text">
                 Harper's Landing<br>
-                The Woodlands, TX, 77385<br>
-                Please contact us for our exact address
+                The Woodlands, TX 77385<br>
+                Please contact us for our exact address.
               </div>
             </div>
 
@@ -949,7 +988,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
     </section>
   </main>
 
-  <div class="page-seperator"></div>
+  <div class="page-separator"></div>
 
   <footer class="bottom-content">
     <div class="image"></div>
@@ -963,7 +1002,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
         <div class="footer-text">
           Harper's Landing<br>
           The Woodlands, TX 77385<br>
-          Please contact for our exact address
+          Please contact us for our exact address.
         </div>
       </div>
 

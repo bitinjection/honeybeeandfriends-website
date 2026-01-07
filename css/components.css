@@ -1,0 +1,714 @@
+/**
+ * components.css - Reusable UI Components
+ *
+ * Contains: CTA buttons/badges, slideshow, video tour, contact form,
+ * testimonials, mobile CTA bar.
+ */
+
+/* =============================================================================
+   CTA Components
+   ============================================================================= */
+
+.cta-container {
+  background-color: var(--color-green-light);
+  margin: var(--space-xl);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.above-fold-cta {
+  text-align: center;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: white;
+  font-family: Jua;
+  font-size: var(--text-xl);
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+/* Enhanced CTA Box Styles */
+.cta-badge {
+  display: inline-block;
+  background-color: var(--color-green-dark);
+  color: white;
+  font-family: Jua;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.cta-subtext {
+  font-family: Jua;
+  font-size: large;
+  color: #444;
+  margin: 0 0 20px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-phone-icon {
+  margin-right: 8px;
+}
+
+.cta-alt {
+  font-family: Jua;
+  font-size: 16px;
+  color: #666;
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* Secondary CTA link */
+.cta-secondary {
+  display: block;
+  font-family: Jua;
+  font-size: large;
+  color: var(--color-green-dark);
+  text-decoration: none;
+  margin-top: 16px;
+  transition: color 0.2s;
+}
+
+.cta-secondary:hover {
+  color: var(--color-green-darker);
+  text-decoration: underline;
+}
+
+/* CTA Responsive */
+@media screen and (max-width: 460px) {
+  .cta-badge {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .cta-subtext {
+    font-size: medium;
+    padding: 0 10px;
+  }
+}
+
+/* =============================================================================
+   Slideshow
+   ============================================================================= */
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 20px;
+  background-color: var(--color-nav-brown);
+}
+
+/* Slides - visibility controlled by .is-hidden class */
+/* Using data attribute selector for JS/CSS decoupling */
+[data-slideshow="slide"] {
+  position: relative;
+}
+
+/* When slide is visible, use block display */
+[data-slideshow="slide"]:not(.is-hidden) {
+  display: block;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 8px 24px;
+  font-family: Jua;
+  font-size: large;
+  border-radius: 4px;
+}
+
+[data-slideshow="slide"] img {
+  max-height: 400px;
+  object-fit: cover;
+  background-color: black;
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Slideshow dots container */
+.slideshow-dots {
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* The dots/bullets/indicators */
+/* Using data attribute selector for JS/CSS decoupling */
+[data-slideshow="dot"] {
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.6s ease;
+}
+
+/* Active state via aria-selected (set by JS) - no shared class name needed */
+[data-slideshow="dot"][aria-selected="true"],
+[data-slideshow="dot"]:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {filter: brightness(0%)}
+  to {filter: brightness(100%)}
+}
+
+/* =============================================================================
+   Video Tour
+   ============================================================================= */
+
+.video-tour-container {
+  background-color: var(--color-nav-brown);
+  padding-bottom: var(--space-lg);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-lg) 0;
+}
+
+/* Responsive 16:9 aspect ratio container */
+.video-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  right: var(--space-lg);
+  width: calc(100% - var(--space-lg) * 2);
+  height: calc(100% - var(--space-lg));
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.video-description {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+}
+
+.video-description h3 {
+  font-family: luck;
+  font-size: var(--text-2xl);
+  color: white;
+  margin: 0 0 var(--space-sm) 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.video-description p {
+  font-family: Jua;
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Video responsive adjustments */
+@media screen and (max-width: 800px) {
+  .video-wrapper {
+    padding: var(--space-md) var(--space-md) 0;
+  }
+
+  .video-wrapper iframe {
+    top: var(--space-md);
+    left: var(--space-md);
+    right: var(--space-md);
+    width: calc(100% - var(--space-md) * 2);
+    height: calc(100% - var(--space-md));
+  }
+
+  .video-description {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .video-description h3 {
+    font-size: var(--text-xl);
+  }
+
+  .video-description p {
+    font-size: var(--text-base);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .video-wrapper {
+    padding: var(--space-sm) var(--space-sm) 0;
+  }
+
+  .video-wrapper iframe {
+    top: var(--space-sm);
+    left: var(--space-sm);
+    right: var(--space-sm);
+    width: calc(100% - var(--space-sm) * 2);
+    height: calc(100% - var(--space-sm));
+    border-radius: var(--radius-sm);
+  }
+
+  .video-description {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* =============================================================================
+   Contact Form
+   ============================================================================= */
+
+.contact-form-wrapper {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin: var(--space-xl) var(--space-2xl);
+}
+
+.contact-form-title {
+  font-family: luck;
+  font-size: var(--text-3xl);
+  text-align: center;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--color-text);
+  font-weight: normal;
+}
+
+.contact-form-subtitle {
+  font-family: Jua;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg) 0;
+  font-size: var(--text-lg);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: Jua;
+  font-size: large;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group .required {
+  color: #e74c3c;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: Jua;
+  font-size: medium;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-green-dark);
+  box-shadow: 0 0 0 3px rgba(74, 155, 74, 0.2);
+  background-color: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit-btn {
+  display: block;
+  width: 100%;
+  padding: var(--space-md) var(--space-xl);
+  background-color: var(--color-green);
+  color: white;
+  font-family: Jua;
+  font-size: var(--text-xl);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+  background-color: var(--color-green-darker);
+}
+
+.form-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Contact form responsive styles */
+@media screen and (max-width: 800px) {
+  .contact-form-wrapper {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-row .form-group {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .contact-form-wrapper {
+    margin: 10px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .contact-form-title {
+    font-size: x-large;
+  }
+
+  .contact-form-subtitle {
+    font-size: medium;
+  }
+
+  .form-group label {
+    font-size: medium;
+  }
+
+  .form-submit-btn {
+    font-size: large;
+    padding: 14px 24px;
+  }
+}
+
+/* =============================================================================
+   Testimonials
+   ============================================================================= */
+
+/* .testimonials-section uses .section-panel--sky */
+.testimonials-section {
+  margin: var(--space-2xl);
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: var(--radius-lg);
+}
+
+.testimonials-title {
+  font-family: luck;
+  font-size: var(--text-3xl);
+  text-align: center;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--color-text);
+  font-weight: normal;
+}
+
+.testimonials-subtitle {
+  font-family: Jua;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-xl) 0;
+  font-size: var(--text-lg);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-stars {
+  color: #fbbc04;
+  font-size: var(--text-xl);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.testimonial-quote {
+  font-family: Georgia, serif;
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0 0 var(--space-md) 0;
+  padding: 0;
+  border-left: 3px solid var(--color-sky);
+  padding-left: var(--space-md);
+}
+
+.testimonial-preview,
+.testimonial-full {
+  font-family: Jua;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-full {
+  white-space: pre-line;
+}
+
+.testimonial-toggle {
+  font-family: Jua;
+  font-size: var(--text-sm);
+  color: var(--color-sky);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  transition: color 0.2s;
+}
+
+.testimonial-toggle:hover {
+  color: var(--color-sky-dark);
+}
+
+.toggle-icon {
+  font-size: 10px;
+  transition: transform 0.3s;
+}
+
+.testimonial-card.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.testimonial-attribution {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.google-logo {
+  flex-shrink: 0;
+}
+
+.reviewer-name {
+  font-family: Jua;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-weight: normal;
+}
+
+.review-date {
+  font-family: Jua;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-left: auto;
+}
+
+.testimonials-cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.review-link {
+  font-family: Jua;
+  font-size: var(--text-base);
+  color: var(--color-sky);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.review-link:hover {
+  color: var(--color-sky-dark);
+  text-decoration: underline;
+}
+
+/* Testimonials responsive - tablet */
+@media screen and (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-section {
+    margin: var(--space-lg);
+    padding: var(--space-lg);
+  }
+}
+
+/* Testimonials responsive - mobile */
+@media screen and (max-width: 460px) {
+  .testimonials-section {
+    margin: var(--space-sm);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  .testimonials-title {
+    font-size: var(--text-2xl);
+  }
+
+  .testimonials-subtitle {
+    font-size: var(--text-base);
+  }
+
+  .testimonial-card {
+    padding: var(--space-md);
+  }
+
+  .testimonial-quote {
+    font-size: var(--text-base);
+  }
+}
+
+/* =============================================================================
+   Sticky Mobile CTA Bar
+   ============================================================================= */
+
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-green-dark);
+  padding: 12px 20px;
+  text-align: center;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.mobile-cta-bar a {
+  text-decoration: none;
+  color: white;
+  font-family: Jua;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mobile-cta-icon {
+  font-size: 22px;
+}
+
+.mobile-cta-text {
+  font-weight: bold;
+}
+
+/* Show mobile CTA bar only on smaller screens */
+@media screen and (max-width: 800px) {
+  .mobile-cta-bar {
+    display: block;
+  }
+
+  /* Add padding to footer so it's not hidden behind sticky bar */
+  .bottom-content {
+    padding-bottom: 60px;
+  }
+}
