@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "Jua";
+  font-family: Jua;
   src: url(Jua-Regular.ttf);
 }
 
 @font-face {
-  font-family: "luck";
+  font-family: luck;
   src: url(luck.ttf);
 }
 
@@ -47,6 +47,15 @@
   --color-text-muted: #666;
   --color-border: #ddd;
   --color-bg: #fafafa;
+
+  /* Accent Colors (CTA hover states, focus rings) */
+  --color-green-dark: #4a9b4a;
+  --color-green-darker: #3d8a3d;
+  --color-sky-dark: #1976d2;
+
+  /* Chrome Colors (navigation, footer) */
+  --color-nav-brown: rgb(120, 37, 2);
+  --color-footer-dark: rgb(0, 33, 43);
 
   /* ----------------------------------------
      Spacing Scale (8px base)
@@ -97,6 +106,8 @@ body {
   padding: 0;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  background: linear-gradient(180deg, rgb(235 248 252) 0%, white 19%);
+  background-color: rgb(240, 250, 255);
 }
 
 img {
@@ -173,7 +184,7 @@ button {
 }
 
 button:focus-visible {
-  outline: 3px solid #4a9b4a;
+  outline: 3px solid var(--color-green-dark);
   outline-offset: 2px;
 }
 
@@ -200,30 +211,52 @@ button:focus-visible {
   display: none !important;
 }
 
-/* For elements that need flex display when visible */
-.is-hidden-flex {
-  display: none !important;
+/* =============================================================================
+   Component Utilities
+   ============================================================================= */
+
+/* Card: white background panel with padding and rounded corners */
+.card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
 }
 
-.is-visible-flex {
-  display: flex !important;
+/* Section Panel: themed content section with light background and accent border
+   Use color modifiers to apply theme: --green, --coral, --gold, --sky, --lavender */
+.section-panel {
+  border-left: 5px solid var(--section-color);
+  background-color: var(--section-bg);
 }
 
-/* For elements that need block display when visible */
-.is-visible-block {
-  display: block !important;
+.section-panel--green {
+  --section-color: var(--color-green);
+  --section-bg: var(--color-green-light);
+}
+
+.section-panel--coral {
+  --section-color: var(--color-coral);
+  --section-bg: var(--color-coral-light);
+}
+
+.section-panel--gold {
+  --section-color: var(--color-gold);
+  --section-bg: var(--color-gold-light);
+}
+
+.section-panel--sky {
+  --section-color: var(--color-sky);
+  --section-bg: var(--color-sky-light);
+}
+
+.section-panel--lavender {
+  --section-color: var(--color-lavender);
+  --section-bg: var(--color-lavender-light);
 }
 
 /* Semantic HTML5 elements */
 header, nav, main, section, footer {
   display: block;
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
-  background: linear-gradient(180deg, rgb(235 248 252) 0%, white 19%);
-  background-color: rgb(240, 250, 255);
 }
 
 .landing-page-container {
@@ -245,7 +278,7 @@ body {
 .nav-bar {
   display: flex;
   height: 65px;
-  background-color: rgb(120, 37, 2);
+  background-color: var(--color-nav-brown);
   position: relative;
 }
 
@@ -282,7 +315,7 @@ body {
 }
 
 .base-frame {
-  font-family: "Jua";
+  font-family: Jua;
   flex-grow: 1;
   font-size: larger;
   padding: 10px;
@@ -370,17 +403,8 @@ body {
   display: block;
 }
 
-.phone-number {
-  align-self: center;
-  text-align: right;
-  padding-right: 32px;
-  font-size: 24px;
-  color: black;
-  font-family: 'Jua', sans-serif;
-}
-
-.page-seperator {
-  background-color: rgb(120, 37, 2);
+.page-separator {
+  background-color: var(--color-nav-brown);
   height: 15px;
 }
 
@@ -411,7 +435,7 @@ body {
   padding: var(--space-md);
   margin: var(--space-xl);
   border-radius: var(--radius-sm);
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   min-height: 250px;
 }
 
@@ -441,13 +465,6 @@ body {
   background-color: var(--color-gold-light);
 }
 
-.page-text-box {
-  font-family: 'Jua', sans-serif;
-  height: auto;
-  width: 80%;
-  align-self: center;
-}
-
 .cute-image {
   padding: 10px;
   margin: 50px;
@@ -459,7 +476,7 @@ body {
 }
 
 .bottom-content {
-  background-color: rgb(0, 33, 43);
+  background-color: var(--color-footer-dark);
   display: flex;
   justify-content: space-between;
   min-height: 300px;
@@ -530,11 +547,6 @@ body {
   background-color: #e8d4a8;
 }
 
-.schedule-title-border > div {
-  background-color: #fff5dc;
-
-}
-
 .schedule-footer {
   margin: 32px;
 }
@@ -561,20 +573,16 @@ body {
   background-color: white;
 }
 
+/* .daycare-schedule-container uses .section-panel--green */
 .daycare-schedule-container {
   font-family: Jua;
-  background-color: var(--color-green-light);
-  border-left: 5px solid var(--color-green);
 }
 
 .asterisk {
   color: red;
 }
 
-#about-container {
-  background-color: var(--color-coral-light);
-  border-left: 5px solid var(--color-coral);
-}
+/* #about-container uses .section-panel--coral */
 
 .about-content {
   display: flex;
@@ -629,7 +637,7 @@ h3.about-heading,
 }
 
 .about-text {
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   height: auto;
   align-self: center;
   font-size: x-large;
@@ -641,18 +649,13 @@ h3.about-heading,
   background-color: var(--color-gold-light);
 }
 
-#gallery-background .middle-content-sub-container {
-  border-left: 5px solid var(--color-gold);
-}
+/* Gallery container uses .section-panel--gold */
 
 #schedule-background {
   background-color: var(--color-green-light);
 }
 
-#menu-container {
-  background-color: var(--color-lavender-light);
-  border-left: 5px solid var(--color-lavender);
-}
+/* #menu-container uses .section-panel--lavender */
 
 #menu-background {
   background-color: var(--color-lavender-light);
@@ -707,10 +710,7 @@ h2.food-title,
   background-color: var(--color-coral-light);
 }
 
-#pricing-container {
-  background-color: var(--color-sky-light);
-  border-left: 5px solid var(--color-sky);
-}
+/* #pricing-container uses .section-panel--sky */
 
 #pricing-text-box {
   font-family: Jua;
@@ -721,10 +721,7 @@ h2.food-title,
   justify-content: space-around;
 }
 
-#contact-container {
-  background-color: var(--color-coral-light);
-  border-left: 5px solid var(--color-coral);
-}
+/* #contact-container uses .section-panel--coral */
 
 #contact-text-box {
   font-family: Jua;
@@ -754,7 +751,7 @@ h2.food-title,
 
 h2.title,
 .title {
-  font-family: "luck";
+  font-family: luck;
   margin-top: var(--space-xl);
   margin-bottom: var(--space-2xl);
   font-size: var(--text-4xl);
@@ -793,27 +790,6 @@ h2.title,
 }
 
 @media screen and (max-width: 800px) {
-
-  .nav-bar {
-    height: 50px;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .middle-content-sub-container {
-    margin: 20px;
-  }
-
-  .base-frame {
-    display: none;
-  }
-
-  .about-text-box {
-    margin: 20px;
-  }
-
   .bottom-content {
     flex-direction: column;
     align-items: center;
@@ -837,7 +813,7 @@ h2.title,
   width: 100%;
   position: relative;
   padding-bottom: 20px;
-  background-color: rgb(120, 37, 2);
+  background-color: var(--color-nav-brown);
 }
 
 /* Slides - visibility controlled by .is-hidden class */
@@ -937,7 +913,7 @@ h2.title,
    ============================================================================= */
 
 .video-tour-container {
-  background-color: rgb(120, 37, 2);
+  background-color: var(--color-nav-brown);
   padding-bottom: var(--space-lg);
 }
 
@@ -1064,14 +1040,6 @@ h2.title,
   }
 }
 
-.gallery-image {
-  width: 100%;
-}
-
-.gallery-image img {
-  width: 100%;
-}
-
 /* Header Phone Number Styles */
 .header-top {
   display: flex;
@@ -1089,7 +1057,7 @@ h2.title,
 .header-phone a {
   text-decoration: none;
   color: #333;
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1112,15 +1080,15 @@ h2.title,
 .phone-number-display {
   font-size: 24px;
   font-weight: bold;
-  color: #4a9b4a;
+  color: var(--color-green-dark);
 }
 
 /* Enhanced CTA Box Styles */
 .cta-badge {
   display: inline-block;
-  background-color: #4a9b4a;
+  background-color: var(--color-green-dark);
   color: white;
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   font-size: 14px;
   padding: 6px 16px;
   border-radius: 20px;
@@ -1129,7 +1097,7 @@ h2.title,
 }
 
 .cta-subtext {
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   font-size: large;
   color: #444;
   margin: 0 0 20px 0;
@@ -1143,7 +1111,7 @@ h2.title,
 }
 
 .cta-alt {
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   font-size: 16px;
   color: #666;
   margin-top: 16px;
@@ -1158,7 +1126,7 @@ h2.title,
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #4a9b4a;
+  background-color: var(--color-green-dark);
   padding: 12px 20px;
   text-align: center;
   box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
@@ -1168,7 +1136,7 @@ h2.title,
 .mobile-cta-bar a {
   text-decoration: none;
   color: white;
-  font-family: 'Jua', sans-serif;
+  font-family: Jua;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -1307,7 +1275,7 @@ h2.title,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #4a9b4a;
+  border-color: var(--color-green-dark);
   box-shadow: 0 0 0 3px rgba(74, 155, 74, 0.2);
   background-color: #fff;
 }
@@ -1348,7 +1316,7 @@ h2.title,
 .form-submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-btn-hover);
-  background-color: #3d8a3d;
+  background-color: var(--color-green-darker);
 }
 
 .form-submit-btn:active {
@@ -1361,14 +1329,14 @@ h2.title,
   display: block;
   font-family: Jua;
   font-size: large;
-  color: #4a9b4a;
+  color: var(--color-green-dark);
   text-decoration: none;
   margin-top: 16px;
   transition: color 0.2s;
 }
 
 .cta-secondary:hover {
-  color: #3d8a3d;
+  color: var(--color-green-darker);
   text-decoration: underline;
 }
 
@@ -1418,12 +1386,11 @@ h2.title,
    Testimonials Section
    ============================================================================= */
 
+/* .testimonials-section uses .section-panel--sky */
 .testimonials-section {
-  background-color: var(--color-sky-light);
   margin: var(--space-2xl);
   padding: var(--space-xl) var(--space-2xl);
   border-radius: var(--radius-lg);
-  border-left: 5px solid var(--color-sky);
 }
 
 .testimonials-title {
@@ -1452,9 +1419,6 @@ h2.title,
 }
 
 .testimonial-card {
-  background-color: white;
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
 }
@@ -1507,7 +1471,7 @@ h2.title,
 }
 
 .testimonial-toggle:hover {
-  color: #1976d2;
+  color: var(--color-sky-dark);
 }
 
 .toggle-icon {
@@ -1517,10 +1481,6 @@ h2.title,
 
 .testimonial-card.expanded .toggle-icon {
   transform: rotate(180deg);
-}
-
-.testimonial-card.expanded .toggle-text {
-  /* Text changes via JS */
 }
 
 .testimonial-attribution {
@@ -1564,7 +1524,7 @@ h2.title,
 }
 
 .review-link:hover {
-  color: #1976d2;
+  color: var(--color-sky-dark);
   text-decoration: underline;
 }
 
@@ -1613,9 +1573,8 @@ h2.title,
   background-color: var(--color-gold-light);
 }
 
+/* #philosophy-container uses .section-panel--gold */
 #philosophy-container {
-  background-color: var(--color-gold-light);
-  border-left: 5px solid var(--color-gold);
   padding: var(--space-lg) var(--space-2xl) var(--space-2xl);
 }
 
@@ -1668,9 +1627,6 @@ h2.title,
   display: flex;
   align-items: flex-start;
   gap: var(--space-md);
-  background-color: white;
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
   margin-top: var(--space-lg);
   border-left: 4px solid var(--color-gold);
 }
@@ -1696,9 +1652,6 @@ h2.title,
 }
 
 .philosophy-card {
-  background-color: white;
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
   text-align: center;
 }
 
@@ -1740,8 +1693,6 @@ h2.title,
 
 /* FAQ Section */
 .philosophy-faq {
-  background-color: white;
-  border-radius: var(--radius-md);
   padding: var(--space-xl);
 }
 
@@ -1807,6 +1758,58 @@ h2.title,
   margin-bottom: var(--space-lg);
 }
 
+/* Philosophy Sources */
+.philosophy-sources {
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.philosophy-sources h4 {
+  font-family: luck;
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.sources-intro {
+  font-family: Jua;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.sources-list {
+  font-family: Jua;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+  padding-left: var(--space-lg);
+}
+
+.sources-list li {
+  margin-bottom: var(--space-md);
+}
+
+.sources-list li:last-child {
+  margin-bottom: 0;
+}
+
+.sources-list a {
+  color: var(--color-sky);
+  text-decoration: none;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+.sources-list em {
+  font-style: italic;
+}
+
 /* Philosophy responsive - tablet */
 @media screen and (max-width: 900px) {
   .philosophy-grid {
@@ -1858,15 +1861,26 @@ h2.title,
   .philosophy-cta p {
     font-size: var(--text-base);
   }
+
+  .philosophy-sources {
+    padding: var(--space-md);
+  }
+
+  .philosophy-sources h4 {
+    font-size: var(--text-lg);
+  }
+
+  .sources-list {
+    padding-left: var(--space-md);
+  }
 }
 
 /* =============================================================================
    Philosophy Teaser (Home Page)
    ============================================================================= */
 
+/* .philosophy-teaser uses .section-panel--gold */
 .philosophy-teaser {
-  background-color: var(--color-gold-light);
-  border-left: 5px solid var(--color-gold);
   margin: var(--space-2xl);
   padding: var(--space-xl);
   text-align: center;
