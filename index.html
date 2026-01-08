@@ -906,57 +906,17 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
 
     <section id="contact-background" class="middle-content is-hidden" aria-label="Contact">
       <div id="contact-container" class="section-panel section-panel--coral middle-content-sub-container">
-        <div id="contact-text-box">
-          <div>
-            <div>
-              <div class="icon">
-                <img class="icon-img" src="pin.png" alt="Daycare's Address in The Woodlands">
-              </div>
-              <div class="contact-text-box-text">
-                Harper's Landing<br>
-                The Woodlands, TX 77385<br>
-                Please contact us for our exact address.
-              </div>
-            </div>
 
-            <div>
-              <div class="icon envelope">
-                <img class="icon-img" src="envelopeback.png" alt="Daycare's E-mail">
-              </div>
-              <div class="contact-text-box-text">
-                <a href="mailto:susan@honeybeeandfriends.buzz">susan@honeybeeandfriends.buzz</a>
-              </div>
-            </div>
-
-            <div>
-              <div class="icon">
-                <img class="icon-img" src="mobile.png" alt="Daycare's Phone Number">
-              </div>
-              <div class="contact-text-box-text">
-                <a href="tel:832-810-2722">832-810-2722</a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-picture">
-            <img src="house-contact.jpeg" alt="Home Daycare in The Woodlands">
-          </div>
-        </div>
-
-        <!-- Contact Form - TEMPORARILY DISABLED pending AWS Lambda migration
-             TODO: Re-enable when AWS SES/Lambda contact form is deployed
-             See: aws-contact-form-setup.txt for implementation instructions
-        -->
-        <!--
+        <!-- Form First (Hero) -->
         <div id="contact-form-container" class="contact-form-wrapper">
-          <h3 class="contact-form-title">Send Us a Message</h3>
+          <h3 class="contact-form-title">Schedule A Tour or Get In Touch</h3>
           <p class="contact-form-subtitle">We'll get back to you within 24 hours</p>
 
-          <form id="contact-form" action="[LAMBDA-URL-HERE]" method="POST" class="contact-form">
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <form id="contact-form" action="https://formspree.io/f/xdaordej" method="POST" class="contact-form">
             <div class="form-row">
               <div class="form-group">
                 <label for="parent-name">Your Name <span class="required">*</span></label>
-                <input type="text" id="parent-name" name="name" required placeholder="Enter your name">
+                <input type="text" id="parent-name" name="parent_name" required placeholder="Enter your name">
               </div>
 
               <div class="form-group">
@@ -998,7 +958,23 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             <button type="submit" class="form-submit-btn">Send Message</button>
           </form>
         </div>
-        -->
+
+        <!-- Contact Info Bar (Compact) -->
+        <div class="contact-info-bar">
+          <a href="tel:832-810-2722" class="contact-info-item">
+            <img src="mobile.png" alt="" class="contact-info-icon">
+            <span>832-810-2722</span>
+          </a>
+          <a href="mailto:susan@honeybeeandfriends.buzz" class="contact-info-item">
+            <img src="envelopeback.png" alt="" class="contact-info-icon">
+            <span>susan@honeybeeandfriends.buzz</span>
+          </a>
+          <span class="contact-info-item">
+            <img src="pin.png" alt="" class="contact-info-icon">
+            <span>Harper's Landing, The Woodlands</span>
+          </span>
+        </div>
+
       </div>
     </section>
   </main>
