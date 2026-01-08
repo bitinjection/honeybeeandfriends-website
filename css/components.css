@@ -483,6 +483,50 @@
 }
 
 /* =============================================================================
+   Contact Info Bar (compact contact details below form)
+   ============================================================================= */
+
+.contact-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  font-family: Jua;
+  font-size: var(--text-base);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a.contact-info-item:hover {
+  text-decoration: underline;
+}
+
+.contact-info-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Contact info bar responsive - mobile */
+@media screen and (max-width: 600px) {
+  .contact-info-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+}
+
+/* =============================================================================
    Testimonials
    ============================================================================= */
 
