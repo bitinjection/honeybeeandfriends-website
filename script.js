@@ -867,6 +867,41 @@ function DevTests() {
     {
       name: 'hidden pages use is-hidden class',
       test: () => document.querySelectorAll('.middle-content.is-hidden').length > 0
+    },
+    // Gallery video tests
+    {
+      name: 'gallery section contains video tour',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        return gallery && gallery.querySelector('.video-tour-container') !== null;
+      }
+    },
+    {
+      name: 'gallery video has correct YouTube embed',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        if (!gallery) return false;
+        const iframe = gallery.querySelector('.video-tour-container iframe');
+        return iframe && iframe.src.includes('youtube.com/embed/vlqsKMn97VE');
+      }
+    },
+    {
+      name: 'gallery video has ARIA region',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        if (!gallery) return false;
+        const video = gallery.querySelector('.video-tour-container');
+        return video && video.getAttribute('role') === 'region';
+      }
+    },
+    {
+      name: 'gallery still contains image thumbnails',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        if (!gallery) return false;
+        const images = gallery.querySelectorAll('.gallery img');
+        return images.length > 0;
+      }
     }
   ];
 
