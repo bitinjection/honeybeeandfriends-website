@@ -11,12 +11,16 @@
 
 @font-face {
   font-family: Jua;
-  src: url(../Jua-Regular.ttf);
+  src: url(../Jua-Regular.woff2) format('woff2'),
+       url(../Jua-Regular.ttf) format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: luck;
-  src: url(../luck.ttf);
+  src: url(../luck.woff2) format('woff2'),
+       url(../luck.ttf) format('truetype');
+  font-display: swap;
 }
 
 /* =============================================================================
