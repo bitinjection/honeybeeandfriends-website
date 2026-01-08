@@ -488,6 +488,18 @@ h3.about-heading,
   margin: 0;
 }
 
+/* Video tour in gallery section - override colors for gold theme */
+#gallery-background .video-tour-container {
+  background-color: transparent;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+}
+
+#gallery-background .video-description h3,
+#gallery-background .video-description p {
+  color: var(--color-text);
+}
+
 @media screen and (min-width: 1077px) {
   .gallery {
     margin: 0 auto;

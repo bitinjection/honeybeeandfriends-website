@@ -989,6 +989,48 @@ function DevTests() {
     },
 
     // =========================================================================
+    // Gallery - video tour in gallery section
+    // =========================================================================
+    {
+      category: 'Gallery',
+      name: 'DOM: gallery section contains video tour',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        return gallery && gallery.querySelector('.video-tour-container') !== null;
+      }
+    },
+    {
+      category: 'Gallery',
+      name: 'DOM: gallery video has correct YouTube embed',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        if (!gallery) return false;
+        const iframe = gallery.querySelector('.video-tour-container iframe');
+        return iframe && iframe.src.includes('youtube.com/embed/vlqsKMn97VE');
+      }
+    },
+    {
+      category: 'Gallery',
+      name: 'Accessibility: gallery video has ARIA region',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        if (!gallery) return false;
+        const video = gallery.querySelector('.video-tour-container');
+        return video && video.getAttribute('role') === 'region';
+      }
+    },
+    {
+      category: 'Gallery',
+      name: 'DOM: gallery still contains image thumbnails',
+      test: () => {
+        const gallery = document.getElementById('gallery-background');
+        if (!gallery) return false;
+        const images = gallery.querySelectorAll('.gallery img');
+        return images.length > 0;
+      }
+    },
+
+    // =========================================================================
     // Contact Section - form-first hero layout
     // =========================================================================
     {
