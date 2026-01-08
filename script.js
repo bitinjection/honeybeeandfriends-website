@@ -799,14 +799,9 @@ function EventController(nav, slideShow, analytics, tracker) {
     document.addEventListener('keydown', handleKeydown);
 
     // Contact form submission tracking
-    // TEMPORARILY DISABLED - Form hidden pending AWS Lambda migration
-    // TODO: Re-enable when AWS SES/Lambda contact form is deployed
-    // See: aws-contact-form-setup.txt for implementation instructions
-    /*
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', () => {
-        // Log form submission with relevant data
         const formData = {
           child_age: contactForm.querySelector('[name="child_age"]')?.value || '',
           has_phone: !!contactForm.querySelector('[name="phone"]')?.value,
@@ -815,7 +810,6 @@ function EventController(nav, slideShow, analytics, tracker) {
         analytics.logFormSubmit(formData);
       });
     }
-    */
   };
 
   /**
@@ -837,52 +831,250 @@ function EventController(nav, slideShow, analytics, tracker) {
 // =============================================================================
 
 /**
- * Simple test runner for local development.
+ * Test runner for local development.
+ * Tests are organized by category and named as documentation.
  */
 function DevTests() {
   const isLocalEnvironment = () =>
     CONFIG.localHosts.includes(location.hostname);
 
+  // Helper: create temporary DOM element for testing
+  const createTestElement = (className = '') => {
+    const el = document.createElement('div');
+    if (className) el.className = className;
+    return el;
+  };
+
   const tests = [
+    // =========================================================================
+    // Pure Functions - hashToPageId
+    // =========================================================================
     {
-      name: 'gtag is available',
+      category: 'Pure Functions',
+      name: 'hashToPageId: returns correct pageId for valid hash',
+      test: () => hashToPageId('gallery') === 'gallery-background'
+    },
+    {
+      category: 'Pure Functions',
+      name: 'hashToPageId: returns default page for empty hash',
+      test: () => hashToPageId('') === CONFIG.defaultPage
+    },
+    {
+      category: 'Pure Functions',
+      name: 'hashToPageId: returns default page for unknown hash',
+      test: () => hashToPageId('nonexistent') === CONFIG.defaultPage
+    },
+    {
+      category: 'Pure Functions',
+      name: 'hashToPageId: handles case-insensitive input',
+      test: () => hashToPageId('GALLERY') === 'gallery-background'
+    },
+
+    // =========================================================================
+    // Pure Functions - pageIdToHash
+    // =========================================================================
+    {
+      category: 'Pure Functions',
+      name: 'pageIdToHash: returns correct hash for valid pageId',
+      test: () => pageIdToHash('gallery-background') === 'gallery'
+    },
+    {
+      category: 'Pure Functions',
+      name: 'pageIdToHash: returns "home" for home-page',
+      test: () => pageIdToHash('home-page') === 'home'
+    },
+    {
+      category: 'Pure Functions',
+      name: 'pageIdToHash: returns empty string for unknown pageId',
+      test: () => pageIdToHash('unknown-page') === ''
+    },
+
+    // =========================================================================
+    // Utilities - show, hide, isHidden
+    // =========================================================================
+    {
+      category: 'Utilities',
+      name: 'show: removes is-hidden class from element',
+      test: () => {
+        const el = createTestElement('is-hidden');
+        show(el);
+        return !el.classList.contains('is-hidden');
+      }
+    },
+    {
+      category: 'Utilities',
+      name: 'hide: adds is-hidden class to element',
+      test: () => {
+        const el = createTestElement();
+        hide(el);
+        return el.classList.contains('is-hidden');
+      }
+    },
+    {
+      category: 'Utilities',
+      name: 'isHidden: returns true for hidden element',
+      test: () => {
+        const el = createTestElement('is-hidden');
+        return isHidden(el) === true;
+      }
+    },
+    {
+      category: 'Utilities',
+      name: 'isHidden: returns false for visible element',
+      test: () => {
+        const el = createTestElement();
+        return isHidden(el) === false;
+      }
+    },
+    {
+      category: 'Utilities',
+      name: 'show/hide: handle null element gracefully',
+      test: () => {
+        show(null);
+        hide(null);
+        return true; // No exception thrown
+      }
+    },
+
+    // =========================================================================
+    // CONFIG Validation
+    // =========================================================================
+    {
+      category: 'CONFIG',
+      name: 'CONFIG: all pagePaths have corresponding route',
+      test: () => {
+        const routePageIds = Object.values(CONFIG.routes);
+        const pathPageIds = Object.keys(CONFIG.pagePaths);
+        return pathPageIds.every(id => routePageIds.includes(id));
+      }
+    },
+    {
+      category: 'CONFIG',
+      name: 'CONFIG: routes.home maps to defaultPage',
+      test: () => CONFIG.routes['home'] === CONFIG.defaultPage
+    },
+
+    // =========================================================================
+    // Integration - DOM state checks
+    // =========================================================================
+    {
+      category: 'Integration',
+      name: 'DOM: gtag analytics is available',
       test: () => typeof gtag === 'function'
     },
     {
-      name: 'nav elements exist',
+      category: 'Integration',
+      name: 'DOM: nav elements with data-page exist',
       test: () => document.querySelectorAll('[data-page]').length > 0
     },
     {
-      name: 'video tour exists',
+      category: 'Integration',
+      name: 'DOM: video tour container exists',
       test: () => document.querySelector('.video-tour-container') !== null
     },
     {
-      name: 'video tour has ARIA attributes',
+      category: 'Integration',
+      name: 'DOM: video tour has ARIA role="region"',
       test: () => document.querySelector('.video-tour-container[role="region"]') !== null
     },
     {
-      name: 'active nav uses aria-current',
+      category: 'Integration',
+      name: 'DOM: active nav uses aria-current="page"',
       test: () => document.querySelector('[data-page][aria-current="page"]') !== null
     },
     {
-      name: 'hidden pages use is-hidden class',
+      category: 'Integration',
+      name: 'DOM: hidden pages use is-hidden class',
       test: () => document.querySelectorAll('.middle-content.is-hidden').length > 0
+    },
+
+    // =========================================================================
+    // Contact Section - form-first hero layout
+    // =========================================================================
+    {
+      category: 'Contact Section',
+      name: 'DOM: contact form exists and has Formspree action',
+      test: () => {
+        const form = document.getElementById('contact-form');
+        return form && form.action.includes('formspree.io');
+      }
+    },
+    {
+      category: 'Contact Section',
+      name: 'DOM: contact info bar exists',
+      test: () => document.querySelector('.contact-info-bar') !== null
+    },
+    {
+      category: 'Contact Section',
+      name: 'DOM: phone link in contact bar has tel: href',
+      test: () => {
+        const phoneLink = document.querySelector('.contact-info-bar a[href^="tel:"]');
+        return phoneLink !== null;
+      }
+    },
+    {
+      category: 'Contact Section',
+      name: 'DOM: email link in contact bar has mailto: href',
+      test: () => {
+        const emailLink = document.querySelector('.contact-info-bar a[href^="mailto:"]');
+        return emailLink !== null;
+      }
+    },
+    {
+      category: 'Contact Section',
+      name: 'Accessibility: required form fields have labels',
+      test: () => {
+        const form = document.getElementById('contact-form');
+        if (!form) return false;
+        const inputs = form.querySelectorAll('input[required], select[required]');
+        return Array.from(inputs).every(input => {
+          const label = form.querySelector(`label[for="${input.id}"]`);
+          return label !== null;
+        });
+      }
     }
   ];
 
+  /**
+   * Runs all tests, grouped by category.
+   */
   const run = () => {
     if (!isLocalEnvironment()) return;
 
-    console.log('=== Dev Tests ===');
+    console.log('=== Dev Tests ===\n');
 
-    const results = tests.map(({ name, test }) => {
-      const passed = test();
-      console.log(`${passed ? 'PASS' : 'FAIL'}: ${name}`);
-      return passed;
+    // Group tests by category
+    const categories = [...new Set(tests.map(t => t.category))];
+    let totalPassed = 0;
+    let totalTests = 0;
+
+    categories.forEach(category => {
+      console.log(`${category}:`);
+      const categoryTests = tests.filter(t => t.category === category);
+
+      categoryTests.forEach(({ name, test }) => {
+        totalTests++;
+        let passed = false;
+        try {
+          passed = test();
+        } catch (e) {
+          console.log(`  FAIL: ${name}`);
+          console.log(`        Error: ${e.message}`);
+          return;
+        }
+
+        if (passed) {
+          totalPassed++;
+          console.log(`  PASS: ${name}`);
+        } else {
+          console.log(`  FAIL: ${name}`);
+        }
+      });
+
+      console.log('');
     });
 
-    const passCount = results.filter(Boolean).length;
-    console.log(`=== ${passCount}/${tests.length} tests passed ===`);
+    console.log(`=== ${totalPassed}/${totalTests} tests passed ===`);
   };
 
   return Object.freeze({ run });
