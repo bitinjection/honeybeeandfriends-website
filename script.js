@@ -33,6 +33,18 @@ const CONFIG = Object.freeze({
     'menu-background': '/menu',
     'pricing-background': '/pricing',
     'contact-background': '/contact'
+  },
+  // URL hash to page ID mapping for routing
+  routes: {
+    '': 'home-page',
+    'home': 'home-page',
+    'about': 'about-background',
+    'philosophy': 'philosophy-background',
+    'gallery': 'gallery-background',
+    'schedule': 'schedule-background',
+    'menu': 'menu-background',
+    'pricing': 'pricing-background',
+    'contact': 'contact-background'
   }
 });
 
@@ -62,6 +74,25 @@ const hide = (el) => {
  * @returns {boolean}
  */
 const isHidden = (el) => el && el.classList.contains(CONFIG.classes.hidden);
+
+/**
+ * Converts a URL hash to a page ID.
+ * @param {string} hash - The hash without the # prefix
+ * @returns {string} The corresponding page ID or default page
+ */
+const hashToPageId = (hash) =>
+  CONFIG.routes[hash.toLowerCase()] || CONFIG.defaultPage;
+
+/**
+ * Converts a page ID to a URL hash.
+ * @param {string} pageId - The page identifier
+ * @returns {string} The corresponding hash (without #) or empty string for home
+ */
+const pageIdToHash = (pageId) => {
+  const entry = Object.entries(CONFIG.routes)
+    .find(([hash, id]) => id === pageId && hash !== '');
+  return entry ? entry[0] : '';
+};
 
 // =============================================================================
 // Analytics Module (GA4)
@@ -362,6 +393,85 @@ function LoggedNavigator(navigator, analytics) {
   const swapMiddle = (pageId) => {
     navigator.swapMiddle(pageId);
     analytics.logPageView(pageId);
+  };
+
+  return Object.freeze({
+    swapMiddle,
+    showSideBar: navigator.showSideBar,
+    hideSideBar: navigator.hideSideBar,
+    toggleSideBar: navigator.toggleSideBar
+  });
+}
+
+// =============================================================================
+// Router Module (URL Hash Navigation)
+// =============================================================================
+
+/**
+ * Creates a router that syncs navigation with URL hash.
+ * Enables shareable URLs and browser back/forward support.
+ * @param {Object} navigator - The base Nav instance for page switching
+ */
+function Router(navigator) {
+  /**
+   * Extracts the hash from the current URL (without # prefix).
+   * @returns {string} The current hash or empty string
+   */
+  const getHash = () => window.location.hash.slice(1);
+
+  /**
+   * Navigates to a page and optionally updates the URL.
+   * @param {string} pageId - The page to navigate to
+   * @param {boolean} updateHistory - Whether to push to browser history
+   */
+  const navigate = (pageId, updateHistory = true) => {
+    navigator.swapMiddle(pageId);
+
+    if (updateHistory) {
+      const hash = pageIdToHash(pageId);
+      const newUrl = hash ? `#${hash}` : window.location.pathname;
+      history.pushState({ pageId }, '', newUrl);
+    }
+  };
+
+  /**
+   * Handles browser back/forward navigation.
+   */
+  const handlePopState = () => {
+    const pageId = hashToPageId(getHash());
+    navigate(pageId, false);
+  };
+
+  /**
+   * Initializes the router - sets up event listeners and handles initial URL.
+   */
+  const init = () => {
+    window.addEventListener('popstate', handlePopState);
+
+    // Handle initial URL hash on page load
+    const hash = getHash();
+    if (hash) {
+      const pageId = hashToPageId(hash);
+      if (pageId !== CONFIG.defaultPage) {
+        navigate(pageId, false);
+      }
+    }
+  };
+
+  return Object.freeze({
+    navigate,
+    init
+  });
+}
+
+/**
+ * Decorator that syncs navigation with URL hash.
+ * @param {Object} navigator - The Nav instance to wrap
+ * @param {Object} router - The Router instance to use
+ */
+function RoutedNavigator(navigator, router) {
+  const swapMiddle = (pageId) => {
+    router.navigate(pageId);
   };
 
   return Object.freeze({
@@ -786,19 +896,29 @@ function DevTests() {
 const tracker = Tracker();
 tracker.init();
 
+// Build navigation with decorator chain: Nav → RoutedNavigator → LoggedNavigator
 const analytics = Analytics();
-const nav = LoggedNavigator(Nav(), analytics);
+const baseNav = Nav();
+const router = Router(baseNav);
+const routedNav = RoutedNavigator(baseNav, router);
+const nav = LoggedNavigator(routedNav, analytics);
+
 const slideShow = SlideShow();
 const eventController = EventController(nav, slideShow, analytics, tracker);
 
 // Initialize event delegation
 eventController.init();
 
+// Initialize router (handles URL hash and sets up popstate listener)
+router.init();
+
 // Show first slide (already visible in HTML, but ensures state is synced)
 slideShow.goToSlide(1);
 
-// Log initial page view (matches CONFIG.defaultPage for consistency)
-analytics.logPageView(CONFIG.defaultPage);
+// Log initial page view (router.init may have navigated based on URL hash)
+const initialHash = window.location.hash.slice(1);
+const initialPage = initialHash ? hashToPageId(initialHash) : CONFIG.defaultPage;
+analytics.logPageView(initialPage);
 
 // Log campaign landing if UTM parameters present
 const utmData = tracker.get();
