@@ -288,6 +288,7 @@
 .bottom-content {
   background-color: var(--color-footer-dark);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   min-height: 300px;
   height: 100%;
@@ -333,6 +334,22 @@
   justify-self: left;
   font-family: sans-serif;
   padding-top: 48px;
+}
+
+.footer-licensing {
+  flex-basis: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 11px;
+  padding: 20px 40px 30px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+}
+
+.footer-licensing p {
+  margin: 5px 0;
 }
 
 /* =============================================================================
