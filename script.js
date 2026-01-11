@@ -102,7 +102,7 @@ const pageIdToHash = (pageId) => {
  * Creates an analytics tracker for GA4.
  * Note: gtag is initialized in the HTML head via Google's snippet.
  */
-function Analytics() {
+function Analytics(getUtmData = () => ({})) {
   const isGtagAvailable = () =>
     typeof gtag === 'function';
 
@@ -120,7 +120,8 @@ function Analytics() {
     gtag('event', 'page_view', {
       page_title: pageTitle,
       page_location: window.location.href,
-      page_path: pagePath
+      page_path: pagePath,
+      ...getUtmData()
     });
   };
 
@@ -136,7 +137,8 @@ function Analytics() {
       event_category: 'conversion',
       event_label: location,
       phone_number: '832-810-2722',
-      transport_type: 'beacon'
+      transport_type: 'beacon',
+      ...getUtmData()
     });
   };
 
@@ -151,7 +153,8 @@ function Analytics() {
     gtag('event', 'email_click', {
       event_category: 'conversion',
       event_label: location,
-      transport_type: 'beacon'
+      transport_type: 'beacon',
+      ...getUtmData()
     });
   };
 
@@ -167,6 +170,7 @@ function Analytics() {
       event_category: 'conversion',
       form_name: 'contact_form',
       transport_type: 'beacon',
+      ...getUtmData(),
       ...formData
     });
   };
@@ -1131,7 +1135,7 @@ const tracker = Tracker();
 tracker.init();
 
 // Build navigation with decorator chain: Nav → RoutedNavigator → LoggedNavigator
-const analytics = Analytics();
+const analytics = Analytics(tracker.get);
 const baseNav = Nav();
 const router = Router(baseNav);
 const routedNav = RoutedNavigator(baseNav, router);

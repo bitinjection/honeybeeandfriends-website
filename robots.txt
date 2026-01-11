@@ -1,11 +1,11 @@
 # Robots.txt for Honeybee and Friends Daycare
-# https://honeybeeandfriends.buzz/
+# https://honeybeeandfriends.care/
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://honeybeeandfriends.buzz/sitemap.xml
+Sitemap: https://honeybeeandfriends.care/sitemap.xml
 
 # Crawl-delay (optional, be nice to the server)
 Crawl-delay: 1
