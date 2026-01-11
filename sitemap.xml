@@ -24,7 +24,7 @@
 
   <!-- Homepage (includes all SPA sections) -->
   <url>
-    <loc>https://honeybeeandfriends.buzz/</loc>
+    <loc>https://honeybeeandfriends.care/</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -33,14 +33,14 @@
 
     <!-- Logo -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/Heading.png</image:loc>
+      <image:loc>https://honeybeeandfriends.care/Heading.png</image:loc>
       <image:title>Honeybee and Friends Daycare Logo</image:title>
       <image:caption>Honeybee and Friends Daycare - Licensed home daycare in The Woodlands TX 77385</image:caption>
     </image:image>
 
     <!-- Social Media / Marketing Image -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/facebook-advert.png</image:loc>
+      <image:loc>https://honeybeeandfriends.care/facebook-advert.png</image:loc>
       <image:title>Honeybee and Friends Daycare - The Woodlands TX</image:title>
       <image:caption>Licensed home daycare serving The Woodlands, Conroe, Shenandoah, and Oakridge TX</image:caption>
     </image:image>
@@ -49,14 +49,14 @@
 
     <!-- Daycare House - Front (key for local SEO) -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/house-front.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/house-front.jpg</image:loc>
       <image:title>Honeybee and Friends Daycare Home in Harper's Landing</image:title>
       <image:caption>State-certified home daycare located in Harper's Landing, The Woodlands TX</image:caption>
     </image:image>
 
     <!-- Daycare House - Back/Yard -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/house-back.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/house-back.jpg</image:loc>
       <image:title>Backyard at Honeybee and Friends Daycare</image:title>
       <image:caption>Safe outdoor area for toddlers and preschoolers in The Woodlands</image:caption>
     </image:image>
@@ -65,42 +65,42 @@
 
     <!-- Living Room / Main Learning Space -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/tour-livingroom1.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/tour-livingroom1.jpg</image:loc>
       <image:title>Daycare Living Room - Honeybee and Friends</image:title>
       <image:caption>Comfortable learning environment for children ages 12 months to 4 years</image:caption>
     </image:image>
 
     <!-- Living Room Wall Decor -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/tour-livingroomwall.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/tour-livingroomwall.jpg</image:loc>
       <image:title>Daycare Decorations - Honeybee and Friends</image:title>
       <image:caption>Child-friendly wall decorations and learning materials</image:caption>
     </image:image>
 
     <!-- Living Room and Dining Room View -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/tour-livingroomanddiningroom.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/tour-livingroomanddiningroom.jpg</image:loc>
       <image:title>Open Floor Plan - Honeybee and Friends Daycare</image:title>
       <image:caption>Spacious living and dining areas at our Woodlands home daycare</image:caption>
     </image:image>
 
     <!-- Dining Area -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/tour-diningroom.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/tour-diningroom.jpg</image:loc>
       <image:title>Daycare Dining Room - Honeybee and Friends</image:title>
       <image:caption>Dining area where nutritious meals are served daily</image:caption>
     </image:image>
 
     <!-- Cubbies / Organization -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/tour-cubbies.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/tour-cubbies.jpg</image:loc>
       <image:title>Children's Cubbies at Honeybee and Friends Daycare</image:title>
       <image:caption>Organized storage cubbies for each child's belongings</image:caption>
     </image:image>
 
     <!-- Indoor Playroom -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/IMG-0642.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/IMG-0642.jpg</image:loc>
       <image:title>Daycare Playroom at Honeybee and Friends</image:title>
       <image:caption>Bright, spacious playroom for learning and play activities</image:caption>
     </image:image>
@@ -109,14 +109,14 @@
 
     <!-- Outdoor Play Equipment -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/IMG-0659.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/IMG-0659.jpg</image:loc>
       <image:title>Swing Set at Honeybee and Friends Daycare</image:title>
       <image:caption>Outdoor swing set for physical activity and fun</image:caption>
     </image:image>
 
     <!-- Bounce House Activity -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/zakariyya-poking-head-bounce-house.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/zakariyya-poking-head-bounce-house.jpg</image:loc>
       <image:title>Bounce House Fun at Honeybee and Friends Daycare</image:title>
       <image:caption>Children enjoying bounce house activities at our Woodlands daycare</image:caption>
     </image:image>
@@ -125,77 +125,77 @@
 
     <!-- Children at Activity Table -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-4kidsattable.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-4kidsattable.jpg</image:loc>
       <image:title>Children at Activity Table - Honeybee and Friends Daycare</image:title>
       <image:caption>Children engaged in learning activities at The Woodlands home daycare</image:caption>
     </image:image>
 
     <!-- Children Playing Together Indoors -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-4kidsinhouse.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-4kidsinhouse.jpg</image:loc>
       <image:title>Children Playing Together at Honeybee and Friends</image:title>
       <image:caption>Social play and interaction at our home daycare in The Woodlands</image:caption>
     </image:image>
 
     <!-- Art Activities with Dot Markers -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-3kidsdotmarkers.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-3kidsdotmarkers.jpg</image:loc>
       <image:title>Art Activities at Honeybee and Friends Daycare</image:title>
       <image:caption>Creative art activities for toddlers and preschoolers</image:caption>
     </image:image>
 
     <!-- Children at Table Activity -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-3kidsattable.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-3kidsattable.jpg</image:loc>
       <image:title>Group Learning at Honeybee and Friends Daycare</image:title>
       <image:caption>Small group activities for toddlers in The Woodlands</image:caption>
     </image:image>
 
     <!-- Children Posing Together -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-3kidsposing.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-3kidsposing.jpg</image:loc>
       <image:title>Happy Children at Honeybee and Friends Daycare</image:title>
       <image:caption>Children enjoying their time at our Harper's Landing daycare</image:caption>
     </image:image>
 
     <!-- Children Playing on Floor -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-3kidsplayingonfloor.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-3kidsplayingonfloor.jpg</image:loc>
       <image:title>Floor Play at Honeybee and Friends Daycare</image:title>
       <image:caption>Children engaged in play-based learning activities</image:caption>
     </image:image>
 
     <!-- Baby in Playpen -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-babyinplaypen.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-babyinplaypen.jpg</image:loc>
       <image:title>Safe Baby Area at Honeybee and Friends Daycare</image:title>
       <image:caption>Safe, supervised play area for infants and toddlers</image:caption>
     </image:image>
 
     <!-- Two Children at Window -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-2kidsfacingwindow.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-2kidsfacingwindow.jpg</image:loc>
       <image:title>Children Exploring at Honeybee and Friends Daycare</image:title>
       <image:caption>Curious children exploring at our Woodlands home daycare</image:caption>
     </image:image>
 
     <!-- Girl and Baby Playing -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-girlandbabyplaying.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-girlandbabyplaying.jpg</image:loc>
       <image:title>Mixed Age Play at Honeybee and Friends Daycare</image:title>
       <image:caption>Children of different ages playing together at our home daycare</image:caption>
     </image:image>
 
     <!-- Girl and Baby in Playpen -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-girlandbabyinplaypen.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-girlandbabyinplaypen.jpg</image:loc>
       <image:title>Sibling-Like Care at Honeybee and Friends Daycare</image:title>
       <image:caption>Nurturing environment for children of all ages</image:caption>
     </image:image>
 
     <!-- Two Kids Posing -->
     <image:image>
-      <image:loc>https://honeybeeandfriends.buzz/gallery/thumbnails/covered-2kidsposing1playing.jpg</image:loc>
+      <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/covered-2kidsposing1playing.jpg</image:loc>
       <image:title>Friends at Honeybee and Friends Daycare</image:title>
       <image:caption>Building friendships at our Woodlands home daycare</image:caption>
     </image:image>
