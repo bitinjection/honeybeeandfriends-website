@@ -30,8 +30,9 @@
   <link rel="preload" href="Jua-Regular-subset.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="luck.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Preconnect to YouTube thumbnail CDN for video facade -->
-  <link rel="preconnect" href="https://img.youtube.com">
+  <!-- Preload logo - responsive sizes for different viewports -->
+  <link rel="preload" href="Heading-400w.webp" as="image" type="image/webp" media="(max-width: 500px)">
+  <link rel="preload" href="Heading-700w.webp" as="image" type="image/webp" media="(min-width: 501px)">
 
   <!-- Critical CSS inlined for instant first paint -->
   <style id="critical-css">
@@ -245,7 +246,20 @@
     <div class="header-top">
       <div id="logo" class="logo">
         <a href="#" data-page="home-page" title="Go to our Home Page">
-          <img src="Heading.png" alt="Honeybee and Friends Daycare - The Woodlands, TX 77385">
+          <picture>
+            <source type="image/webp"
+                    srcset="Heading-400w.webp 400w,
+                            Heading-700w.webp 700w,
+                            Heading-1000w.webp 1000w,
+                            Heading-1670w.webp 1670w"
+                    sizes="(max-width: 500px) 400px,
+                           (max-width: 800px) 700px,
+                           700px">
+            <img src="Heading.png"
+                 alt="Honeybee and Friends Daycare - The Woodlands, TX 77385"
+                 width="1670" height="366"
+                 fetchpriority="high">
+          </picture>
         </a>
       </div>
       <div class="header-phone">
@@ -292,9 +306,12 @@
           <button class="youtube-facade"
                   data-youtube-id="vlqsKMn97VE"
                   aria-label="Play video: Honeybee and Friends Daycare Virtual Tour">
-            <img src="https://img.youtube.com/vi/vlqsKMn97VE/hqdefault.jpg"
-                 alt="Video thumbnail - Honeybee and Friends Daycare tour"
-                 width="480" height="360">
+            <picture>
+              <source type="image/webp" srcset="video-thumbnail.webp">
+              <img src="video-thumbnail.jpg"
+                   alt="Video thumbnail - Honeybee and Friends Daycare tour"
+                   width="480" height="360">
+            </picture>
             <span class="youtube-facade-play" aria-hidden="true"></span>
           </button>
           <iframe
@@ -732,10 +749,13 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             <button class="youtube-facade"
                     data-youtube-id="vlqsKMn97VE"
                     aria-label="Play video: Honeybee and Friends Daycare Virtual Tour">
-              <img src="https://img.youtube.com/vi/vlqsKMn97VE/hqdefault.jpg"
-                   alt="Video thumbnail - Honeybee and Friends Daycare tour"
-                   loading="lazy"
-                   width="480" height="360">
+              <picture>
+                <source type="image/webp" srcset="video-thumbnail.webp">
+                <img src="video-thumbnail.jpg"
+                     alt="Video thumbnail - Honeybee and Friends Daycare tour"
+                     loading="lazy"
+                     width="480" height="360">
+              </picture>
               <span class="youtube-facade-play" aria-hidden="true"></span>
             </button>
             <iframe
