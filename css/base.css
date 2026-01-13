@@ -11,8 +11,8 @@
 
 @font-face {
   font-family: Jua;
-  src: url(../Jua-Regular.woff2) format('woff2'),
-       url(../Jua-Regular.ttf) format('truetype');
+  src: url(../Jua-Regular-subset.woff2) format('woff2'),
+       url(../Jua-Regular.woff2) format('woff2');
   font-display: swap;
 }
 
