@@ -164,6 +164,7 @@ h3 {
 }
 .logo img {
   width: 100%;
+  height: auto;
   margin-bottom: -7px;
 }
 .header-top {
