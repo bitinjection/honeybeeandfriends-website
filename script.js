@@ -695,6 +695,20 @@ function EventController(nav, slideShow, analytics, tracker) {
    * @param {Event} event - The click event
    */
   const handleClick = (event) => {
+    // YouTube facade - load iframe on click
+    const youtubeFacade = event.target.closest('.youtube-facade');
+    if (youtubeFacade) {
+      event.preventDefault();
+      const wrapper = youtubeFacade.closest('.video-wrapper');
+      const iframe = wrapper?.querySelector('iframe');
+      if (iframe && iframe.dataset.src) {
+        iframe.src = iframe.dataset.src;
+        iframe.classList.remove(CONFIG.classes.hidden);
+        youtubeFacade.classList.add(CONFIG.classes.hidden);
+      }
+      return;
+    }
+
     // Phone click tracking (tel: links)
     const phoneLink = event.target.closest('a[href^="tel:"]');
     if (phoneLink) {
