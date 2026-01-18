@@ -1171,6 +1171,39 @@ function DevTests() {
           return label !== null;
         });
       }
+    },
+
+    // =========================================================================
+    // Phone Tracking - Google Ads call conversion
+    // =========================================================================
+    {
+      category: 'Phone Tracking',
+      name: 'all phone links use consistent number',
+      test: () => {
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const expectedNumber = '832-810-2722';
+        return Array.from(phoneLinks).every(link =>
+          link.href.includes(expectedNumber.replace(/-/g, ''))
+        );
+      }
+    },
+    {
+      category: 'Phone Tracking',
+      name: 'phone-number class exists for Google tracking',
+      test: () => {
+        const phoneElements = document.querySelectorAll('.phone-number');
+        return phoneElements.length >= 6;
+      }
+    },
+    {
+      category: 'Phone Tracking',
+      name: 'all tel: links have phone-number class',
+      test: () => {
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        return Array.from(phoneLinks).every(link =>
+          link.classList.contains('phone-number')
+        );
+      }
     }
   ];
 
