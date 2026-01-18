@@ -161,17 +161,27 @@ function Analytics(getUtmData = () => ({})) {
   /**
    * Logs a form submission conversion event.
    * Uses beacon transport to ensure delivery before form navigation.
+   * Fires both GA4 event and Google Ads conversion.
    * @param {Object} formData - Form field data to include
    */
   const logFormSubmit = (formData = {}) => {
     if (!isGtagAvailable()) return;
 
+    // GA4 event
     gtag('event', 'form_submit', {
       event_category: 'conversion',
       form_name: 'contact_form',
       transport_type: 'beacon',
       ...getUtmData(),
       ...formData
+    });
+
+    // Google Ads conversion
+    gtag('event', 'conversion', {
+      send_to: 'AW-10946914652/eYfHCK2a9OcbENzS8uMo',
+      value: 100.00,
+      currency: 'USD',
+      transport_type: 'beacon'
     });
   };
 
