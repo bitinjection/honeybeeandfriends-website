@@ -524,6 +524,44 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.form-submit-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Form status messages */
+.form-status {
+  margin-top: var(--space-md);
+  padding: 0;
+  border-radius: var(--radius-md);
+  font-family: Jua;
+  font-size: var(--text-base);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status--success {
+  display: block;
+  padding: var(--space-md);
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.form-status--error {
+  display: block;
+  padding: var(--space-md);
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
 /* Contact form responsive styles */
 @media screen and (max-width: 800px) {
   .contact-form-wrapper {
