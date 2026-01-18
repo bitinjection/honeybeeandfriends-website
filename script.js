@@ -826,16 +826,85 @@ function EventController(nav, slideShow, analytics, tracker) {
     document.addEventListener('click', handleClick);
     document.addEventListener('keydown', handleKeydown);
 
-    // Contact form submission tracking
+    // Contact form AJAX submission with conversion tracking on success only
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', () => {
-        const formData = {
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitBtn = contactForm.querySelector('.form-submit-btn');
+        const statusEl = contactForm.querySelector('.form-status');
+
+        // Disable button and show loading state
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.dataset.originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Sending...';
+        }
+
+        // Clear previous status
+        if (statusEl) {
+          statusEl.className = 'form-status';
+          statusEl.textContent = '';
+        }
+
+        // Collect analytics data before submission
+        const analyticsData = {
           child_age: contactForm.querySelector('[name="child_age"]')?.value || '',
           has_phone: !!contactForm.querySelector('[name="phone"]')?.value,
           has_start_date: !!contactForm.querySelector('[name="start_date"]')?.value
         };
-        analytics.logFormSubmit(formData);
+
+        // Attach UTM parameters to form before submission
+        tracker.attachToForm(contactForm);
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            // SUCCESS - Form was accepted by Formspree
+            // Only now do we fire conversion tracking
+            analytics.logFormSubmit(analyticsData);
+
+            // Show success message
+            if (statusEl) {
+              statusEl.className = 'form-status form-status--success';
+              statusEl.textContent = 'Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
+            }
+
+            // Reset form
+            contactForm.reset();
+          } else {
+            // Handle Formspree error response
+            const data = await response.json();
+            const errorMsg = data.errors
+              ? data.errors.map(e => e.message).join(', ')
+              : 'Something went wrong. Please try again.';
+
+            if (statusEl) {
+              statusEl.className = 'form-status form-status--error';
+              statusEl.textContent = errorMsg;
+            }
+          }
+        } catch (error) {
+          // Network error or other failure
+          if (statusEl) {
+            statusEl.className = 'form-status form-status--error';
+            statusEl.textContent = 'Network error. Please check your connection and try again.';
+          }
+        } finally {
+          // Re-enable button
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.originalText || 'Send Message';
+          }
+        }
       });
     }
   };
