@@ -9,28 +9,6 @@
    Home Page
    ============================================================================= */
 
-#home-container {
-  background-color: #ffffff00;
-  box-shadow: none;
-}
-
-#home-container h1 {
-  text-align: center;
-  padding-bottom: var(--space-xl);
-}
-
-#home-container > div:nth-child(1) {
-  background-color: var(--color-green-light);
-}
-
-#home-container > div:nth-child(2) {
-  background-color: var(--color-gold-light);
-}
-
-#home-container > div:nth-child(3) {
-  background-color: var(--color-lavender-light);
-}
-
 /* =============================================================================
    Philosophy Teaser (Home Page)
    ============================================================================= */
@@ -108,6 +86,107 @@
   }
 
   .philosophy-teaser p {
+    font-size: var(--text-base);
+  }
+}
+
+/* =============================================================================
+   Content Navigation Teasers (Home Page)
+   ============================================================================= */
+
+.content-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin: var(--space-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-nav__card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content-nav__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.content-nav__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.content-nav__thumbnails img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.content-nav__label {
+  font-family: Jua;
+  font-size: var(--text-lg);
+  color: var(--color-green-dark);
+  display: block;
+  text-align: center;
+}
+
+.content-nav__card--review {
+  text-align: center;
+}
+
+.content-nav__stars {
+  color: #fbbc04;
+  font-size: var(--text-2xl);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.content-nav__quote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0 0 var(--space-md) 0;
+  padding: 0;
+}
+
+.content-nav__card--review .content-nav__label {
+  color: var(--color-sky);
+}
+
+@media screen and (min-width: 600px) {
+  .content-nav {
+    flex-direction: row;
+  }
+
+  .content-nav__card {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .content-nav {
+    margin: var(--space-md);
+  }
+
+  .content-nav__card {
+    padding: var(--space-md);
+  }
+
+  .content-nav__label {
     font-size: var(--text-base);
   }
 }
@@ -543,8 +622,12 @@ h3.about-heading,
   font-family: Jua;
 }
 
-.daycare-schedule, td, th {
+.daycare-schedule {
   border-collapse: collapse;
+}
+
+.daycare-schedule td,
+.daycare-schedule th {
   padding: 16px;
 }
 
@@ -655,9 +738,14 @@ h2.food-title,
   font-family: Jua;
   font-size: var(--text-xl);
   margin: var(--space-2xl);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+}
+
+#pricing-text-box p {
+  margin: 0 0 var(--space-lg) 0;
+}
+
+#pricing-text-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* =============================================================================

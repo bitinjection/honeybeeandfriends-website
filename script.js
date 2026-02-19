@@ -360,6 +360,7 @@ function Nav() {
     updateActiveNav(pageId);
     currentPage = pageId;
     hideSideBar();
+    window.scrollTo(0, 0);
   };
 
   const showSideBar = () => {
@@ -425,8 +426,9 @@ function LoggedNavigator(navigator, analytics) {
  * Creates a router that syncs navigation with URL hash.
  * Enables shareable URLs and browser back/forward support.
  * @param {Object} navigator - The base Nav instance for page switching
+ * @param {Function} onNavigate - Optional callback fired after every navigation (e.g. analytics)
  */
-function Router(navigator) {
+function Router(navigator, onNavigate) {
   /**
    * Extracts the hash from the current URL (without # prefix).
    * @returns {string} The current hash or empty string
@@ -446,6 +448,10 @@ function Router(navigator) {
       const newUrl = hash ? `#${hash}` : window.location.pathname;
       history.pushState({ pageId }, '', newUrl);
     }
+
+    // Fire callback for popstate-driven navigation (back/forward)
+    // User-initiated navigation is already tracked by LoggedNavigator
+    if (!updateHistory && onNavigate) onNavigate(pageId);
   };
 
   /**
@@ -684,7 +690,7 @@ function EventController(nav, slideShow, analytics, tracker) {
     if (link.closest('.header-phone')) return 'header';
     if (link.closest('.cta-container')) return 'cta_primary';
     if (link.closest('#contact-text-box')) return 'contact_page';
-    if (link.closest('.mobile-cta-bar')) return 'mobile_sticky';
+    if (link.closest('.bottom-nav')) return 'bottom_nav';
     if (link.closest('footer')) return 'footer';
     return 'unknown';
   };
@@ -698,6 +704,27 @@ function EventController(nav, slideShow, analytics, tracker) {
     if (link.closest('#contact-text-box')) return 'contact_page';
     if (link.closest('footer')) return 'footer';
     return 'unknown';
+  };
+
+  /**
+   * Scrolls to an element by ID, navigating to its parent page first if needed.
+   * Tries ID with '-container' suffix first, then exact ID.
+   * @param {string} scrollTarget - The scroll target identifier
+   */
+  const scrollToElement = (scrollTarget) => {
+    const targetEl = document.getElementById(scrollTarget + '-container')
+                  || document.getElementById(scrollTarget);
+    if (!targetEl) return;
+
+    // Navigate to parent page if target is on a hidden page
+    const parentPage = targetEl.closest('.middle-content');
+    if (parentPage && parentPage.classList.contains(CONFIG.classes.hidden)) {
+      nav.swapMiddle(parentPage.id);
+    }
+
+    requestAnimationFrame(() => {
+      targetEl.scrollIntoView({ behavior: 'smooth' });
+    });
   };
 
   /**
@@ -737,7 +764,7 @@ function EventController(nav, slideShow, analytics, tracker) {
       return;
     }
 
-    const target = event.target.closest('[data-page], [data-action], [data-slide], [data-slide-delta]');
+    const target = event.target.closest('[data-page], [data-action], [data-slide], [data-slide-delta], [data-scroll]');
     if (!target) return;
 
     // CTA secondary link tracking (before navigation)
@@ -749,6 +776,18 @@ function EventController(nav, slideShow, analytics, tracker) {
     if (target.dataset.page) {
       event.preventDefault();
       nav.swapMiddle(target.dataset.page);
+
+      // Smooth scroll to target after navigation if data-scroll is present
+      if (target.dataset.scroll) {
+        scrollToElement(target.dataset.scroll);
+      }
+      return;
+    }
+
+    // Scroll-only: data-scroll without data-page
+    if (target.dataset.scroll) {
+      event.preventDefault();
+      scrollToElement(target.dataset.scroll);
       return;
     }
 
@@ -1103,7 +1142,9 @@ function DevTests() {
         const gallery = document.getElementById('gallery-background');
         if (!gallery) return false;
         const iframe = gallery.querySelector('.video-tour-container iframe');
-        return iframe && iframe.src.includes('youtube.com/embed/vlqsKMn97VE');
+        // Check data-src (lazy load) or src (after facade click)
+        const src = iframe?.dataset.src || iframe?.src || '';
+        return src.includes('youtube.com/embed/vlqsKMn97VE');
       }
     },
     {
@@ -1263,7 +1304,7 @@ tracker.init();
 // Build navigation with decorator chain: Nav → RoutedNavigator → LoggedNavigator
 const analytics = Analytics(tracker.get);
 const baseNav = Nav();
-const router = Router(baseNav);
+const router = Router(baseNav, (pageId) => analytics.logPageView(pageId));
 const routedNav = RoutedNavigator(baseNav, router);
 const nav = LoggedNavigator(routedNav, analytics);
 

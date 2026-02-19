@@ -358,15 +358,22 @@ h2.title,
 }
 
 .hamburger {
-  height: 50%;
+  height: auto;
   justify-self: center;
   align-self: center;
-  padding-left: 10px;
+  padding: 2px 10px;
   display: none;
 }
 
 .hamburger img {
-  height: 100%;
+  height: 22px;
+  width: auto;
+}
+
+.hamburger__label {
+  color: white;
+  font-family: Jua;
+  font-size: 11px;
 }
 
 .base-frame {
@@ -400,36 +407,35 @@ h2.title,
 }
 
 /* Nav tabs use consolidated 5-color palette */
-.blue-frame, #home-side-content {
+.home-frame, #home-side-content {
   background-color: var(--color-green-tab);
 }
 
-.red-frame, #about-side-content {
+.about-frame, #about-side-content {
   background-color: var(--color-coral-tab);
 }
 
-.yellow-frame, #gallery-side-content {
+.gallery-frame, #gallery-side-content {
   background-color: var(--color-gold-tab);
 }
 
-.green-frame, #daily-side-content {
+.schedule-frame, #daily-side-content {
   background-color: var(--color-green-tab);
 }
 
-.purple-frame, #menu-side-content {
+.menu-frame, #menu-side-content {
   background-color: var(--color-lavender-tab);
 }
 
-.indigo-frame, #pricing-side-content {
+.pricing-frame, #pricing-side-content {
   background-color: var(--color-sky-tab);
 }
 
-.violet-frame, #contact-side-content {
+.contact-frame, #contact-side-content {
   background-color: var(--color-coral-tab);
 }
 
-/* Nav tab color for philosophy */
-.sky-frame, #philosophy-side-content {
+.philosophy-frame, #philosophy-side-content {
   background-color: var(--color-sky-tab);
 }
 
@@ -493,52 +499,6 @@ h2.title,
   justify-content: space-around;
 }
 
-.text-box {
-  background-color: var(--color-bg);
-  max-width: 500px;
-  padding: var(--space-md);
-  margin: var(--space-xl);
-  border-radius: var(--radius-sm);
-  font-family: Jua;
-  min-height: 250px;
-}
-
-.text-box h1,
-.text-box h2 {
-  font-family: luck;
-  text-align: center;
-  font-size: xx-large;
-}
-
-.text-box div {
-  padding-bottom: 32px;
-  font-size: x-large;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.box1 {
-  background-color: var(--color-lavender-light);
-}
-
-.box2 {
-  background-color: var(--color-green-light);
-}
-
-.box3 {
-  background-color: var(--color-gold-light);
-}
-
-.cute-image {
-  padding: 10px;
-  margin: 50px;
-  align-self: center;
-}
-
-.cute-image img {
-  width: 300px;
-}
-
 /* =============================================================================
    Footer
    ============================================================================= */
@@ -554,19 +514,13 @@ h2.title,
 
 .icon {
   font-size: large;
-  float: left;
   width: 30px;
-  margin-right: 10px;
-  padding: 0px 5px 0px 5px;
+  flex-shrink: 0;
 }
 
 .icon-img {
   width: 100%;
   vertical-align: middle;
-}
-
-.envelope {
-  padding: 0px;
 }
 
 .footer-title {
@@ -575,11 +529,13 @@ h2.title,
 }
 
 .footer-contact-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
 .footer-text {
-  display: inline-block;
   line-height: 25px;
 }
 
@@ -620,7 +576,9 @@ h2.title,
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .middle-content-sub-container {
@@ -911,6 +869,7 @@ h2.title,
   right: var(--space-lg);
   width: calc(100% - var(--space-lg) * 2);
   height: calc(100% - var(--space-lg));
+  border: none;
   border-radius: var(--radius-md);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -1195,6 +1154,44 @@ h2.title,
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.form-submit-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Form status messages */
+.form-status {
+  margin-top: var(--space-md);
+  padding: 0;
+  border-radius: var(--radius-md);
+  font-family: Jua;
+  font-size: var(--text-base);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status--success {
+  display: block;
+  padding: var(--space-md);
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.form-status--error {
+  display: block;
+  padding: var(--space-md);
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
 /* Contact form responsive styles */
 @media screen and (max-width: 800px) {
   .contact-form-wrapper {
@@ -1465,50 +1462,68 @@ a.contact-info-item:hover {
 }
 
 /* =============================================================================
-   Sticky Mobile CTA Bar
+   Bottom Navigation Bar (replaces mobile CTA bar)
    ============================================================================= */
 
-.mobile-cta-bar {
+.bottom-nav {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--color-green-dark);
-  padding: 12px 20px;
-  text-align: center;
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
   z-index: 1000;
-}
-
-.mobile-cta-bar a {
-  text-decoration: none;
-  color: white;
-  font-family: Jua;
-  font-size: 18px;
-  display: flex;
+  background-color: var(--color-green-dark);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  padding: 6px 0 max(6px, env(safe-area-inset-bottom));
 }
 
-.mobile-cta-icon {
-  font-size: 22px;
+.bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Jua;
+  font-size: 11px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.mobile-cta-text {
-  font-weight: bold;
+.bottom-nav__item[aria-current="page"],
+.bottom-nav__item:hover {
+  color: white;
 }
 
-/* Show mobile CTA bar only on smaller screens */
+/* Override the global [data-page] active border for bottom nav */
+.bottom-nav .bottom-nav__item[aria-current="page"] {
+  border-bottom: none;
+}
+
+.bottom-nav__item--cta {
+  color: var(--color-gold);
+}
+
+.bottom-nav__item--cta:hover {
+  color: white;
+}
+
+.bottom-nav__icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Show bottom nav on mobile, add footer padding */
 @media screen and (max-width: 800px) {
-  .mobile-cta-bar {
-    display: block;
+  .bottom-nav {
+    display: flex;
   }
 
-  /* Add padding to footer so it's not hidden behind sticky bar */
   .bottom-content {
-    padding-bottom: 60px;
+    padding-bottom: 70px;
   }
 }
 
@@ -1524,28 +1539,6 @@ a.contact-info-item:hover {
 /* =============================================================================
    Home Page
    ============================================================================= */
-
-#home-container {
-  background-color: #ffffff00;
-  box-shadow: none;
-}
-
-#home-container h1 {
-  text-align: center;
-  padding-bottom: var(--space-xl);
-}
-
-#home-container > div:nth-child(1) {
-  background-color: var(--color-green-light);
-}
-
-#home-container > div:nth-child(2) {
-  background-color: var(--color-gold-light);
-}
-
-#home-container > div:nth-child(3) {
-  background-color: var(--color-lavender-light);
-}
 
 /* =============================================================================
    Philosophy Teaser (Home Page)
@@ -1624,6 +1617,107 @@ a.contact-info-item:hover {
   }
 
   .philosophy-teaser p {
+    font-size: var(--text-base);
+  }
+}
+
+/* =============================================================================
+   Content Navigation Teasers (Home Page)
+   ============================================================================= */
+
+.content-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin: var(--space-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-nav__card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content-nav__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.content-nav__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.content-nav__thumbnails img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.content-nav__label {
+  font-family: Jua;
+  font-size: var(--text-lg);
+  color: var(--color-green-dark);
+  display: block;
+  text-align: center;
+}
+
+.content-nav__card--review {
+  text-align: center;
+}
+
+.content-nav__stars {
+  color: #fbbc04;
+  font-size: var(--text-2xl);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.content-nav__quote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0 0 var(--space-md) 0;
+  padding: 0;
+}
+
+.content-nav__card--review .content-nav__label {
+  color: var(--color-sky);
+}
+
+@media screen and (min-width: 600px) {
+  .content-nav {
+    flex-direction: row;
+  }
+
+  .content-nav__card {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .content-nav {
+    margin: var(--space-md);
+  }
+
+  .content-nav__card {
+    padding: var(--space-md);
+  }
+
+  .content-nav__label {
     font-size: var(--text-base);
   }
 }
@@ -2059,8 +2153,12 @@ h3.about-heading,
   font-family: Jua;
 }
 
-.daycare-schedule, td, th {
+.daycare-schedule {
   border-collapse: collapse;
+}
+
+.daycare-schedule td,
+.daycare-schedule th {
   padding: 16px;
 }
 
@@ -2171,9 +2269,14 @@ h2.food-title,
   font-family: Jua;
   font-size: var(--text-xl);
   margin: var(--space-2xl);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+}
+
+#pricing-text-box p {
+  margin: 0 0 var(--space-lg) 0;
+}
+
+#pricing-text-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* =============================================================================

@@ -36,7 +36,7 @@
 
   <!-- Critical CSS inlined for instant first paint -->
   <style id="critical-css">
-@font-face{font-family:Jua;src:url(Jua-Regular-subset.woff2) format('woff2'),url(Jua-Regular.woff2) format('woff2');font-display:swap}@font-face{font-family:luck;src:url(luck.woff2) format('woff2'),url(luck.ttf) format('truetype');font-display:swap}:root{--color-green:#66bb6a;--color-green-light:#f0faf0;--color-green-tab:#d0f5d0;--color-coral:#ff8a65;--color-coral-light:#fff5f2;--color-coral-tab:#ffd4c4;--color-gold:#ffb74d;--color-gold-light:#fffbf0;--color-gold-tab:#ffe4b8;--color-sky:#64b5f6;--color-sky-light:#f0f8ff;--color-sky-tab:#c8e4ff;--color-lavender:#ba68c8;--color-lavender-light:#fdf5fc;--color-lavender-tab:#e8c8f0;--color-text:#333;--color-text-muted:#666;--color-border:#ddd;--color-bg:#fafafa;--color-green-dark:#4a9b4a;--color-green-darker:#3d8a3d;--color-sky-dark:#1976d2;--color-nav-brown:rgb(120,37,2);--color-footer-dark:rgb(0,33,43);--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px;--space-3xl:64px;--text-sm:0.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-3xl:2rem;--text-4xl:2.5rem;--shadow-btn:0 4px 8px rgba(0,0,0,0.2);--shadow-btn-hover:0 6px 12px rgba(0,0,0,0.25);--radius-sm:4px;--radius-md:8px;--radius-lg:12px}*,*::before,*::after{box-sizing:border-box}body{margin:0;padding:0;line-height:1.6;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,rgb(235 248 252) 0%,white 19%);background-color:rgb(240,250,255)}img{max-width:100%;display:block}h1{font-family:luck;font-size:var(--text-4xl);letter-spacing:1.5px;font-weight:normal}h2{font-family:Jua;font-size:var(--text-3xl)}h3{font-family:Jua;font-size:var(--text-2xl)}.is-hidden{display:none !important}.sr-only,.slideshow-live-region{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.card{background-color:white;border-radius:var(--radius-md);padding:var(--space-lg)}.section-panel{border-left:5px solid var(--section-color);background-color:var(--section-bg)}.section-panel--green{--section-color:var(--color-green);--section-bg:var(--color-green-light)}.section-panel--coral{--section-color:var(--color-coral);--section-bg:var(--color-coral-light)}.section-panel--gold{--section-color:var(--color-gold);--section-bg:var(--color-gold-light)}.section-panel--sky{--section-color:var(--color-sky);--section-bg:var(--color-sky-light)}.section-panel--lavender{--section-color:var(--color-lavender);--section-bg:var(--color-lavender-light)}.landing-page-container{display:flex;flex-direction:column}.logo{align-self:center;padding:5px 10px 0 10px;max-width:700px}.logo img{width:100%;height:auto;margin-bottom:-7px}.header-top{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px}.header-phone{text-align:center;padding:10px 20px}.header-phone a{text-decoration:none;color:#333;font-family:Jua;display:flex;align-items:center;gap:8px;transition:transform 0.2s}.header-phone a:hover{transform:scale(1.05)}.phone-icon{font-size:24px}.phone-text{font-size:18px;color:#555}.phone-number-display{font-size:24px;font-weight:bold;color:var(--color-green-dark)}.nav-bar{display:flex;height:65px;background-color:var(--color-nav-brown);position:relative}#side-nav-bar{flex-direction:column;height:fit-content;position:absolute;top:50px;z-index:2}#side-nav-bar:not(.is-hidden){display:flex}.side-content{font-family:Jua;font-size:larger;padding:10px;width:100%}.hamburger{height:50%;justify-self:center;align-self:center;padding-left:10px;display:none}.hamburger img{height:100%}.base-frame{font-family:Jua;flex-grow:1;font-size:larger;padding:10px;text-align:center;margin-top:auto;width:100%;border-top-left-radius:16px;border-top-right-radius:16px;min-width:140px}.base-frame:hover{height:60px}[data-page][aria-current="page"]{border-bottom:4px solid rgba(0,0,0,0.3);font-weight:bold}.side-content[aria-current="page"]{background-color:rgba(255,255,255,0.3);border-left:4px solid rgba(0,0,0,0.3);border-bottom:none}.blue-frame,#home-side-content{background-color:var(--color-green-tab)}.red-frame,#about-side-content{background-color:var(--color-coral-tab)}.yellow-frame,#gallery-side-content{background-color:var(--color-gold-tab)}.green-frame,#daily-side-content{background-color:var(--color-green-tab)}.purple-frame,#menu-side-content{background-color:var(--color-lavender-tab)}.indigo-frame,#pricing-side-content{background-color:var(--color-sky-tab)}.violet-frame,#contact-side-content{background-color:var(--color-coral-tab)}.sky-frame,#philosophy-side-content{background-color:var(--color-sky-tab)}.nav-text-short{display:none}@media screen and (max-width:1181px) and (min-width:1077px){.nav-text-full{display:none}.nav-text-short{display:inline}}#filter{position:fixed;top:0;left:0;height:100%;width:100%;z-index:1;background-color:black;filter:opacity(50%)}#filter:not(.is-hidden){display:block}.page-separator{background-color:var(--color-nav-brown);height:15px}.middle-content{background-color:var(--color-green-light);min-height:80vh;padding-top:var(--space-lg);padding-bottom:var(--space-lg)}.flex-row{display:flex;flex-wrap:wrap;justify-content:space-around}.text-box{background-color:var(--color-bg);max-width:500px;padding:var(--space-md);margin:var(--space-xl);border-radius:var(--radius-sm);font-family:Jua;min-height:250px}.text-box h1,.text-box h2{font-family:luck;text-align:center;font-size:xx-large}.text-box div{padding-bottom:32px;font-size:x-large;padding-left:24px;padding-right:24px}.box1{background-color:var(--color-lavender-light)}.box2{background-color:var(--color-green-light)}.box3{background-color:var(--color-gold-light)}.cute-image{padding:10px;margin:50px;align-self:center}.cute-image img{width:300px}.icon-img{width:100%;vertical-align:middle}@media screen and (max-width:1077px){.nav-bar{height:50px}.hamburger{display:block}.middle-content-sub-container{margin:20px}.base-frame{display:none}}@media screen and (max-width:800px){.bottom-content{flex-direction:column;align-items:center}.header-phone{padding:5px 10px}.phone-text{display:none}.phone-number-display{font-size:20px}}@media screen and (max-width:460px){.middle-content-sub-container{margin:0px}.header-top{flex-direction:column;gap:5px}.header-phone{padding:5px}}.cta-container{background-color:var(--color-green-light);margin:var(--space-xl);padding:var(--space-xl);text-align:center}.cta-button{display:inline-block;background-color:var(--color-green);color:white;font-family:Jua;font-size:var(--text-xl);padding:var(--space-md) var(--space-2xl);border-radius:var(--radius-md);text-decoration:none;box-shadow:var(--shadow-btn);transition:transform 0.2s,box-shadow 0.2s}.cta-button:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn-hover)}.cta-badge{display:inline-block;background-color:var(--color-green-dark);color:white;font-family:Jua;font-size:14px;padding:6px 16px;border-radius:20px;margin-bottom:16px;letter-spacing:0.5px}.cta-subtext{font-family:Jua;font-size:large;color:#444;margin:0 0 20px 0;max-width:500px;margin-left:auto;margin-right:auto}.cta-phone-icon{margin-right:8px}.cta-alt{font-family:Jua;font-size:16px;color:#666;margin-top:16px;margin-bottom:0;font-style:italic}.cta-secondary{display:block;font-family:Jua;font-size:large;color:var(--color-green-dark);text-decoration:none;margin-top:16px;transition:color 0.2s}.cta-secondary:hover{color:var(--color-green-darker);text-decoration:underline}@media screen and (max-width:460px){.cta-badge{font-size:12px;padding:4px 12px}.cta-subtext{font-size:medium;padding:0 10px}}[data-slideshow="slide"]:not(.is-hidden){display:block}[data-slideshow="slide"]img{max-height:400px;object-fit:cover;background-color:black;width:100%}.video-tour-container{background-color:var(--color-nav-brown);padding-bottom:var(--space-lg)}.video-wrapper{position:relative;width:100%;max-width:800px;margin:0 auto;padding:var(--space-lg) var(--space-lg) 0}.video-wrapper::before{content:"";display:block;padding-top:56.25%}.video-wrapper iframe{position:absolute;top:var(--space-lg);left:var(--space-lg);right:var(--space-lg);width:calc(100% - var(--space-lg) * 2);height:calc(100% - var(--space-lg));border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,0.4)}.video-description{max-width:700px;margin:0 auto;padding:var(--space-lg) var(--space-xl);text-align:center}.video-description h3{font-family:luck;font-size:var(--text-2xl);color:white;margin:0 0 var(--space-sm) 0;font-weight:normal;letter-spacing:1px}.video-description p{font-family:Jua;font-size:var(--text-lg);color:rgba(255,255,255,0.9);line-height:1.6;margin:0}@media screen and (max-width:800px){.video-wrapper{padding:var(--space-md) var(--space-md) 0}.video-wrapper iframe{top:var(--space-md);left:var(--space-md);right:var(--space-md);width:calc(100% - var(--space-md) * 2);height:calc(100% - var(--space-md))}.video-description{padding:var(--space-md) var(--space-lg)}.video-description h3{font-size:var(--text-xl)}.video-description p{font-size:var(--text-base)}}@media screen and (max-width:460px){.video-wrapper{padding:var(--space-sm) var(--space-sm) 0}.video-wrapper iframe{top:var(--space-sm);left:var(--space-sm);right:var(--space-sm);width:calc(100% - var(--space-sm) * 2);height:calc(100% - var(--space-sm));border-radius:var(--radius-sm)}.video-description{padding:var(--space-sm) var(--space-md)}}.youtube-facade{position:absolute;top:var(--space-lg);left:var(--space-lg);right:var(--space-lg);width:calc(100% - var(--space-lg) * 2);height:calc(100% - var(--space-lg));border-radius:var(--radius-md);overflow:hidden;cursor:pointer;background-color:#000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}.youtube-facade img{width:100%;height:100%;object-fit:cover}.youtube-facade-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background-color:#cc0000;border-radius:14px;transition:background-color 0.2s,transform 0.2s}.youtube-facade:hover .youtube-facade-play{background-color:#ff0000;transform:translate(-50%,-50%) scale(1.1)}.youtube-facade-play::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-35%,-50%);border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent white}.youtube-facade.is-hidden{display:none}@media screen and (max-width:800px){.youtube-facade{top:var(--space-md);left:var(--space-md);right:var(--space-md);width:calc(100% - var(--space-md) * 2);height:calc(100% - var(--space-md))}}@media screen and (max-width:460px){.youtube-facade{top:var(--space-sm);left:var(--space-sm);right:var(--space-sm);width:calc(100% - var(--space-sm) * 2);height:calc(100% - var(--space-sm));border-radius:var(--radius-sm)}.youtube-facade-play{width:54px;height:38px;border-radius:10px}.youtube-facade-play::before{border-width:8px 0 8px 14px}}@media screen and (max-width:800px){.contact-form-wrapper{margin:20px;padding:24px}.form-row{flex-direction:column;gap:0}.form-row .form-group{min-width:100%}}@media screen and (max-width:460px){.contact-form-wrapper{margin:10px;padding:16px;border-radius:8px}.contact-form-title{font-size:x-large}.contact-form-subtitle{font-size:medium}.form-group label{font-size:medium}.form-submit-btn{font-size:large;padding:14px 24px}}@media screen and (max-width:460px){.testimonials-section{margin:var(--space-sm);padding:var(--space-md);border-radius:var(--radius-md)}.testimonials-title{font-size:var(--text-2xl)}.testimonials-subtitle{font-size:var(--text-base)}.testimonial-card{padding:var(--space-md)}.testimonial-quote{font-size:var(--text-base)}}.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background-color:var(--color-green-dark);padding:12px 20px;text-align:center;box-shadow:0 -4px 12px rgba(0,0,0,0.2);z-index:1000}.mobile-cta-bar a{text-decoration:none;color:white;font-family:Jua;font-size:18px;display:flex;align-items:center;justify-content:center;gap:10px}@media screen and (max-width:800px){.mobile-cta-bar{display:block}.bottom-content{padding-bottom:60px}}#home-container{background-color:#ffffff00;box-shadow:none}#home-container h1{text-align:center;padding-bottom:var(--space-xl)}#home-container>div:nth-child(1){background-color:var(--color-green-light)}#home-container>div:nth-child(2){background-color:var(--color-gold-light)}#home-container>div:nth-child(3){background-color:var(--color-lavender-light)}.philosophy-teaser{margin:var(--space-2xl);padding:var(--space-xl);text-align:center;border-radius:var(--radius-lg)}.teaser-icon{font-size:var(--text-4xl);margin-bottom:var(--space-sm)}.philosophy-teaser h3{font-family:luck;font-size:var(--text-2xl);color:var(--color-text);margin:0 0 var(--space-md) 0;font-weight:normal;letter-spacing:1px}.philosophy-teaser p{font-family:Jua;font-size:var(--text-lg);color:var(--color-text);line-height:1.6;max-width:600px;margin:0 auto var(--space-lg)}.teaser-link{font-family:Jua;font-size:var(--text-lg);color:var(--color-gold);text-decoration:none;display:inline-flex;align-items:center;gap:var(--space-sm);transition:color 0.2s}.teaser-link:hover{color:#e6a23c}.teaser-arrow{transition:transform 0.2s}.teaser-link:hover .teaser-arrow{transform:translateX(4px)}@media screen and (max-width:800px){.philosophy-teaser{margin:var(--space-lg);padding:var(--space-lg)}}@media screen and (max-width:460px){.philosophy-teaser{margin:var(--space-sm);padding:var(--space-md)}.philosophy-teaser h3{font-size:var(--text-xl)}.philosophy-teaser p{font-size:var(--text-base)}}.about-content>div:nth-child(2) img{width:400px}h2.about-heading,h3.about-heading,.about-heading{letter-spacing:1.3px;font-family:luck;margin-bottom:24px;margin-top:0;color:black;font-weight:normal}@media screen and (max-width:1077px){.about-text-box{margin:20px}}@media screen and (max-width:460px){#philosophy-container{padding:var(--space-md)}.philosophy-lead{font-size:var(--text-lg)}.philosophy-heading{font-size:var(--text-xl)}.philosophy-section p,.highlight-text{font-size:var(--text-base)}.research-highlight{flex-direction:column;align-items:center;text-align:center}.philosophy-faq{padding:var(--space-md)}.philosophy-cta{padding:var(--space-md)}.philosophy-cta h3{font-size:var(--text-xl)}.philosophy-cta p{font-size:var(--text-base)}.philosophy-sources{padding:var(--space-md)}.philosophy-sources h4{font-size:var(--text-lg)}.sources-list{padding-left:var(--space-md)}}#gallery-background .video-tour-container{background-color:transparent;margin-bottom:var(--space-xl);padding-bottom:var(--space-lg)}#gallery-background .video-description h3,#gallery-background .video-description p{color:var(--color-text)}@media screen and (min-width:1077px){.gallery{margin:0 auto;display:grid;grid-template-columns:auto auto auto;padding:10px;justify-content:space-evenly;justify-items:center;align-content:space-evenly;align-items:center}.gallery img{margin:12px}}@media screen and (max-width:1077px){.gallery{margin:0 auto;display:grid;grid-template-columns:auto;padding:10px}}.calendar img{width:100%}.contact-picture img{width:100%}@media screen and (max-width:800px){#contact-text-box{font-size:larger;margin:20px}}
+@font-face{font-family:Jua;src:url(Jua-Regular-subset.woff2) format('woff2'),url(Jua-Regular.woff2) format('woff2');font-display:swap}@font-face{font-family:luck;src:url(luck.woff2) format('woff2'),url(luck.ttf) format('truetype');font-display:swap}:root{--color-green:#66bb6a;--color-green-light:#f0faf0;--color-green-tab:#d0f5d0;--color-coral:#ff8a65;--color-coral-light:#fff5f2;--color-coral-tab:#ffd4c4;--color-gold:#ffb74d;--color-gold-light:#fffbf0;--color-gold-tab:#ffe4b8;--color-sky:#64b5f6;--color-sky-light:#f0f8ff;--color-sky-tab:#c8e4ff;--color-lavender:#ba68c8;--color-lavender-light:#fdf5fc;--color-lavender-tab:#e8c8f0;--color-text:#333;--color-text-muted:#666;--color-border:#ddd;--color-bg:#fafafa;--color-green-dark:#4a9b4a;--color-green-darker:#3d8a3d;--color-sky-dark:#1976d2;--color-nav-brown:rgb(120,37,2);--color-footer-dark:rgb(0,33,43);--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px;--space-3xl:64px;--text-sm:0.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-3xl:2rem;--text-4xl:2.5rem;--shadow-btn:0 4px 8px rgba(0,0,0,0.2);--shadow-btn-hover:0 6px 12px rgba(0,0,0,0.25);--radius-sm:4px;--radius-md:8px;--radius-lg:12px}*,*::before,*::after{box-sizing:border-box}body{margin:0;padding:0;line-height:1.6;-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,rgb(235 248 252) 0%,white 19%);background-color:rgb(240,250,255)}img{max-width:100%;display:block}h1{font-family:luck;font-size:var(--text-4xl);letter-spacing:1.5px;font-weight:normal}h2{font-family:Jua;font-size:var(--text-3xl)}h3{font-family:Jua;font-size:var(--text-2xl)}.is-hidden{display:none !important}.sr-only,.slideshow-live-region{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.card{background-color:white;border-radius:var(--radius-md);padding:var(--space-lg)}.section-panel{border-left:5px solid var(--section-color);background-color:var(--section-bg)}.section-panel--green{--section-color:var(--color-green);--section-bg:var(--color-green-light)}.section-panel--coral{--section-color:var(--color-coral);--section-bg:var(--color-coral-light)}.section-panel--gold{--section-color:var(--color-gold);--section-bg:var(--color-gold-light)}.section-panel--sky{--section-color:var(--color-sky);--section-bg:var(--color-sky-light)}.section-panel--lavender{--section-color:var(--color-lavender);--section-bg:var(--color-lavender-light)}.landing-page-container{display:flex;flex-direction:column}.logo{align-self:center;padding:5px 10px 0 10px;max-width:700px}.logo img{width:100%;height:auto;margin-bottom:-7px}.header-top{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px}.header-phone{text-align:center;padding:10px 20px}.header-phone a{text-decoration:none;color:#333;font-family:Jua;display:flex;align-items:center;gap:8px;transition:transform 0.2s}.header-phone a:hover{transform:scale(1.05)}.phone-icon{font-size:24px}.phone-text{font-size:18px;color:#555}.phone-number-display{font-size:24px;font-weight:bold;color:var(--color-green-dark)}.nav-bar{display:flex;height:65px;background-color:var(--color-nav-brown);position:relative}#side-nav-bar{flex-direction:column;height:fit-content;position:absolute;top:50px;z-index:2}#side-nav-bar:not(.is-hidden){display:flex}.side-content{font-family:Jua;font-size:larger;padding:10px;width:100%}.hamburger{height:auto;justify-self:center;align-self:center;padding:2px 10px;display:none}.hamburger img{height:22px;width:auto}.hamburger__label{color:white;font-family:Jua;font-size:11px}.base-frame{font-family:Jua;flex-grow:1;font-size:larger;padding:10px;text-align:center;margin-top:auto;width:100%;border-top-left-radius:16px;border-top-right-radius:16px;min-width:140px}.base-frame:hover{height:60px}[data-page][aria-current="page"]{border-bottom:4px solid rgba(0,0,0,0.3);font-weight:bold}.side-content[aria-current="page"]{background-color:rgba(255,255,255,0.3);border-left:4px solid rgba(0,0,0,0.3);border-bottom:none}.home-frame,#home-side-content{background-color:var(--color-green-tab)}.about-frame,#about-side-content{background-color:var(--color-coral-tab)}.gallery-frame,#gallery-side-content{background-color:var(--color-gold-tab)}.schedule-frame,#daily-side-content{background-color:var(--color-green-tab)}.menu-frame,#menu-side-content{background-color:var(--color-lavender-tab)}.pricing-frame,#pricing-side-content{background-color:var(--color-sky-tab)}.contact-frame,#contact-side-content{background-color:var(--color-coral-tab)}.philosophy-frame,#philosophy-side-content{background-color:var(--color-sky-tab)}.nav-text-short{display:none}@media screen and (max-width:1181px) and (min-width:1077px){.nav-text-full{display:none}.nav-text-short{display:inline}}#filter{position:fixed;top:0;left:0;height:100%;width:100%;z-index:1;background-color:black;filter:opacity(50%)}#filter:not(.is-hidden){display:block}.page-separator{background-color:var(--color-nav-brown);height:15px}.middle-content{background-color:var(--color-green-light);min-height:80vh;padding-top:var(--space-lg);padding-bottom:var(--space-lg)}.flex-row{display:flex;flex-wrap:wrap;justify-content:space-around}.icon-img{width:100%;vertical-align:middle}@media screen and (max-width:1077px){.nav-bar{height:50px}.hamburger{display:flex;flex-direction:column;align-items:center}.middle-content-sub-container{margin:20px}.base-frame{display:none}}@media screen and (max-width:800px){.bottom-content{flex-direction:column;align-items:center}.header-phone{padding:5px 10px}.phone-text{display:none}.phone-number-display{font-size:20px}}@media screen and (max-width:460px){.middle-content-sub-container{margin:0px}.header-top{flex-direction:column;gap:5px}.header-phone{padding:5px}}.cta-container{background-color:var(--color-green-light);margin:var(--space-xl);padding:var(--space-xl);text-align:center}.cta-button{display:inline-block;background-color:var(--color-green);color:white;font-family:Jua;font-size:var(--text-xl);padding:var(--space-md) var(--space-2xl);border-radius:var(--radius-md);text-decoration:none;box-shadow:var(--shadow-btn);transition:transform 0.2s,box-shadow 0.2s}.cta-button:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn-hover)}.cta-badge{display:inline-block;background-color:var(--color-green-dark);color:white;font-family:Jua;font-size:14px;padding:6px 16px;border-radius:20px;margin-bottom:16px;letter-spacing:0.5px}.cta-subtext{font-family:Jua;font-size:large;color:#444;margin:0 0 20px 0;max-width:500px;margin-left:auto;margin-right:auto}.cta-phone-icon{margin-right:8px}.cta-alt{font-family:Jua;font-size:16px;color:#666;margin-top:16px;margin-bottom:0;font-style:italic}.cta-secondary{display:block;font-family:Jua;font-size:large;color:var(--color-green-dark);text-decoration:none;margin-top:16px;transition:color 0.2s}.cta-secondary:hover{color:var(--color-green-darker);text-decoration:underline}@media screen and (max-width:460px){.cta-badge{font-size:12px;padding:4px 12px}.cta-subtext{font-size:medium;padding:0 10px}}[data-slideshow="slide"]:not(.is-hidden){display:block}[data-slideshow="slide"]img{max-height:400px;object-fit:cover;background-color:black;width:100%}.video-tour-container{background-color:var(--color-nav-brown);padding-bottom:var(--space-lg)}.video-wrapper{position:relative;width:100%;max-width:800px;margin:0 auto;padding:var(--space-lg) var(--space-lg) 0}.video-wrapper::before{content:"";display:block;padding-top:56.25%}.video-wrapper iframe{position:absolute;top:var(--space-lg);left:var(--space-lg);right:var(--space-lg);width:calc(100% - var(--space-lg) * 2);height:calc(100% - var(--space-lg));border:none;border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,0.4)}.video-description{max-width:700px;margin:0 auto;padding:var(--space-lg) var(--space-xl);text-align:center}.video-description h3{font-family:luck;font-size:var(--text-2xl);color:white;margin:0 0 var(--space-sm) 0;font-weight:normal;letter-spacing:1px}.video-description p{font-family:Jua;font-size:var(--text-lg);color:rgba(255,255,255,0.9);line-height:1.6;margin:0}@media screen and (max-width:800px){.video-wrapper{padding:var(--space-md) var(--space-md) 0}.video-wrapper iframe{top:var(--space-md);left:var(--space-md);right:var(--space-md);width:calc(100% - var(--space-md) * 2);height:calc(100% - var(--space-md))}.video-description{padding:var(--space-md) var(--space-lg)}.video-description h3{font-size:var(--text-xl)}.video-description p{font-size:var(--text-base)}}@media screen and (max-width:460px){.video-wrapper{padding:var(--space-sm) var(--space-sm) 0}.video-wrapper iframe{top:var(--space-sm);left:var(--space-sm);right:var(--space-sm);width:calc(100% - var(--space-sm) * 2);height:calc(100% - var(--space-sm));border-radius:var(--radius-sm)}.video-description{padding:var(--space-sm) var(--space-md)}}.youtube-facade{position:absolute;top:var(--space-lg);left:var(--space-lg);right:var(--space-lg);width:calc(100% - var(--space-lg) * 2);height:calc(100% - var(--space-lg));border-radius:var(--radius-md);overflow:hidden;cursor:pointer;background-color:#000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}.youtube-facade img{width:100%;height:100%;object-fit:cover}.youtube-facade-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background-color:#cc0000;border-radius:14px;transition:background-color 0.2s,transform 0.2s}.youtube-facade:hover .youtube-facade-play{background-color:#ff0000;transform:translate(-50%,-50%) scale(1.1)}.youtube-facade-play::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-35%,-50%);border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent white}.youtube-facade.is-hidden{display:none}@media screen and (max-width:800px){.youtube-facade{top:var(--space-md);left:var(--space-md);right:var(--space-md);width:calc(100% - var(--space-md) * 2);height:calc(100% - var(--space-md))}}@media screen and (max-width:460px){.youtube-facade{top:var(--space-sm);left:var(--space-sm);right:var(--space-sm);width:calc(100% - var(--space-sm) * 2);height:calc(100% - var(--space-sm));border-radius:var(--radius-sm)}.youtube-facade-play{width:54px;height:38px;border-radius:10px}.youtube-facade-play::before{border-width:8px 0 8px 14px}}@media screen and (max-width:800px){.contact-form-wrapper{margin:20px;padding:24px}.form-row{flex-direction:column;gap:0}.form-row .form-group{min-width:100%}}@media screen and (max-width:460px){.contact-form-wrapper{margin:10px;padding:16px;border-radius:8px}.contact-form-title{font-size:x-large}.contact-form-subtitle{font-size:medium}.form-group label{font-size:medium}.form-submit-btn{font-size:large;padding:14px 24px}}@media screen and (max-width:460px){.testimonials-section{margin:var(--space-sm);padding:var(--space-md);border-radius:var(--radius-md)}.testimonials-title{font-size:var(--text-2xl)}.testimonials-subtitle{font-size:var(--text-base)}.testimonial-card{padding:var(--space-md)}.testimonial-quote{font-size:var(--text-base)}}.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:1000;background-color:var(--color-green-dark);box-shadow:0 -4px 12px rgba(0,0,0,0.2);justify-content:space-around;align-items:center;padding:6px 0 max(6px,env(safe-area-inset-bottom))}.bottom-nav__item{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:rgba(255,255,255,0.7);font-family:Jua;font-size:11px;padding:4px 8px;transition:color 0.2s;-webkit-tap-highlight-color:transparent}.bottom-nav__item[aria-current="page"],.bottom-nav__item:hover{color:white}.bottom-nav .bottom-nav__item[aria-current="page"]{border-bottom:none}.bottom-nav__item--cta{color:var(--color-gold)}.bottom-nav__item--cta:hover{color:white}.bottom-nav__icon{width:22px;height:22px}@media screen and (max-width:800px){.bottom-nav{display:flex}.bottom-content{padding-bottom:70px}}.philosophy-teaser{margin:var(--space-2xl);padding:var(--space-xl);text-align:center;border-radius:var(--radius-lg)}.teaser-icon{font-size:var(--text-4xl);margin-bottom:var(--space-sm)}.philosophy-teaser h3{font-family:luck;font-size:var(--text-2xl);color:var(--color-text);margin:0 0 var(--space-md) 0;font-weight:normal;letter-spacing:1px}.philosophy-teaser p{font-family:Jua;font-size:var(--text-lg);color:var(--color-text);line-height:1.6;max-width:600px;margin:0 auto var(--space-lg)}.teaser-link{font-family:Jua;font-size:var(--text-lg);color:var(--color-gold);text-decoration:none;display:inline-flex;align-items:center;gap:var(--space-sm);transition:color 0.2s}.teaser-link:hover{color:#e6a23c}.teaser-arrow{transition:transform 0.2s}.teaser-link:hover .teaser-arrow{transform:translateX(4px)}@media screen and (max-width:800px){.philosophy-teaser{margin:var(--space-lg);padding:var(--space-lg)}}@media screen and (max-width:460px){.philosophy-teaser{margin:var(--space-sm);padding:var(--space-md)}.philosophy-teaser h3{font-size:var(--text-xl)}.philosophy-teaser p{font-size:var(--text-base)}}.content-nav__thumbnails img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius-md)}@media screen and (max-width:460px){.content-nav{margin:var(--space-md)}.content-nav__card{padding:var(--space-md)}.content-nav__label{font-size:var(--text-base)}}.about-content>div:nth-child(2) img{width:400px}h2.about-heading,h3.about-heading,.about-heading{letter-spacing:1.3px;font-family:luck;margin-bottom:24px;margin-top:0;color:black;font-weight:normal}@media screen and (max-width:1077px){.about-text-box{margin:20px}}@media screen and (max-width:460px){#philosophy-container{padding:var(--space-md)}.philosophy-lead{font-size:var(--text-lg)}.philosophy-heading{font-size:var(--text-xl)}.philosophy-section p,.highlight-text{font-size:var(--text-base)}.research-highlight{flex-direction:column;align-items:center;text-align:center}.philosophy-faq{padding:var(--space-md)}.philosophy-cta{padding:var(--space-md)}.philosophy-cta h3{font-size:var(--text-xl)}.philosophy-cta p{font-size:var(--text-base)}.philosophy-sources{padding:var(--space-md)}.philosophy-sources h4{font-size:var(--text-lg)}.sources-list{padding-left:var(--space-md)}}#gallery-background .video-tour-container{background-color:transparent;margin-bottom:var(--space-xl);padding-bottom:var(--space-lg)}#gallery-background .video-description h3,#gallery-background .video-description p{color:var(--color-text)}@media screen and (min-width:1077px){.gallery{margin:0 auto;display:grid;grid-template-columns:auto auto auto;padding:10px;justify-content:space-evenly;justify-items:center;align-content:space-evenly;align-items:center}.gallery img{margin:12px}}@media screen and (max-width:1077px){.gallery{margin:0 auto;display:grid;grid-template-columns:auto;padding:10px}}.calendar img{width:100%}.contact-picture img{width:100%}@media screen and (max-width:800px){#contact-text-box{font-size:larger;margin:20px}}
   </style>
 
   <!-- Deferred CSS loaded asynchronously -->
@@ -281,15 +281,16 @@
     <nav class="nav-bar" aria-label="Main navigation">
       <button class="hamburger" data-action="show-sidebar" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="side-nav-bar">
         <img src="hamburger.png" alt="">
+        <span class="hamburger__label">Menu</span>
       </button>
-      <button class="base-frame blue-frame" data-page="home-page" type="button" title="Go to our Home Page" aria-current="page">Home</button>
-      <button class="base-frame red-frame" data-page="about-background" type="button" title="Learn about us">About Us</button>
-      <button class="base-frame sky-frame" data-page="philosophy-background" type="button" title="Our learning philosophy">Our Approach</button>
-      <button class="base-frame yellow-frame" data-page="gallery-background" type="button" title="Check out pictures">Gallery</button>
-      <button class="base-frame green-frame" data-page="schedule-background" type="button" title="Daily schedule">Schedule</button>
-      <button class="base-frame purple-frame" data-page="menu-background" type="button" title="Food menu for the kids">Menu</button>
-      <button class="base-frame indigo-frame" data-page="pricing-background" type="button" title="Pricing"><span class="nav-text-full">Pricing and Forms</span><span class="nav-text-short">Pricing & Forms</span></button>
-      <button class="base-frame violet-frame" data-page="contact-background" type="button" title="Our contact information">Contact</button>
+      <button class="base-frame home-frame" data-page="home-page" type="button" title="Go to our Home Page" aria-current="page">Home</button>
+      <button class="base-frame about-frame" data-page="about-background" type="button" title="Learn about us">About Us</button>
+      <button class="base-frame philosophy-frame" data-page="philosophy-background" type="button" title="Our learning philosophy">Our Approach</button>
+      <button class="base-frame gallery-frame" data-page="gallery-background" type="button" title="Check out pictures">Gallery</button>
+      <button class="base-frame schedule-frame" data-page="schedule-background" type="button" title="Daily schedule">Schedule</button>
+      <button class="base-frame menu-frame" data-page="menu-background" type="button" title="Food menu for the kids">Menu</button>
+      <button class="base-frame pricing-frame" data-page="pricing-background" type="button" title="Pricing"><span class="nav-text-full">Pricing and Forms</span><span class="nav-text-short">Pricing & Forms</span></button>
+      <button class="base-frame contact-frame" data-page="contact-background" type="button" title="Our contact information">Contact</button>
 
       <div id="side-nav-bar" class="is-hidden" role="menu" aria-label="Mobile navigation">
         <button id="home-side-content" class="side-content" data-page="home-page" type="button" role="menuitem" title="Go to our Home Page" aria-current="page">Home</button>
@@ -319,6 +320,27 @@
         <a href="#" class="cta-secondary" data-page="contact-background" title="Send us a message online">Or send us a message online</a>
       </div>
 
+      <!-- Content Navigation Teasers -->
+      <div class="content-nav">
+        <a href="#gallery" class="content-nav__card" data-page="gallery-background">
+          <div class="content-nav__thumbnails">
+            <img src="gallery/thumbnails/covered-4kidsattable.jpg" alt="" loading="lazy" width="90" height="90">
+            <img src="gallery/thumbnails/covered-3kidsdotmarkers.jpg" alt="" loading="lazy" width="90" height="90">
+            <img src="gallery/thumbnails/tour-livingroom1.jpg" alt="" loading="lazy" width="90" height="90">
+            <img src="gallery/thumbnails/IMG-0659.jpg" alt="" loading="lazy" width="90" height="90">
+          </div>
+          <span class="content-nav__label">See our daycare in action &#8594;</span>
+        </a>
+
+        <a href="#" class="content-nav__card content-nav__card--review" data-scroll="testimonials">
+          <div class="content-nav__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote class="content-nav__quote">
+            "Miss K is truly an amazing teacher who genuinely loves what she does."
+          </blockquote>
+          <span class="content-nav__label">Read parent reviews &#8594;</span>
+        </a>
+      </div>
+
       <!-- Video Tour - YouTube Lite Embed (below fold on mobile) -->
       <div class="video-tour-container" role="region" aria-label="Virtual tour video">
         <div class="video-wrapper">
@@ -337,7 +359,6 @@
           <iframe
             data-src="https://www.youtube.com/embed/vlqsKMn97VE?rel=0&autoplay=1"
             title="Honeybee and Friends Daycare Virtual Tour - The Woodlands TX"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -351,50 +372,6 @@
             will learn, play, and grow. We update this tour periodically as we add new features
             and activities to our daycare.
           </p>
-        </div>
-      </div>
-      <div id="home-container" class="middle-content-sub-container">
-        <div class="flex-row">
-          <div class="text-box box1">
-            <h2>Fun with Friends</h2>
-            <div>
-              Families in Harper's Landing and The Woodlands trust us to prepare their children for elementary school
-              through social interaction, education, art, and play. Our comfortable, nurturing environment helps
-              little ones learn to cooperate and love learning.
-            </div>
-          </div>
-
-          <div class="cute-image butterfly">
-            <img src="butterfly.png" alt="Graphic of our daycare's butterfly" loading="lazy">
-          </div>
-        </div>
-
-        <div class="flex-row">
-          <div class="text-box box2">
-            <h2>State Certified</h2>
-            <div>
-               Your child's safety and comfort are our number one concern. Honeybee and Friends Daycare is an official Texas listed home daycare serving
-               The Woodlands, Conroe, and surrounding communities, and we comply with all state regulations.
-            </div>
-          </div>
-
-          <div class="cute-image ant">
-            <img src="ant.png" alt="Graphic of our daycare's ant" loading="lazy">
-          </div>
-        </div>
-
-        <div class="flex-row">
-          <div class="text-box box3">
-            <h2>Experienced, Certified Care</h2>
-            <div>
-              With years of experience as a mother and educator in Montgomery County, Miss K guides, nurtures, and
-              encourages your child to grow through creative play, teamwork, and independent learning.
-            </div>
-          </div>
-
-          <div class="cute-image ladybug">
-            <img src="ladybug.png" alt="Graphic of our daycare's ladybug" loading="lazy">
-          </div>
         </div>
       </div>
 
@@ -549,9 +526,9 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
       <!-- Philosophy Teaser -->
       <div class="section-panel section-panel--gold philosophy-teaser">
         <div class="teaser-icon">&#127891;</div>
-        <h3>Wondering About Academics vs. Play?</h3>
+        <h3>Happy Children Are Successful Children</h3>
         <p>
-          Many parents ask us to teach children to read books or write words at young ages. The research on early childhood development might surprise you, and it's why we do things differently.
+          We prioritize play, social interaction, and happiness.  The research on early childhood development might surprise you, and it's why we do things differently.
         </p>
         <a href="#" class="teaser-link" data-page="philosophy-background">
           Learn about our approach <span class="teaser-arrow">&#8594;</span>
@@ -805,7 +782,6 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             <iframe
               data-src="https://www.youtube.com/embed/vlqsKMn97VE?rel=0&autoplay=1"
               title="Honeybee and Friends Daycare Virtual Tour - The Woodlands TX"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
@@ -850,10 +826,13 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
         </div>
         <div class="section-panel section-panel--green daycare-schedule-container">
           <table class="daycare-schedule">
+            <thead>
             <tr>
-              <th>Time</th>
-              <th>Activity</th>
+              <th scope="col">Time</th>
+              <th scope="col">Activity</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
               <td>7:00 AM</td>
               <td>Arrival / Wash hands / Breakfast</td>
@@ -927,6 +906,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
               <td>5:30 PM</td>
               <td>Closing Time</td>
             </tr>
+            </tbody>
           </table>
           <div class="schedule-footer">
             <span class="asterisk">*</span> Bathroom breaks throughout the day.<br>
@@ -943,16 +923,19 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
           <div class="food-note">We serve all meals and snacks with milk, orange juice, apple juice, or grape juice.</div>
           <div class="food-note">We regularly update this menu.</div>
           <table class="food-menu">
-            <tr><th>Breakfast</th></tr>
+            <thead><tr><th scope="col">Breakfast</th></tr></thead>
+            <tbody>
             <tr><td>Pancakes, strawberries, and milk</td></tr>
             <tr><td>French toast with bananas and milk</td></tr>
             <tr><td>Oatmeal with fruit</td></tr>
             <tr><td>Cereal with jelly toast</td></tr>
             <tr><td>Eggs with cheese, peaches, jelly toast, and milk</td></tr>
             <tr><td>Eggs, muffins, mixed fruit, and milk</td></tr>
+            </tbody>
           </table>
           <table class="food-menu">
-            <tr><th>Lunch</th></tr>
+            <thead><tr><th scope="col">Lunch</th></tr></thead>
+            <tbody>
             <tr><td>Spaghetti, garlic bread, and mixed vegetables</td></tr>
             <tr><td>Macaroni and cheese with broccoli</td></tr>
             <tr><td>Chicken fried rice with carrots</td></tr>
@@ -960,9 +943,11 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             <tr><td>Chicken nuggets, french fries, and mixed vegetables</td></tr>
             <tr><td>Baked chicken with tater tots and green beans</td></tr>
             <tr><td>Pizza</td></tr>
+            </tbody>
           </table>
           <table class="food-menu">
-            <tr><th>Snacks</th></tr>
+            <thead><tr><th scope="col">Snacks</th></tr></thead>
+            <tbody>
             <tr><td>Crackers and sliced cheese</td></tr>
             <tr><td>Cinnamon applesauce</td></tr>
             <tr><td>Mixed fruit with yogurt (or parfait)</td></tr>
@@ -977,6 +962,7 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
             <tr><td>Carrots and ranch</td></tr>
             <tr><td>Cucumbers</td></tr>
             <tr><td>Watermelon</td></tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -985,12 +971,9 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
     <section id="pricing-background" class="middle-content is-hidden" aria-label="Pricing">
       <div id="pricing-container" class="section-panel section-panel--sky middle-content-sub-container">
         <div id="pricing-text-box">
-          Honeybee and Friends Daycare offers quality childcare in The Woodlands area at $250 per week.<br>
-          <br>
-          Pricing is non-negotiable, and full-time enrollment is all we are currently able to offer.<br>
-          However, if you need other accommodations, please feel free to reach out.<br>
-          <br>
-          You may pay via credit card, debit card, or check. Payments are due weekly by Monday.<br>
+          <p>Honeybee and Friends Daycare offers quality childcare in The Woodlands area at $250 per week.</p>
+          <p>Pricing is non-negotiable, and full-time enrollment is all we are currently able to offer. However, if you need other accommodations, please feel free to reach out.</p>
+          <p>You may pay via credit card, debit card, or check. Payments are due weekly by Monday.</p>
         </div>
       </div>
     </section>
@@ -1126,13 +1109,29 @@ We feel so lucky to have found her. Our child absolutely loves her, and this has
       <p><strong>THIS HOME IS A LISTED FAMILY HOME. IT IS NOT LICENSED OR REGISTERED WITH THE HEALTH AND HUMAN SERVICES COMMISSION. A LISTED FAMILY HOME HAS LIMITED MINIMUM STANDARDS AND IS NOT INSPECTED UNLESS A COMPLAINT IS FILED WITH THE COMMISSION.</strong></p>
     </div>
   </footer>
-  <!-- Sticky Mobile CTA Bar -->
-  <div class="mobile-cta-bar">
-    <a href="tel:832-810-2722" class="phone-number" title="Tap to call and schedule a tour">
-      <span class="mobile-cta-icon">&#128222;</span>
-      <span class="mobile-cta-text">Schedule a Tour: 832-810-2722</span>
+  <!-- Bottom Navigation Bar (mobile) -->
+  <nav class="bottom-nav" aria-label="Quick navigation">
+    <a href="#" data-page="home-page" class="bottom-nav__item" aria-current="page">
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+      <span>Home</span>
     </a>
-  </div>
+    <a href="#" data-page="gallery-background" class="bottom-nav__item">
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/></svg>
+      <span>Gallery</span>
+    </a>
+    <a href="tel:832-810-2722" class="bottom-nav__item bottom-nav__item--cta phone-number">
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <span>Call</span>
+    </a>
+    <a href="#" data-scroll="testimonials" class="bottom-nav__item">
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span>Reviews</span>
+    </a>
+    <a href="#" data-page="contact-background" class="bottom-nav__item">
+      <svg class="bottom-nav__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span>Contact</span>
+    </a>
+  </nav>
 
   <script src="script.js"></script>
 </body>

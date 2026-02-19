@@ -240,6 +240,7 @@
   right: var(--space-lg);
   width: calc(100% - var(--space-lg) * 2);
   height: calc(100% - var(--space-lg));
+  border: none;
   border-radius: var(--radius-md);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -832,49 +833,67 @@ a.contact-info-item:hover {
 }
 
 /* =============================================================================
-   Sticky Mobile CTA Bar
+   Bottom Navigation Bar (replaces mobile CTA bar)
    ============================================================================= */
 
-.mobile-cta-bar {
+.bottom-nav {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--color-green-dark);
-  padding: 12px 20px;
-  text-align: center;
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
   z-index: 1000;
-}
-
-.mobile-cta-bar a {
-  text-decoration: none;
-  color: white;
-  font-family: Jua;
-  font-size: 18px;
-  display: flex;
+  background-color: var(--color-green-dark);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  padding: 6px 0 max(6px, env(safe-area-inset-bottom));
 }
 
-.mobile-cta-icon {
-  font-size: 22px;
+.bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Jua;
+  font-size: 11px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.mobile-cta-text {
-  font-weight: bold;
+.bottom-nav__item[aria-current="page"],
+.bottom-nav__item:hover {
+  color: white;
 }
 
-/* Show mobile CTA bar only on smaller screens */
+/* Override the global [data-page] active border for bottom nav */
+.bottom-nav .bottom-nav__item[aria-current="page"] {
+  border-bottom: none;
+}
+
+.bottom-nav__item--cta {
+  color: var(--color-gold);
+}
+
+.bottom-nav__item--cta:hover {
+  color: white;
+}
+
+.bottom-nav__icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Show bottom nav on mobile, add footer padding */
 @media screen and (max-width: 800px) {
-  .mobile-cta-bar {
-    display: block;
+  .bottom-nav {
+    display: flex;
   }
 
-  /* Add padding to footer so it's not hidden behind sticky bar */
   .bottom-content {
-    padding-bottom: 60px;
+    padding-bottom: 70px;
   }
 }
