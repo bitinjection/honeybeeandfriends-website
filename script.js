@@ -963,6 +963,48 @@ function EventController(nav, slideShow, analytics, tracker) {
 }
 
 // =============================================================================
+// Enrollment Status Module
+// =============================================================================
+
+/**
+ * Fetches enrollment status from a server-editable JSON config file.
+ * When enrolling is true, restores original enrollment-open messaging.
+ * When enrolling is false, displays the custom message from the config.
+ * If the fetch fails, the page keeps its default HTML content (graceful fallback).
+ */
+function EnrollmentStatus() {
+  const OPEN_CTA = 'Limited enrollment available';
+  const OPEN_PRICING = 'Pricing is non-negotiable, and full-time enrollment is all we are currently able to offer. However, if you need other accommodations, please feel free to reach out.';
+
+  const init = () => {
+    fetch('enrollment-status.json', { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) return;
+        return response.json();
+      })
+      .then(data => {
+        if (!data) return;
+
+        const ctaEl = document.getElementById('enrollment-cta');
+        const pricingEl = document.getElementById('enrollment-pricing');
+
+        if (data.enrolling) {
+          if (ctaEl) ctaEl.textContent = OPEN_CTA;
+          if (pricingEl) pricingEl.textContent = OPEN_PRICING;
+        } else if (data.message) {
+          if (ctaEl) ctaEl.textContent = data.message;
+          if (pricingEl) pricingEl.textContent = 'Pricing is non-negotiable, and we are currently at capacity. However, if you need other accommodations, please feel free to reach out.';
+        }
+      })
+      .catch(() => {
+        // Fetch failed — keep default HTML content
+      });
+  };
+
+  return Object.freeze({ init });
+}
+
+// =============================================================================
 // Development Utilities
 // =============================================================================
 
@@ -1333,6 +1375,9 @@ if (Object.keys(utmData).length > 0 && typeof gtag === 'function') {
     ...utmData
   });
 }
+
+// Load enrollment status from server config
+EnrollmentStatus().init();
 
 // Run dev tests in local environment
 DevTests().run();
