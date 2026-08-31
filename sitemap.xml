@@ -35,14 +35,14 @@
     <image:image>
       <image:loc>https://honeybeeandfriends.care/Heading.png</image:loc>
       <image:title>Honeybee and Friends Daycare Logo</image:title>
-      <image:caption>Honeybee and Friends Daycare - Licensed home daycare in The Woodlands TX 77385</image:caption>
+      <image:caption>Honeybee and Friends Daycare - Registered home daycare in The Woodlands TX 77385</image:caption>
     </image:image>
 
     <!-- Social Media / Marketing Image -->
     <image:image>
       <image:loc>https://honeybeeandfriends.care/facebook-advert.png</image:loc>
       <image:title>Honeybee and Friends Daycare - The Woodlands TX</image:title>
-      <image:caption>Licensed home daycare serving The Woodlands, Conroe, Shenandoah, and Oakridge TX</image:caption>
+      <image:caption>Registered home daycare serving The Woodlands, Conroe, Shenandoah, and Oakridge TX</image:caption>
     </image:image>
 
     <!-- ===== FACILITY EXTERIOR IMAGES ===== -->
@@ -51,7 +51,7 @@
     <image:image>
       <image:loc>https://honeybeeandfriends.care/gallery/thumbnails/house-front.jpg</image:loc>
       <image:title>Honeybee and Friends Daycare Home in Harper's Landing</image:title>
-      <image:caption>State-certified home daycare located in Harper's Landing, The Woodlands TX</image:caption>
+      <image:caption>State-registered home daycare located in Harper's Landing, The Woodlands TX</image:caption>
     </image:image>
 
     <!-- Daycare House - Back/Yard -->
